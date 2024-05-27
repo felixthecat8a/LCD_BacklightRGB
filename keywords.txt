@@ -1,0 +1,12 @@
+# Syntax Coloring Map For LiquidCrystal
+
+# Datatypes (KEYWORD1)
+
+LCD_BacklightRGB    KEYWORD1
+
+# Methods and Functions (KEYWORD2)
+
+begin   KEYWORD2
+setRGB  KEYWORD2
+
+# Constants (LITERAL1)
