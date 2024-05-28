@@ -1,4 +1,4 @@
-# LCD_BackgroundRGB
+# LCD_BacklightRGB
 
 This library allows interfacing with an RGB LCD display backlight. It enables the user to control the RGB backlight using Arduino.
 
