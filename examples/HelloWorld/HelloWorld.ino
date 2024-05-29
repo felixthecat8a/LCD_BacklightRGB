@@ -15,15 +15,16 @@ const int redPin = 6, greenPin = 9, bluePin = 10;
 LCD_BacklightRGB backlight(redPin, greenPin, bluePin);
 
 void setup() {
-    lcd.begin(16, 2);
-    // initiate the backlight pins
-    backlight.begin();
-    // set the backlight using RGB values
-    backlight.setRGB(0, 255, 255);
-    lcd.print("hello, world!");
+  // Initiate the LCD
+  lcd.begin(16, 2);
+  // initiate the backlight RGB pins
+  backlight.begin();
+  // set the backlight using RGB values
+  backlight.setRGB(0, 255, 255);
+  lcd.print("hello, world!");
 }
 
 void loop() {
-    lcd.setCursor(0, 1);
-    lcd.print(millis()/1000);
+  lcd.setCursor(0, 1);
+  lcd.print(millis()/1000);
 }
