@@ -28,21 +28,24 @@ void setup() {
   backlight.setRGB(0, 128, 128);
   lcd.print("Backlight Color:");
   lcd.setCursor(0,1); 
-  lcd.print("Teal!");
+  lcd.print("Teal! ");
   delay(500);
 }
 
 void loop() {
   // set the backlight using RGB values
+  lcd.setCursor(0,1); 
   backlight.setRGB(255,0,0);
-  lcd.print("Red");
+  lcd.print("Red!  ");
   delay(1000);
   // change color every second
+  lcd.setCursor(0,1); 
   backlight.setRGB(0,255,0);
-  lcd.print("Green");
+  lcd.print("Green!");
   delay(1000);
 
+  lcd.setCursor(0,1); 
   backlight.setRGB(0,0,255);
-  lcd.print("Blue");
+  lcd.print("Blue! ");
   delay(1000);
 }
