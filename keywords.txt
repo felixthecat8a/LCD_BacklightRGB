@@ -7,6 +7,7 @@ LCD_BacklightRGB    KEYWORD1
 # Methods and Functions (KEYWORD2)
 
 begin   KEYWORD2
+clamp   KEYWORD2
 setRGB  KEYWORD2
 
 # Constants (LITERAL1)
