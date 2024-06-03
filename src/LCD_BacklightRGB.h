@@ -11,6 +11,9 @@ public:
   LCD_BacklightRGB(int redPin, int greenPin, int bluePin);
   void begin();
   void setRGB(int red, int green, int blue);
+  void setRed();
+  void setGreen();
+  void setBlue();
 };
 
 #endif

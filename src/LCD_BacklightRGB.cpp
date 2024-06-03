@@ -37,3 +37,15 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
   analogWrite(_greenPin, green);
   analogWrite(_bluePin, blue);
 }
+
+void LCD_BacklightRGB::setRed() {
+  LCD_BacklightRGB::setRGB(255, 0, 0);
+}
+
+void LCD_BacklightRGB::setGreen() {
+  LCD_BacklightRGB::setRGB(0, 255, 0);
+}
+
+void LCD_BacklightRGB::setBlue() {
+  LCD_BacklightRGB::setRGB(0, 0, 255);
+}
