@@ -12,7 +12,9 @@ public:
   void begin();
   void setRGB(int red, int green, int blue);
   void setRed();
+  void setYellow();
   void setGreen();
+  void setCyan();
   void setBlue();
 };
 

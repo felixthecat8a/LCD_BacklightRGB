@@ -42,8 +42,16 @@ void LCD_BacklightRGB::setRed() {
   LCD_BacklightRGB::setRGB(255, 0, 0);
 }
 
+void LCD_BacklightRGB::setYellow() {
+  LCD_BacklightRGB::setRGB(255, 255, 0);
+}
+
 void LCD_BacklightRGB::setGreen() {
   LCD_BacklightRGB::setRGB(0, 255, 0);
+}
+
+void LCD_BacklightRGB::setCyan() {
+  LCD_BacklightRGB::setRGB(0, 255, 255);
 }
 
 void LCD_BacklightRGB::setBlue() {
