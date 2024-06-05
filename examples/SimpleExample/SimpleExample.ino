@@ -23,7 +23,7 @@ void setup() {
   // Initiate the RGB pins.
   backlight.begin();
   // Set the backlight using RGB values.
-  backlight.setRGB(0, 128, 128);
+  backlight.setRGB(10, 150, 150);
   lcd.print("Backlight Color:");
   lcd.setCursor(0,1); 
   lcd.print("Teal! ");
@@ -31,19 +31,29 @@ void setup() {
 }
 
 void loop() {
-  // set the backlight using RGB values
+  // set the backlight using default colors
   lcd.setCursor(0,1); 
-  backlight.setRGB(255,0,0);
-  lcd.print("Red!  ");
+  backlight.setRed();
+  lcd.print("Red!    ");
   delay(1000);
   // change color every second
   lcd.setCursor(0,1); 
-  backlight.setRGB(0,255,0);
-  lcd.print("Green!");
+  backlight.setYellow();
+  lcd.print("Yellow! ");
   delay(1000);
 
   lcd.setCursor(0,1); 
-  backlight.setRGB(0,0,255);
-  lcd.print("Blue! ");
+  backlight.setGreen();
+  lcd.print("Green!  ");
+  delay(1000);
+
+  lcd.setCursor(0,1); 
+  backlight.setCyan();
+  lcd.print("Cyan!   ");
+  delay(1000);
+
+  lcd.setCursor(0,1); 
+  backlight.setBlue();
+  lcd.print("Blue!   ");
   delay(1000);
 }
