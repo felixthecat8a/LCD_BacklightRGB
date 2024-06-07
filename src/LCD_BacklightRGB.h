@@ -6,7 +6,7 @@ class LCD_BacklightRGB {
 private:
   int _redPin, _greenPin, _bluePin;
   const int minRGB = 0, maxRGB = 255;
-  int clamp(int value);
+  void display(int red, int green, int blue);
 public:
   LCD_BacklightRGB(int redPin, int greenPin, int bluePin);
   void begin();

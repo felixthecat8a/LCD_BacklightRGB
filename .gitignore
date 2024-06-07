@@ -25,6 +25,7 @@ Thumbs.db
 .vscode/
 .idea/
 *.code-workspace
+prototype/
 
 # Arduino specific directories
 /libraries
