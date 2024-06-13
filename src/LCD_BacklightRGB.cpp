@@ -16,12 +16,6 @@ void LCD_BacklightRGB::begin() {
   pinMode(_bluePin, OUTPUT);
 }
 
-void LCD_BacklightRGB::display(int red, int green, int blue) {
-  analogWrite(_redPin, red);
-  analogWrite(_greenPin, green);
-  analogWrite(_bluePin, blue);
-}
-
 void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
   red = constrain(red, minRGB, maxRGB);
   green = constrain(green, minRGB, maxRGB);
@@ -33,25 +27,27 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
     blue = 255 - blue;
   #endif
 
-  LCD_BacklightRGB::display(red, green, blue);
+  analogWrite(_redPin, red);
+  analogWrite(_greenPin, green);
+  analogWrite(_bluePin, blue);
 }
 
 void LCD_BacklightRGB::setRed() {
-  LCD_BacklightRGB::setRGB(255, 0, 0);
+  setRGB(255, 0, 0);
 }
 
 void LCD_BacklightRGB::setYellow() {
-  LCD_BacklightRGB::setRGB(255, 255, 0);
+  setRGB(255, 255, 0);
 }
 
 void LCD_BacklightRGB::setGreen() {
-  LCD_BacklightRGB::setRGB(0, 255, 0);
+  setRGB(0, 255, 0);
 }
 
 void LCD_BacklightRGB::setCyan() {
-  LCD_BacklightRGB::setRGB(0, 255, 255);
+  setRGB(0, 255, 255);
 }
 
 void LCD_BacklightRGB::setBlue() {
-  LCD_BacklightRGB::setRGB(0, 0, 255);
+  setRGB(0, 0, 255);
 }

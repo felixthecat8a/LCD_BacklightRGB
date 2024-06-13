@@ -1,3 +1,6 @@
+# Config File
+.editorconfig
+
 # Compiled object files and binaries
 *.elf
 *.hex
