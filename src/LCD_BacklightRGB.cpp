@@ -33,22 +33,26 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
   analogWrite(_bluePin, blue);
 }
 
+void LCD_BacklightRGB::setDefaultColor(const int color[3]) {
+  setRGB(color[0], color[1], color[2]);
+}
+
 void LCD_BacklightRGB::setRed() {
-  setRGB(Colors::RED);
+  setDefaultColor(Colors::RED);
 }
 
 void LCD_BacklightRGB::setYellow() {
-  setRGB(Colors::YELLOW);
+  setDefaultColor(Colors::YELLOW);
 }
 
 void LCD_BacklightRGB::setGreen() {
-  setRGB(Colors::GREEN);
+  setDefaultColor(Colors::GREEN);
 }
 
 void LCD_BacklightRGB::setCyan() {
-  setRGB(Colors::CYAN);
+  setDefaultColor(Colors::CYAN);
 }
 
 void LCD_BacklightRGB::setBlue() {
-  setRGB(Colors::BLUE);
+  setDefaultColor(Colors::BLUE);
 }
