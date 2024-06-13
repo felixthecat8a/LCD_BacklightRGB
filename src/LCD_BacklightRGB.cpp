@@ -1,5 +1,6 @@
 // LCD_BacklightRGB.cpp
 #include "LCD_BacklightRGB.h"
+#include "Colors.h"
 #include <Arduino.h>
 
 #define COMMON_ANODE
@@ -33,21 +34,21 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
 }
 
 void LCD_BacklightRGB::setRed() {
-  setRGB(255, 0, 0);
+  setRGB(Colors::RED);
 }
 
 void LCD_BacklightRGB::setYellow() {
-  setRGB(255, 255, 0);
+  setRGB(Colors::YELLOW);
 }
 
 void LCD_BacklightRGB::setGreen() {
-  setRGB(0, 255, 0);
+  setRGB(Colors::GREEN);
 }
 
 void LCD_BacklightRGB::setCyan() {
-  setRGB(0, 255, 255);
+  setRGB(Colors::CYAN);
 }
 
 void LCD_BacklightRGB::setBlue() {
-  setRGB(0, 0, 255);
+  setRGB(Colors::BLUE);
 }
