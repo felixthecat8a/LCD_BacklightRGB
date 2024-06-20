@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/github/license/felixthecat8a/LCD_BacklightRGB)](https://opensource.org/licenses/MIT)
+
 # LCD_BacklightRGB
 
 This library allows interfacing with an 18-pin RGB LCD display backlight connected directly to an Arduino board. It enables the user to control the RGB backlight using Arduino. This library is meant to be used alongside the LiquidCrystal library.
@@ -40,4 +42,6 @@ void loop() {
 ```
 ## RGB LCD Displays
 
-Some of the RGB displays out there are the Adafruit RGB LCD displays available in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399). Another RGB LCD available out there is [this one](https://www.amazon.com/Character-Negative-Backlight-Arduino-projects/dp/B00CRSF37I) from Winstar on Amazon.
+Here are some of the 18-pin RGB displays that I found available:
+* The Adafruit RGB LCD displays available in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
+* [This one from Winstar](https://www.amazon.com/Character-Negative-Backlight-Arduino-projects/dp/B00CRSF37I) that I found on Amazon.
