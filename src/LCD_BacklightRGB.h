@@ -6,6 +6,7 @@ class LCD_BacklightRGB {
 private:
   int _redPin, _greenPin, _bluePin;
   const int minRGB = 0, maxRGB = 255;
+  int setColor(int color);
   void setDefaultColor(const int color[3]);
 
 public:

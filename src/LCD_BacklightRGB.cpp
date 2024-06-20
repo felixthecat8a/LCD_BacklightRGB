@@ -17,20 +17,18 @@ void LCD_BacklightRGB::begin() {
   pinMode(_bluePin, OUTPUT);
 }
 
-void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
-  red = constrain(red, minRGB, maxRGB);
-  green = constrain(green, minRGB, maxRGB);
-  blue = constrain(blue, minRGB, maxRGB);
-
+int LCD_BacklightRGB::setColor(int color) {
+  color = constrain(color, minRGB, maxRGB);
   #ifdef COMMON_ANODE
-    red = 255 - red;
-    green = 255 - green;
-    blue = 255 - blue;
+    color = 255 - color;
   #endif
+  return color;
+}
 
-  analogWrite(_redPin, red);
-  analogWrite(_greenPin, green);
-  analogWrite(_bluePin, blue);
+void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
+  analogWrite(_redPin, setColor(red));
+  analogWrite(_greenPin, setColor(green));
+  analogWrite(_bluePin, setColor(blue));
 }
 
 void LCD_BacklightRGB::setDefaultColor(const int color[3]) {
