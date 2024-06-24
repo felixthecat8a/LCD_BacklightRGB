@@ -2,6 +2,7 @@
  * SimpleExample.ino
  * For an RGB LCD with 18 pins, set pin 15 to HIGH.
  * Pin 16 is red, pin 17 is green and pin 18 is blue.
+ * On the Arduino board, choose 3 PWM pins (denoted by ~)
  * This sketch will loop through the different colors 
  * and display the color name.
 */
