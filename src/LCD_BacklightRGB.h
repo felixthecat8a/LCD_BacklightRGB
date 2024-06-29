@@ -1,4 +1,4 @@
-// LCD_BacklightRGB.h v1.0.2
+// LCD_BacklightRGB.h
 #ifndef LCD_BACKLIGHTRGB_H
 #define LCD_BACKLIGHTRGB_H
 
