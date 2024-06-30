@@ -14,7 +14,8 @@
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
-// set the RGB pins for the RGB LCD
+// Set the RGB pins for the RGB LCD. 
+// Use PWM pin denoted by ~ symbol.
 const int redPin = 6, greenPin = 9, bluePin = 10;
 LCD_BacklightRGB backlight(redPin, greenPin, bluePin);
 
@@ -23,16 +24,17 @@ void setup() {
   lcd.begin(16, 2);
   // Initiate the RGB pins.
   backlight.begin();
+  // Set the brightness level (0 - 255)
+  backlight.setBrightness(150);
   // Set the backlight using RGB values.
+  // If not set, the default value is (0, 128, 128)
   backlight.setRGB(10, 150, 150);
   lcd.home();
   lcd.print("Backlight Color:");
-  lcd.setCursor(0,1); 
-  lcd.print("Teal! ");
-  delay(1000);
 }
 
 void loop() {
+  lcd.setCursor(0,1); 
   // set the backlight using default colors
   backlight.setRed();
   lcd.print("Red!     ");
