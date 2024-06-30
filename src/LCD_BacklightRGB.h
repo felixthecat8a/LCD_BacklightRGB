@@ -8,7 +8,7 @@ private:
   const int minRGB = 0, maxRGB = 255;
   int _brightness = 255;
   int _currentColor[3];
-  void storeCurrentColor(int red, int green, int blue);
+  void showRGB(int red, int green, int blue);
   int setColor(int color);
 
 public:
