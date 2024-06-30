@@ -13,6 +13,7 @@ class Colors {
     static const int MAGENTA[3];
     static const int WHITE[3];
     static const int BLACK[3];
+    static const int TEAL[3];
 };
 
 #endif

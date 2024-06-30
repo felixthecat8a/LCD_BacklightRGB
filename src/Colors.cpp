@@ -10,3 +10,4 @@ const int Colors::BLUE[3] = {10, 10, 255};
 const int Colors::MAGENTA[3] = {255, 10, 255};
 const int Colors::WHITE[3] = {255, 255, 255};
 const int Colors::BLACK[3] = {0, 0, 0};
+const int Colors::TEAL[3] = {10, 128, 128};
