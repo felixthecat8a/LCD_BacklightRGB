@@ -19,7 +19,11 @@ void setup() {
   lcd.begin(16, 2);
   // initiate the backlight RGB pins
   backlight.begin();
-  // set the backlight using RGB values
+  // Set the brightness level (0 - 255) 
+  // The default value is 255.
+  backlight.setBrightness(130);
+  // Set the backlight using RGB values
+  // If the color is not set, the default color is (0, 128, 128)
   backlight.setRGB(0, 255, 255);
   lcd.print("hello, world!");
 }

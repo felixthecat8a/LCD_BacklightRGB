@@ -5,6 +5,8 @@
  * On the Arduino board, choose 3 PWM pins (denoted by ~)
  * This sketch will loop through the different colors 
  * and display the color name.
+ * This example loops through all of the default colors
+ * available in the library.
 */
 
 #include <LiquidCrystal.h>
@@ -25,10 +27,13 @@ void setup() {
   // Initiate the RGB pins.
   backlight.begin();
   // Set the brightness level (0 - 255)
+  // Default value is 255
   backlight.setBrightness(150);
   // Set the backlight using RGB values.
   // If not set, the default value is (0, 128, 128)
   backlight.setRGB(10, 150, 150);
+  // or set the color and brightness at the same time:
+  //backlight.setRGB(10, 150, 150, 150);
   lcd.home();
   lcd.print("Backlight Color:");
 }

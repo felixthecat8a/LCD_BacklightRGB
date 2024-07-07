@@ -31,6 +31,8 @@ void setup() {
     lcd.begin(16, 2);
     // Initiate the RGB pins.
     backlight.begin();
+    // Set the brightness level (0 - 255)
+    backlight.setBrightness(130);
     // Set the backlight using RGB values.
     backlight.setRGB(0, 255, 0);
     lcd.print("Green!");

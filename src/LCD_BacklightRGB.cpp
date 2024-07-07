@@ -32,7 +32,17 @@ void LCD_BacklightRGB::setRGB(const int rgb[3]) {
   showRGB(rgb[0], rgb[1], rgb[2]);
 }
 
+void LCD_BacklightRGB::setRGB(const int rgb[3], int brightness) {
+  _brightness = constrain(brightness, minRGB, maxRGB);
+  showRGB(rgb[0], rgb[1], rgb[2]);
+}
+
 void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
+  showRGB(red, green, blue);
+}
+
+void LCD_BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
+  _brightness = constrain(brightness, minRGB, maxRGB);
   showRGB(red, green, blue);
 }
 
@@ -54,22 +64,46 @@ void LCD_BacklightRGB::setRed() {
   setRGB(Colors::RED);
 }
 
+void LCD_BacklightRGB::setRed(int brightness) {
+  setRGB(Colors::RED, brightness);
+}
+
 void LCD_BacklightRGB::setYellow() {
   setRGB(Colors::YELLOW);
+}
+
+void LCD_BacklightRGB::setYellow(int brightness) {
+  setRGB(Colors::YELLOW, brightness);
 }
 
 void LCD_BacklightRGB::setGreen() {
   setRGB(Colors::GREEN);
 }
 
+void LCD_BacklightRGB::setGreen(int brightness) {
+  setRGB(Colors::GREEN, brightness);
+}
+
 void LCD_BacklightRGB::setCyan() {
   setRGB(Colors::CYAN);
+}
+
+void LCD_BacklightRGB::setCyan(int brightness) {
+  setRGB(Colors::CYAN, brightness);
 }
 
 void LCD_BacklightRGB::setBlue() {
   setRGB(Colors::BLUE);
 }
 
+void LCD_BacklightRGB::setBlue(int brightness) {
+  setRGB(Colors::BLUE, brightness);
+}
+
 void LCD_BacklightRGB::setMagenta() {
   setRGB(Colors::MAGENTA);
+}
+
+void LCD_BacklightRGB::setMagenta(int brightness) {
+  setRGB(Colors::MAGENTA, brightness);
 }
