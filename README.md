@@ -10,9 +10,20 @@ On the RGB LCD display module, set pin 15 to HIGH. Pin 16 is red, pin 17 is gree
 
 ## Installation
 
+### Install via ZIP file
 1. Download the library *.zip* file from the [latest release](https://github.com/felixthecat8a/LCD_BacklightRGB/releases/latest/).
 2. In the Arduino IDE, go to `Sketch` > `Include Library` > `Add .ZIP Library...`.
 3. Select the downloaded *.zip* file.
+
+
+### Install via Arduino IDE Library Manager
+
+1. Open the Arduino IDE.
+2. Go to `Tools` > `Manage Libraries...`.
+3. In the Library Manager, type "LCD_BacklightRGB" into the search bar.
+4. Find the "LCD_BacklightRGB" library in the list and click on it.
+5. Click the `Install` button.
+
 
 ## Usage
 
