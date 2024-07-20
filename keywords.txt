@@ -2,6 +2,7 @@
 
 # Data types (KEYWORD1)
 LCD_BacklightRGB	KEYWORD1
+Colors	KEYWORD1
 
 # Methods and Functions (KEYWORD2)
 begin	KEYWORD2
