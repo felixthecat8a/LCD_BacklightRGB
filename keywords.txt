@@ -1,13 +1,27 @@
-# Syntax Coloring Map For LiquidCrystal
+# Syntax Coloring Map for LCD_BacklightRGB
 
-# Datatypes (KEYWORD1)
-
-LCD_BacklightRGB    KEYWORD1
+# Data types (KEYWORD1)
+LCD_BacklightRGB	KEYWORD1
 
 # Methods and Functions (KEYWORD2)
-
-begin   KEYWORD2
-clamp   KEYWORD2
-setRGB  KEYWORD2
+begin	KEYWORD2
+setColor	KEYWORD2
+setRGB	KEYWORD2
+showRGB	KEYWORD2
+setBrightness	KEYWORD2
+setRed	KEYWORD2
+setYellow	KEYWORD2
+setGreen	KEYWORD2
+setCyan	KEYWORD2
+setBlue	KEYWORD2
+setMagenta	KEYWORD2
 
 # Constants (LITERAL1)
+COMMON_ANODE	LITERAL1
+Colors::TEAL	LITERAL1
+Colors::RED	LITERAL1
+Colors::YELLOW	LITERAL1
+Colors::GREEN	LITERAL1
+Colors::CYAN	LITERAL1
+Colors::BLUE	LITERAL1
+Colors::MAGENTA	LITERAL1
