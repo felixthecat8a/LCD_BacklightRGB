@@ -59,4 +59,5 @@ void loop() {
 
 Here are some of the 18-pin RGB displays that I found available:
 * The Adafruit RGB LCD displays available in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
-* [This one from Winstar](https://www.amazon.com/Character-Negative-Backlight-Arduino-projects/dp/B00CRSF37I) that I found on Amazon.
+* Sparkfun also has this [one available](https://www.sparkfun.com/products/10862).
+* This is one from [Winstar](https://www.amazon.com/Character-Negative-Backlight-Arduino-projects/dp/B00CRSF37I) that I found on Amazon.
