@@ -45,18 +45,22 @@ void loop() {
   lcd.print("Red!     ");
   delay(1000);
   // change color every second
+  lcd.setCursor(0,1); 
   backlight.setYellow();
   lcd.print("Yellow!  ");
   delay(1000);
 
+  lcd.setCursor(0,1); 
   backlight.setGreen();
   lcd.print("Green!   ");
   delay(1000);
 
+  lcd.setCursor(0,1); 
   backlight.setCyan();
   lcd.print("Cyan!    ");
   delay(1000);
 
+  lcd.setCursor(0,1); 
   backlight.setBlue();
   lcd.print("Blue!    ");
   delay(1000);
