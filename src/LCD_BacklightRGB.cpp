@@ -9,6 +9,7 @@ LCD_BacklightRGB::LCD_BacklightRGB(int redPin, int greenPin, int bluePin) {
   _redPin = redPin;
   _greenPin = greenPin;
   _bluePin = bluePin;
+  _brightness = 255;
 }
 
 void LCD_BacklightRGB::begin() {
@@ -20,8 +21,8 @@ void LCD_BacklightRGB::begin() {
 }
 
 int LCD_BacklightRGB::setColor(int color) {
+  color = constrain(color, 0, 255);
   color = color * _brightness / 255;
-  color = constrain(color, minRGB, maxRGB);
   #ifdef COMMON_ANODE
     color = 255 - color;
   #endif
@@ -33,7 +34,7 @@ void LCD_BacklightRGB::setRGB(const int rgb[3]) {
 }
 
 void LCD_BacklightRGB::setRGB(const int rgb[3], int brightness) {
-  _brightness = constrain(brightness, minRGB, maxRGB);
+  _brightness = constrain(brightness, 0, 255);
   showRGB(rgb[0], rgb[1], rgb[2]);
 }
 
@@ -42,7 +43,7 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
 }
 
 void LCD_BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
-  _brightness = constrain(brightness, minRGB, maxRGB);
+  _brightness = constrain(brightness, 0, 255);
   showRGB(red, green, blue);
 }
 
@@ -56,7 +57,7 @@ void LCD_BacklightRGB::showRGB(int red, int green, int blue) {
 }
 
 void LCD_BacklightRGB::setBrightness(int brightness) {
-  _brightness = constrain(brightness, minRGB, maxRGB);
+  _brightness = constrain(brightness, 0, 255);
   showRGB(_currentColor[0], _currentColor[1], _currentColor[2]);
 }
 
