@@ -61,6 +61,14 @@ void LCD_BacklightRGB::setBrightness(int brightness) {
   showRGB(_currentColor[0], _currentColor[1], _currentColor[2]);
 }
 
+void LCD_BacklightRGB::setWhite() {
+  setRGB(Colors::WHITE);
+}
+
+void LCD_BacklightRGB::setWhite(int brightness) {
+  setRGB(Colors::WHITE, brightness);
+}
+
 void LCD_BacklightRGB::setRed() {
   setRGB(Colors::RED);
 }
@@ -107,4 +115,8 @@ void LCD_BacklightRGB::setMagenta() {
 
 void LCD_BacklightRGB::setMagenta(int brightness) {
   setRGB(Colors::MAGENTA, brightness);
+}
+
+void LCD_BacklightRGB::off() {
+  setRGB(Colors::BLACK);
 }

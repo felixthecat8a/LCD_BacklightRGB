@@ -18,6 +18,8 @@ public:
   void setRGB(int red, int green, int blue);
   void setRGB(int red, int green, int blue, int brightness);
   void setBrightness(int brightness);
+  void setWhite();
+  void setWhite(int brightness);
   void setRed();
   void setRed(int brightness);
   void setYellow();
@@ -30,6 +32,7 @@ public:
   void setBlue(int brightness);
   void setMagenta();
   void setMagenta(int brightness);
+  void off();
 };
 
 #endif
