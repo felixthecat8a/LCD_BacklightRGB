@@ -8,7 +8,7 @@
 */
 
 #include <LiquidCrystal.h>
-#include "LCD_BacklightRGB.h"
+#include <LCD_BacklightRGB.h>
 // Set the pins for the LCD display.
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
@@ -28,7 +28,7 @@ void setup() {
   // or set the color and brightness at the same time:
   //backlight.setRGB(46, 139, 87, 150);
   lcd.home(); lcd.print("Backlight Color:");
-  lcd.setCursor(0,1); lcd.print("Sea Green1");
+  lcd.setCursor(0,1); lcd.print("Sea Green!");
   delay(1000);
 }
 
