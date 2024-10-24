@@ -42,12 +42,18 @@ void setup() {
     lcd.begin(16, 2);
     // Initiate the RGB pins.
     backlight.begin();
-    // Set the brightness level (0 - 255)
+    // Set the brightness level. (0 - 255)
     backlight.setBrightness(130);
     // Set the backlight using RGB values.
     backlight.setRGB(0, 255, 0);
-    lcd.print("Green!");
-    delay(500);
+
+    lcd.home();
+    lcd.print("Ready!");
+    delay(1500);
+    for (int index = 0; index < 16; index++) {
+        lcd.scrollDisplayLeft();
+        delay(100);
+    }
     lcd.clear();
 }
 
@@ -60,4 +66,3 @@ void loop() {
 Here are some of the 18-pin RGB displays that I found available:
 * The Adafruit RGB LCD displays available in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
 * Sparkfun also has this [one available](https://www.sparkfun.com/products/10862).
-* This is one from [Winstar](https://www.amazon.com/Character-Negative-Backlight-Arduino-projects/dp/B00CRSF37I) that I found on Amazon.

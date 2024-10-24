@@ -30,6 +30,10 @@ void setup() {
   lcd.home(); lcd.print("Backlight Color:");
   lcd.setCursor(0,1); lcd.print("Sea Green!");
   delay(1000);
+  for (int index = 0; index < 16; index++) {
+    lcd.scrollDisplayLeft(); delay(100);
+  }
+  lcd.clear();
 }
 
 void loop() {
@@ -54,5 +58,9 @@ void loop() {
 
   backlight.setBlue();
   lcd.setCursor(0,1); lcd.print("Blue!     ");
+  delay(1000);
+
+  backlight.setMagenta();
+  lcd.setCursor(0,1); lcd.print("Magenta!  ");
   delay(1000);
 }
