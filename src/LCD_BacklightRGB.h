@@ -2,6 +2,8 @@
 #ifndef LCD_BACKLIGHTRGB_H
 #define LCD_BACKLIGHTRGB_H
 
+#include <Arduino.h>
+
 class LCD_BacklightRGB {
 private:
   int _redPin, _greenPin, _bluePin;
