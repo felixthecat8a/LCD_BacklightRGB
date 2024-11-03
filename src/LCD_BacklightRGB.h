@@ -24,16 +24,23 @@ public:
   void setWhite(int brightness);
   void setRed();
   void setRed(int brightness);
+  void setOrange();
+  void setOrange(int brightness);
   void setYellow();
   void setYellow(int brightness);
+  //set lime green default
   void setGreen();
   void setGreen(int brightness);
+  //set teal default
   void setCyan();
   void setCyan(int brightness);
+  //set sky blue default
   void setBlue();
   void setBlue(int brightness);
+  //set purple default
   void setMagenta();
   void setMagenta(int brightness);
+  //set pink default
   void off();
 };
 

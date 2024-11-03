@@ -16,7 +16,7 @@ void LCD_BacklightRGB::begin() {
   pinMode(_greenPin, OUTPUT);
   pinMode(_bluePin, OUTPUT);
   // Default Color
-  setRGB(Colors::TEAL);
+  setRGB(10, 128, 128);
 }
 
 int LCD_BacklightRGB::setColor(int color) {
@@ -76,6 +76,14 @@ void LCD_BacklightRGB::setRed(int brightness) {
   setRGB(Colors::RED, brightness);
 }
 
+void LCD_BacklightRGB::setOrange() {
+  setRGB(Colors::ORANGE);
+}
+
+void LCD_BacklightRGB::setOrange(int brightness) {
+  setRGB(Colors::ORANGE, brightness);
+}
+
 void LCD_BacklightRGB::setYellow() {
   setRGB(Colors::YELLOW);
 }
@@ -83,6 +91,8 @@ void LCD_BacklightRGB::setYellow() {
 void LCD_BacklightRGB::setYellow(int brightness) {
   setRGB(Colors::YELLOW, brightness);
 }
+
+//set lime green default
 
 void LCD_BacklightRGB::setGreen() {
   setRGB(Colors::GREEN);
@@ -92,6 +102,8 @@ void LCD_BacklightRGB::setGreen(int brightness) {
   setRGB(Colors::GREEN, brightness);
 }
 
+//set teal default
+
 void LCD_BacklightRGB::setCyan() {
   setRGB(Colors::CYAN);
 }
@@ -99,6 +111,8 @@ void LCD_BacklightRGB::setCyan() {
 void LCD_BacklightRGB::setCyan(int brightness) {
   setRGB(Colors::CYAN, brightness);
 }
+
+//set sky blue default
 
 void LCD_BacklightRGB::setBlue() {
   setRGB(Colors::BLUE);
@@ -108,6 +122,8 @@ void LCD_BacklightRGB::setBlue(int brightness) {
   setRGB(Colors::BLUE, brightness);
 }
 
+//set purple default
+
 void LCD_BacklightRGB::setMagenta() {
   setRGB(Colors::MAGENTA);
 }
@@ -115,6 +131,8 @@ void LCD_BacklightRGB::setMagenta() {
 void LCD_BacklightRGB::setMagenta(int brightness) {
   setRGB(Colors::MAGENTA, brightness);
 }
+
+//set pink default
 
 void LCD_BacklightRGB::off() {
   setRGB(Colors::BLACK);
