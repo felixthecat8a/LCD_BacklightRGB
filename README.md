@@ -48,7 +48,7 @@ void setup() {
     backlight.setRGB(0, 255, 0);
 
     lcd.home();
-    lcd.print("Ready!");
+    lcd.print("Arduino!");
     delay(1500);
     for (int index = 0; index < 16; index++) {
         lcd.scrollDisplayLeft();

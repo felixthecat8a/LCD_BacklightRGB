@@ -16,7 +16,7 @@ void LCD_BacklightRGB::begin() {
   pinMode(_greenPin, OUTPUT);
   pinMode(_bluePin, OUTPUT);
   // Default Color
-  setRGB(10, 128, 128);
+  setRGB(30, 128, 128);
 }
 
 int LCD_BacklightRGB::setColor(int color) {
@@ -92,7 +92,13 @@ void LCD_BacklightRGB::setYellow(int brightness) {
   setRGB(Colors::YELLOW, brightness);
 }
 
-//set lime green default
+void LCD_BacklightRGB::setLimeGreen() {
+  setRGB(Colors::LIME);
+}
+
+void LCD_BacklightRGB::setLimeGreen(int brightness) {
+  setRGB(Colors::LIME, brightness);
+}
 
 void LCD_BacklightRGB::setGreen() {
   setRGB(Colors::GREEN);

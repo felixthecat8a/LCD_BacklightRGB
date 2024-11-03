@@ -28,7 +28,8 @@ public:
   void setOrange(int brightness);
   void setYellow();
   void setYellow(int brightness);
-  //set lime green default
+  void setLimeGreen();
+  void setLimeGreen(int brightness);
   void setGreen();
   void setGreen(int brightness);
   //set teal default
