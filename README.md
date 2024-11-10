@@ -4,9 +4,9 @@
 
 # LCD_BacklightRGB
 
-This library allows interfacing with an 18-pin RGB LCD display backlight connected directly to an Arduino board. It enables the user to control the RGB backlight using Arduino. This library is meant to be used alongside the LiquidCrystal library.
+This library allows interfacing with an 18-pin RGB LCD display backlight connected directly to an Arduino board. This library is meant to be used alongside the LiquidCrystal library.
 
-On the RGB LCD display module, set pin 15 to HIGH. Pin 16 is red, pin 17 is green and pin 18 is blue. This sketch will loop through the different colors and display the color name. The code is based on a function that can be used to control the colors on an RGB LED.
+On the RGB LCD display module, set pin 15 to HIGH. Pin 16 is red, pin 17 is green and pin 18 is blue. The code is based on a function that can be used to control the colors on an RGB LED.
 
 ## Installation
 
@@ -63,6 +63,12 @@ void loop() {
 ```
 ## RGB LCD Displays
 
-Here are some of the 18-pin RGB displays that I found available:
+Here are some of the 18-pin RGB displays that I found:
 * The Adafruit RGB LCD displays available in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
 * Sparkfun also has this [one available](https://www.sparkfun.com/products/10862).
+
+## Comming Soon
+The v1.1.5 release will include new dafault color methods for orange, lime green, teal, sky blue, purple & pink. A future release may include a method for calling a color from the colorwheel.
+
+## Known Issues
+* Release v1.1.1 has an issue with setting the ouput values. Update to the latest release to fix the issue.
