@@ -1,6 +1,5 @@
 // LCD_BacklightRGB.cpp
 #include "LCD_BacklightRGB.h"
-#include "Colors.h"
 
 #define COMMON_ANODE
 

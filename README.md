@@ -1,6 +1,7 @@
 [![arduino-library-badge](https://www.ardu-badge.com/badge/LCD_BacklightRGB.svg?)](https://www.ardu-badge.com/LCD_BacklightRGB)
 ![GitHub Release](https://img.shields.io/github/v/release/felixthecat8a/LCD_BacklightRGB)
 [![License: MIT](https://img.shields.io/github/license/felixthecat8a/LCD_BacklightRGB)](https://opensource.org/licenses/MIT)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/felixthecat8a/library/LCD_BacklightRGB.svg)](https://registry.platformio.org/libraries/felixthecat8a/LCD_BacklightRGB)
 
 # LCD_BacklightRGB
 
@@ -68,7 +69,7 @@ Here are some of the 18-pin RGB displays that I found:
 * Sparkfun also has this [one available](https://www.sparkfun.com/products/10862).
 
 ## Comming Soon
-The v1.1.5 release will include new dafault color methods for orange, lime green, teal, sky blue, purple & pink. A future release may include a method for calling a color from the colorwheel.
+The v1.1.5 release will include new dafault color methods for orange, lime green, teal, sky blue, purple & pink. 
 
 ## Known Issues
 * Release v1.1.1 has an issue with setting the ouput values. Update to the latest release to fix the issue.
