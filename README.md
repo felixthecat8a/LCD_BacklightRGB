@@ -47,15 +47,6 @@ void setup() {
     backlight.setBrightness(130);
     // Set the backlight using RGB values.
     backlight.setRGB(0, 255, 0);
-
-    lcd.home();
-    lcd.print("Arduino!");
-    delay(1500);
-    for (int index = 0; index < 16; index++) {
-        lcd.scrollDisplayLeft();
-        delay(100);
-    }
-    lcd.clear();
 }
 
 void loop() {
