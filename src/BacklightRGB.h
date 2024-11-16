@@ -1,10 +1,10 @@
-// RGB.h
-#ifndef RGB_H
-#define RGB_H
+// BacklightRGB.h
+#ifndef BACKLIGHT_RGB_H
+#define BACKLIGHT_RGB_H
 
 #include <Arduino.h>
 
-class RGB {
+class BacklightRGB {
   private:
   const bool COMMON_ANODE = true;
   int _redPin, _greenPin, _bluePin;
@@ -14,7 +14,7 @@ class RGB {
   void showRGB(int red, int green, int blue);
   
   public:
-  RGB(int redPin, int greenPin, int bluePin);
+  BacklightRGB(int redPin, int greenPin, int bluePin);
   void begin();
   void setBrightness(int brightness);
   void setRGB(const int rgb[3]);

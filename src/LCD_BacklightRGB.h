@@ -3,12 +3,12 @@
 #define LCD_BACKLIGHTRGB_H
 
 #include <Arduino.h>
-#include "Colors.h"
-#include "RGB.h"
+#include "BacklightColors.h"
+#include "BacklightRGB.h"
 
 class LCD_BacklightRGB {
 private:
-  RGB rgb;
+  BacklightRGB rgb;
 
 public:
   LCD_BacklightRGB(int r, int g, int b);

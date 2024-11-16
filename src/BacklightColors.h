@@ -1,8 +1,8 @@
-// Colors.h
-#ifndef COLORS_H
-#define COLORS_H
+// BacklightColors.h
+#ifndef BACKLIGHT_COLORS_H
+#define BACKLIGHT_COLORS_H
 
-struct Colors {
+struct BacklightColors {
   static const int RED[3];
   static const int ORANGE[3];
   static const int YELLOW[3];

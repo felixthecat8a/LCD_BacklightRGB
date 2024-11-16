@@ -21,109 +21,109 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
 }
 
 void LCD_BacklightRGB::setWhite() {
-  rgb.setRGB(Colors::WHITE);
+  rgb.setRGB(BacklightColors::WHITE);
 }
 
 void LCD_BacklightRGB::setWhite(int brightness) {
-  rgb.setRGB(Colors::WHITE, brightness);
+  rgb.setRGB(BacklightColors::WHITE, brightness);
 }
 
 void LCD_BacklightRGB::setRed() {
-  rgb.setRGB(Colors::RED);
+  rgb.setRGB(BacklightColors::RED);
 }
 
 void LCD_BacklightRGB::setRed(int brightness) {
-  rgb.setRGB(Colors::RED, brightness);
+  rgb.setRGB(BacklightColors::RED, brightness);
 }
 
 void LCD_BacklightRGB::setOrange() {
-  rgb.setRGB(Colors::ORANGE);
+  rgb.setRGB(BacklightColors::ORANGE);
 }
 
 void LCD_BacklightRGB::setOrange(int brightness) {
-  rgb.setRGB(Colors::ORANGE, brightness);
+  rgb.setRGB(BacklightColors::ORANGE, brightness);
 }
 
 void LCD_BacklightRGB::setYellow() {
-  rgb.setRGB(Colors::YELLOW);
+  rgb.setRGB(BacklightColors::YELLOW);
 }
 
 void LCD_BacklightRGB::setYellow(int brightness) {
-  rgb.setRGB(Colors::YELLOW, brightness);
+  rgb.setRGB(BacklightColors::YELLOW, brightness);
 }
 
 void LCD_BacklightRGB::setLimeGreen() {
-  rgb.setRGB(Colors::LIME);
+  rgb.setRGB(BacklightColors::LIME);
 }
 
 void LCD_BacklightRGB::setLimeGreen(int brightness) {
-  rgb.setRGB(Colors::LIME, brightness);
+  rgb.setRGB(BacklightColors::LIME, brightness);
 }
 
 void LCD_BacklightRGB::setGreen() {
-  rgb.setRGB(Colors::GREEN);
+  rgb.setRGB(BacklightColors::GREEN);
 }
 
 void LCD_BacklightRGB::setGreen(int brightness) {
-  rgb.setRGB(Colors::GREEN, brightness);
+  rgb.setRGB(BacklightColors::GREEN, brightness);
 }
 
 void LCD_BacklightRGB::setTeal() {
-  rgb.setRGB(Colors::TEAL);
+  rgb.setRGB(BacklightColors::TEAL);
 }
 
 void LCD_BacklightRGB::setTeal(int brightness) {
-  rgb.setRGB(Colors::TEAL, brightness);
+  rgb.setRGB(BacklightColors::TEAL, brightness);
 }
 
 void LCD_BacklightRGB::setCyan() {
-  rgb.setRGB(Colors::CYAN);
+  rgb.setRGB(BacklightColors::CYAN);
 }
 
 void LCD_BacklightRGB::setCyan(int brightness) {
-  rgb.setRGB(Colors::CYAN, brightness);
+  rgb.setRGB(BacklightColors::CYAN, brightness);
 }
 
 void LCD_BacklightRGB::setSkyBlue() {
-  rgb.setRGB(Colors::SKY);
+  rgb.setRGB(BacklightColors::SKY);
 }
 
 void LCD_BacklightRGB::setSkyBlue(int brightness) {
-  rgb.setRGB(Colors::SKY, brightness);
+  rgb.setRGB(BacklightColors::SKY, brightness);
 }
 
 void LCD_BacklightRGB::setBlue() {
-  rgb.setRGB(Colors::BLUE);
+  rgb.setRGB(BacklightColors::BLUE);
 }
 
 void LCD_BacklightRGB::setBlue(int brightness) {
-  rgb.setRGB(Colors::BLUE, brightness);
+  rgb.setRGB(BacklightColors::BLUE, brightness);
 }
 
 void LCD_BacklightRGB::setPurple() {
-  rgb.setRGB(Colors::PURPLE);
+  rgb.setRGB(BacklightColors::PURPLE);
 }
 
 void LCD_BacklightRGB::setPurple(int brightness) {
-  rgb.setRGB(Colors::PURPLE, brightness);
+  rgb.setRGB(BacklightColors::PURPLE, brightness);
 }
 
 void LCD_BacklightRGB::setMagenta() {
-  rgb.setRGB(Colors::MAGENTA);
+  rgb.setRGB(BacklightColors::MAGENTA);
 }
 
 void LCD_BacklightRGB::setMagenta(int brightness) {
-  rgb.setRGB(Colors::MAGENTA, brightness);
+  rgb.setRGB(BacklightColors::MAGENTA, brightness);
 }
 
 void LCD_BacklightRGB::setPink() {
-  rgb.setRGB(Colors::PINK);
+  rgb.setRGB(BacklightColors::PINK);
 }
 
 void LCD_BacklightRGB::setPink(int brightness) {
-  rgb.setRGB(Colors::PINK, brightness);
+  rgb.setRGB(BacklightColors::PINK, brightness);
 }
 
 void LCD_BacklightRGB::off() {
-  rgb.setRGB(Colors::BLACK);
+  rgb.setRGB(BacklightColors::BLACK);
 }
