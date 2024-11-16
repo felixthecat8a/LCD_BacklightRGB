@@ -40,27 +40,27 @@ void loop() {
   // Set the backlight using default colors.
   backlight.setRed();
   // Display the name on the second line of the LCD.
-  lcd.setCursor(0,1); lcd.print("Red!      ");
+  lcd.setCursor(0,1); lcd.print("Red"); lcd.print("     ");
   // Change color every second.
   delay(1000);
   
   backlight.setYellow();
-  lcd.setCursor(0,1); lcd.print("Yellow!   ");
+  lcd.setCursor(0,1); lcd.print("Yellow"); lcd.print("     ");
   delay(1000);
 
   backlight.setGreen();
-  lcd.setCursor(0,1); lcd.print("Green!    ");
+  lcd.setCursor(0,1); lcd.print("Green"); lcd.print("     ");
   delay(1000);
 
   backlight.setCyan();
-  lcd.setCursor(0,1); lcd.print("Cyan!     ");
+  lcd.setCursor(0,1); lcd.print("Cyan"); lcd.print("     ");
   delay(1000);
 
   backlight.setBlue();
-  lcd.setCursor(0,1); lcd.print("Blue!     ");
+  lcd.setCursor(0,1); lcd.print("Blue"); lcd.print("     ");
   delay(1000);
 
   backlight.setMagenta();
-  lcd.setCursor(0,1); lcd.print("Magenta!  ");
+  lcd.setCursor(0,1); lcd.print("Magenta"); lcd.print("     ");
   delay(1000);
 }

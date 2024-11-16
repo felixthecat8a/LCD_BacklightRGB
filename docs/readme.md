@@ -55,9 +55,5 @@ void loop() {
 }
 ```
 
-## Comming Soon
-The v1.1.5 release will include new dafault color methods for orange, lime green, teal, sky blue, purple & pink.
-A future release may include methods for calling a color from the colorwheel.
-
 ## Known Issues
 * Release v1.1.1 has an issue with setting the ouput values. Update to the latest release to fix the issue.

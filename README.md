@@ -30,7 +30,7 @@ On the RGB LCD display module, set pin 15 to HIGH. Pin 16 is red, pin 17 is gree
 
 ```cpp
 #include <LiquidCrystal.h>
-#include "LCD_BacklightRGB.h"
+#include <LCD_BacklightRGB.h>
 // Set up the LiquidCrystal library
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
@@ -50,17 +50,14 @@ void setup() {
 }
 
 void loop() {
-    // Add your loop code here.
+    // Add your code here.
 }
 ```
 ## RGB LCD Displays
 
 Here are some of the 18-pin RGB displays that I found:
 * The Adafruit RGB LCD displays available in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
-* Sparkfun also has this [one available](https://www.sparkfun.com/products/10862).
-
-## Comming Soon
-The v1.1.5 release will include new dafault color methods for orange, lime green, teal, sky blue, purple & pink. 
+* Sparkfun also has this [one available](https://www.sparkfun.com/products/10862). 
 
 ## Known Issues
 * Release v1.1.1 has an issue with setting the ouput values. Update to the latest release to fix the issue.
