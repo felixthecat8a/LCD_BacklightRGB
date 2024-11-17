@@ -21,6 +21,8 @@ class BacklightRGB {
   void setRGB(const int rgb[3], int brightness);
   void setRGB(int red, int green, int blue);
   void setRGB(int red, int green, int blue, int brightness);
+  void setRGB(uint32_t hexColor);
+  void setRGB(uint32_t hexColor, int brightness);
 };
 
 #endif

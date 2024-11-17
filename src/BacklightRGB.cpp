@@ -34,6 +34,21 @@ void BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
   showRGB(red, green, blue);
 }
 
+void BacklightRGB::setRGB(uint32_t hexColor) {
+  int red = (hexColor >> 16) & 0xFF;
+  int green = (hexColor >> 8) & 0xFF;
+  int blue = hexColor & 0xFF;
+  showRGB(red, green, blue);
+}
+
+void BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
+  _brightness = constrain(brightness, 0, 255);
+  int red = (hexColor >> 16) & 0xFF;
+  int green = (hexColor >> 8) & 0xFF;
+  int blue = hexColor & 0xFF;
+  showRGB(red, green, blue);
+}
+
 int BacklightRGB::setColor(int color) {
   color = constrain(color, 0, 255);
   color = color * _brightness / 255;

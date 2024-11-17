@@ -5,7 +5,7 @@ LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b):rgb(r, g, b) {}
 
 void LCD_BacklightRGB::begin() {
   rgb.begin();
-  rgb.setRGB(70, 215, 190);
+  rgb.setRGB(0x00878F);
 }
 
 void LCD_BacklightRGB::setBrightness(int brightness) {
@@ -18,6 +18,14 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
 
 void LCD_BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
   rgb.setRGB(red, green, blue, brightness);
+}
+
+void LCD_BacklightRGB::setRGB(uint32_t hexColor) {
+  rgb.setRGB(hexColor);
+}
+
+void LCD_BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
+  rgb.setRGB(hexColor, brightness);
 }
 
 void LCD_BacklightRGB::setWhite() {

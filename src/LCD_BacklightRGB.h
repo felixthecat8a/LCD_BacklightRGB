@@ -16,6 +16,8 @@ public:
   void setBrightness(int brightness);
   void setRGB(int red, int green, int blue);
   void setRGB(int red, int green, int blue, int brightness);
+  void setRGB(uint32_t hexColor);
+  void setRGB(uint32_t hexColor, int brightness);
   void setWhite();
   void setWhite(int brightness);
   void setRed();
