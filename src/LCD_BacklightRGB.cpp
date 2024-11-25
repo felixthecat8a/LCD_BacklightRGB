@@ -125,11 +125,11 @@ void LCD_BacklightRGB::setMagenta(int brightness) {
 }
 
 void LCD_BacklightRGB::setPink() {
-  rgb.setRGB(BacklightColors::PINK);
+  rgb.setRGB(BacklightColors::HOTPINK);
 }
 
 void LCD_BacklightRGB::setPink(int brightness) {
-  rgb.setRGB(BacklightColors::PINK, brightness);
+  rgb.setRGB(BacklightColors::HOTPINK, brightness);
 }
 
 void LCD_BacklightRGB::off() {

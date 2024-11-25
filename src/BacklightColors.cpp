@@ -1,7 +1,7 @@
 // BacklightColors.cpp
 #include "BacklightColors.h"
 
-const int BacklightColors::PINK[3] = {255, 10, 127};
+const int BacklightColors::HOTPINK[3] = {255, 10, 127};
 const int BacklightColors::RED[3] = {255, 10, 10};
 const int BacklightColors::ORANGE[3] = {255, 127, 10};
 const int BacklightColors::YELLOW[3] = {255, 255, 10};
