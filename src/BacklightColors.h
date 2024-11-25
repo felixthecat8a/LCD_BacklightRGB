@@ -3,6 +3,7 @@
 #define BACKLIGHT_COLORS_H
 
 struct BacklightColors {
+  static const int PINK[3];
   static const int RED[3];
   static const int ORANGE[3];
   static const int YELLOW[3];
@@ -14,7 +15,6 @@ struct BacklightColors {
   static const int BLUE[3];
   static const int PURPLE[3];
   static const int MAGENTA[3];
-  static const int PINK[3];
   static const int WHITE[3];
   static const int BLACK[3];
 };
