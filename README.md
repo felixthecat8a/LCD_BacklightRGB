@@ -1,9 +1,9 @@
-[![arduino-library-badge](https://www.ardu-badge.com/badge/LCD_BacklightRGB.svg?)](https://www.ardu-badge.com/LCD_BacklightRGB)
 ![GitHub Release](https://img.shields.io/github/v/release/felixthecat8a/LCD_BacklightRGB)
 [![License: MIT](https://img.shields.io/github/license/felixthecat8a/LCD_BacklightRGB)](https://opensource.org/licenses/MIT)
 ![Check Arduino](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/check-arduino.yml/badge.svg)
 ![Compile Examples](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/compile-examples.yml/badge.svg)
 ![Spell Check](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/spell-check.yml/badge.svg)
+[![arduino-library-badge](https://www.ardu-badge.com/badge/LCD_BacklightRGB.svg?)](https://www.ardu-badge.com/LCD_BacklightRGB)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/felixthecat8a/library/LCD_BacklightRGB.svg)](https://registry.platformio.org/libraries/felixthecat8a/LCD_BacklightRGB)
 
 # LCD_BacklightRGB
@@ -59,8 +59,9 @@ void loop() {
 ## RGB LCD Displays
 
 Here are some of the 18-pin RGB displays that I found:
-* The Adafruit RGB LCD displays available in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
-* Sparkfun also has this [one available](https://www.sparkfun.com/products/10862). 
+* The Adafruit RGB LCD displays in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
+* Sparkfun also has this one in [backlight positive](https://www.sparkfun.com/products/10862). 
+* I found this one on Amazon from Winstar in [backlight negative](https://www.amazon.com/Character-Negative-Backlight-Arduino-projects/dp/B00CRSF37I)
 
 ## Known Issues
 * Release v1.1.1 has an issue with setting the output values. Update to the latest release to fix the issue.
