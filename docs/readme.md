@@ -56,4 +56,4 @@ void loop() {
 ```
 
 ## Known Issues
-* Release v1.1.1 has an issue with setting the ouput values. Update to the latest release to fix the issue.
+* Release v1.1.1 has an issue with setting the output values. Update to the latest release to fix the issue.

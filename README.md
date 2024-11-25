@@ -62,4 +62,4 @@ Here are some of the 18-pin RGB displays that I found:
 * Sparkfun also has this [one available](https://www.sparkfun.com/products/10862). 
 
 ## Known Issues
-* Release v1.1.1 has an issue with setting the ouput values. Update to the latest release to fix the issue.
+* Release v1.1.1 has an issue with setting the output values. Update to the latest release to fix the issue.
