@@ -28,12 +28,24 @@ void LCD_BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
   rgb.setRGB(hexColor, brightness);
 }
 
+void LCD_BacklightRGB::off() {
+  rgb.setRGB(BacklightColors::BLACK);
+}
+
 void LCD_BacklightRGB::setWhite() {
   rgb.setRGB(BacklightColors::WHITE);
 }
 
 void LCD_BacklightRGB::setWhite(int brightness) {
   rgb.setRGB(BacklightColors::WHITE, brightness);
+}
+
+void LCD_BacklightRGB::setPink() {
+  rgb.setRGB(BacklightColors::HOTPINK);
+}
+
+void LCD_BacklightRGB::setPink(int brightness) {
+  rgb.setRGB(BacklightColors::HOTPINK, brightness);
 }
 
 void LCD_BacklightRGB::setRed() {
@@ -122,16 +134,4 @@ void LCD_BacklightRGB::setMagenta() {
 
 void LCD_BacklightRGB::setMagenta(int brightness) {
   rgb.setRGB(BacklightColors::MAGENTA, brightness);
-}
-
-void LCD_BacklightRGB::setPink() {
-  rgb.setRGB(BacklightColors::HOTPINK);
-}
-
-void LCD_BacklightRGB::setPink(int brightness) {
-  rgb.setRGB(BacklightColors::HOTPINK, brightness);
-}
-
-void LCD_BacklightRGB::off() {
-  rgb.setRGB(BacklightColors::BLACK);
 }

@@ -18,8 +18,11 @@ public:
   void setRGB(int red, int green, int blue, int brightness);
   void setRGB(uint32_t hexColor);
   void setRGB(uint32_t hexColor, int brightness);
+  void off();
   void setWhite();
   void setWhite(int brightness);
+  void setPink();
+  void setPink(int brightness);
   void setRed();
   void setRed(int brightness);
   void setOrange();
@@ -42,9 +45,6 @@ public:
   void setPurple(int brightness);
   void setMagenta();
   void setMagenta(int brightness);
-  void setPink();
-  void setPink(int brightness);
-  void off();
 };
 
 #endif

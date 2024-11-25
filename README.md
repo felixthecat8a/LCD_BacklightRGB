@@ -1,12 +1,17 @@
-![GitHub Release](https://img.shields.io/github/v/release/felixthecat8a/LCD_BacklightRGB)
-[![License: MIT](https://img.shields.io/github/license/felixthecat8a/LCD_BacklightRGB)](https://opensource.org/licenses/MIT)
-![Check Arduino](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/check-arduino.yml/badge.svg)
-![Compile Examples](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/compile-examples.yml/badge.svg)
-![Spell Check](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/spell-check.yml/badge.svg)
 [![arduino-library-badge](https://www.ardu-badge.com/badge/LCD_BacklightRGB.svg?)](https://www.ardu-badge.com/LCD_BacklightRGB)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/felixthecat8a/library/LCD_BacklightRGB.svg)](https://registry.platformio.org/libraries/felixthecat8a/LCD_BacklightRGB)
 
 # LCD_BacklightRGB
+
+![GitHub Release](https://img.shields.io/github/v/release/felixthecat8a/LCD_BacklightRGB)
+[![License: MIT](https://img.shields.io/github/license/felixthecat8a/LCD_BacklightRGB)](https://opensource.org/licenses/MIT)
+![GitHub repo size](https://img.shields.io/github/repo-size/felixthecat8a/LCD_BacklightRGB)
+![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/felixthecat8a/LCD_BacklightRGB)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/felixthecat8a/LCD_BacklightRGB)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/felixthecat8a/LCD_BacklightRGB/total)
+![Check Arduino](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/check-arduino.yml/badge.svg)
+![Compile Examples](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/compile-examples.yml/badge.svg)
+![Spell Check](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/spell-check.yml/badge.svg)
 
 This library allows interfacing with an 18-pin RGB LCD display backlight connected directly to an Arduino board. This library is meant to be used alongside the LiquidCrystal library.
 
