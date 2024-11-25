@@ -8,6 +8,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/felixthecat8a/LCD_BacklightRGB)
 ![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/felixthecat8a/LCD_BacklightRGB)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/felixthecat8a/LCD_BacklightRGB)
+![GitHub top language](https://img.shields.io/github/languages/top/felixthecat8a/LCD_BacklightRGB)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/felixthecat8a/LCD_BacklightRGB/total)
 ![Check Arduino](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/check-arduino.yml/badge.svg)
 ![Compile Examples](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/compile-examples.yml/badge.svg)
