@@ -103,7 +103,7 @@ brightness: The desired brightness level for the LCD backlight in the range of 0
 ```ino
 // Set the backlight to pure blue
 backlight.setRGB(0, 0, 255);
-lcd.print("Color: Orange");
+lcd.print("Color: Blue");
 ```
 ```ino
 // Set the backlight to orange with 50% brightness
