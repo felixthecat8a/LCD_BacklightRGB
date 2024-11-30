@@ -67,4 +67,4 @@ Here are some of the 18-pin RGB displays that I found:
 
 ## Known Issues
 * Release v1.1.1 has an issue with setting the output values. Update to the latest release to fix the issue.
-* Release v1.1.5 and earlier releases have an issue that involves compiling to the arduino-avr-mega platform.
+* Release v1.1.5 and earlier releases have an issue that involves compiling to the arduino-avr-mega platform. Update to the latest release to fix the issue.
