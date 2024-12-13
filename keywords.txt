@@ -1,10 +1,10 @@
 # Syntax Coloring Map for LCD_BacklightRGB
 
 # Data types (KEYWORD1)
-LCD_BacklightRGB  KEYWORD1
-BacklightColors	KEYWORD1
-BacklightRGB  KEYWORD1
-BacklightCW  KEYWORD1
+LCD_BacklightRGB    KEYWORD1
+BacklightColors KEYWORD1
+BacklightRGB    KEYWORD1
+BacklightCW KEYWORD1
 
 # Methods and Functions (KEYWORD2)
 begin	KEYWORD2
@@ -16,15 +16,15 @@ setWhite	KEYWORD2
 setRed	KEYWORD2
 setOrange  KEYWORD2
 setYellow	KEYWORD2
-setLimeGreen  KEYWORD2
-setGreen  KEYWORD2
+setLimeGreen    KEYWORD2
+setGreen    KEYWORD2
 setTeal KEYWORD2
 setCyan	KEYWORD2
 setSkyBlue  KEYWORD2
 setBlue	KEYWORD2
 setPurple   KEYWORD2
-setMagenta	KEYWORD2
-setPink   KEYWORD2
+setMagenta  KEYWORD2
+setPink KEYWORD2
 off KEYWORD2
 
 # Constants (LITERAL1)
