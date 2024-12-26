@@ -5,10 +5,12 @@
 #include <Arduino.h>
 #include "BacklightColors.h"
 #include "BacklightRGB.h"
+#include "BacklightCW.h"
 
 class LCD_BacklightRGB {
 private:
   BacklightRGB rgb;
+  BacklightCW cw;
 
 public:
   LCD_BacklightRGB(int r, int g, int b);

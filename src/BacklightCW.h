@@ -6,36 +6,45 @@
 
 class BacklightCW {
   private:
-  int _index;
-  int _rgb[3] = {255, 0, 0};
-  const int* getColorWheelRGB(int index) {
-    index = index % 256;  // Ensure index is within 0-255
-    if (index < 85) {
-      _rgb[0] = 255 - index * 3; _rgb[1] = index * 3; _rgb[2] = 0; // Red to Green
-    } else if (index < 170) {
-      index -= 85;
-      _rgb[0] = 0; _rgb[1] = 255 - index * 3; _rgb[2] = index * 3; // Green to Blue
-    } else {
-      index -= 170;
-      _rgb[0] = index * 3; _rgb[1] = 0; _rgb[2] = 255 - index * 3; // Blue to Red
+    int _rgb[3] = {255, 0, 0};
+    int* getColorWheelRGB(int index) {
+      index = index % 256;
+      if (index < 85) {
+        // Red to Green
+        _rgb[0] = 255 - index * 3; 
+        _rgb[1] = index * 3; 
+        _rgb[2] = 0;
+      } else if (index < 170) {
+        // Green to Blue
+        index -= 85;
+        _rgb[0] = 0; 
+        _rgb[1] = 255 - index * 3; 
+        _rgb[2] = index * 3;
+      } else {
+        // Blue to Red
+        index -= 170;
+        _rgb[0] = index * 3; 
+        _rgb[1] = 0; 
+        _rgb[2] = 255 - index * 3;
+      }
+      return _rgb;
     }
-    return _rgb;
-  }
 
   public:
-  const int* mapToColorWheel(int value, int fromValue, int toValue) {
-    int min = 0, max = 255;
-    if (fromValue < toValue) {
-      value = constrain(value, fromValue, toValue);
-      _index = map(value, fromValue, toValue, min, max);
-    } else if (fromValue > toValue) {
-      value = constrain(value, toValue, fromValue);
-      _index = map(value, fromValue, toValue, max, min);
-    } else {
-      _index = 0;
+    int* mapToColorWheel(int value, int fromValue, int toValue) {
+      int index;
+      const int min = 0, max = 255;
+      if (fromValue < toValue) {
+        value = constrain(value, fromValue, toValue);
+        index = map(value, fromValue, toValue, min, max);
+      } else if (fromValue > toValue) {
+        value = constrain(value, toValue, fromValue);
+        index = map(value, fromValue, toValue, max, min);
+      } else {
+        index = 0;
+      }
+      return getColorWheelRGB(index);
     }
-    return getColorWheelRGB(_index);
-  }
 };
 
 #endif
