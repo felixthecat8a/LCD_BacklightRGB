@@ -31,5 +31,5 @@ Thumbs.db
 /build
 
 # Prototyping file
-src.ino
+LCD_BacklightRGB.ino
 notes.md
