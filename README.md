@@ -3,11 +3,11 @@
 
 # LCD_BacklightRGB
 
-![GitHub Release](https://img.shields.io/github/v/release/felixthecat8a/LCD_BacklightRGB)
+![GitHub Release](https://img.shields.io/github/v/release/felixthecat8a/LCD_BacklightRGB?color=%2300878F)
 [![License: MIT](https://img.shields.io/github/license/felixthecat8a/LCD_BacklightRGB)](https://opensource.org/licenses/MIT)
-![GitHub top language](https://img.shields.io/github/languages/top/felixthecat8a/LCD_BacklightRGB)
-![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/felixthecat8a/LCD_BacklightRGB)
 ![GitHub repo size](https://img.shields.io/github/repo-size/felixthecat8a/LCD_BacklightRGB)
+![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/felixthecat8a/LCD_BacklightRGB)
+![GitHub top language](https://img.shields.io/github/languages/top/felixthecat8a/LCD_BacklightRGB)
 ![Check Arduino](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/check-arduino.yml/badge.svg)
 ![Compile Examples](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/compile-examples.yml/badge.svg)
 ![Spell Check](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/spell-check.yml/badge.svg)
