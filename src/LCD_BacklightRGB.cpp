@@ -1,37 +1,88 @@
-// LCD_BacklightRGB.cpp
+/**
+ * @file LCD_BacklightRGB.cpp
+ * @brief Implementation of the BacklightRGB class for controlling an RGB backlight.
+ *
+ * This class provides methods to control an RGB backlight, including setting colors,
+ * brightness levels, and predefined color presets.
+ */
 #include "LCD_BacklightRGB.h"
 
+/**
+ * @brief Constructor for the BacklightRGB class.
+ * @param r Pin for the red LED.
+ * @param g Pin for the green LED.
+ * @param b Pin for the blue LED.
+ */
 LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b):rgb(r, g, b) {}
 
+/**
+ * @brief Initializes the RGB backlight.
+ * @note Sets the initial color to a default teal (hex: 0x0A878F).
+ */
 void LCD_BacklightRGB::begin() {
   rgb.begin();
   rgb.setRGB(0x0A878F);
 }
 
+/**
+ * @brief Sets the brightness of the backlight.
+ * @param brightness Brightness level (0 to 255).
+ */
 void LCD_BacklightRGB::setBrightness(int brightness) {
   rgb.setBrightness(brightness);
 }
 
+/**
+ * @brief Sets the RGB color using individual color components.
+ * @param red Red intensity (0 to 255).
+ * @param green Green intensity (0 to 255).
+ * @param blue Blue intensity (0 to 255).
+ */
 void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
   rgb.setRGB(red, green, blue);
 }
 
+/**
+ * @brief Sets the RGB color and brightness using individual color components.
+ * @param red Red intensity (0 to 255).
+ * @param green Green intensity (0 to 255).
+ * @param blue Blue intensity (0 to 255).
+ * @param brightness Brightness level (0 to 255).
+ */
 void LCD_BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
   rgb.setRGB(red, green, blue, brightness);
 }
 
+/**
+ * @brief Sets the RGB color using a hexadecimal color value.
+ * @param hexColor Hexadecimal representation of the color (e.g., 0xFF0000 for red).
+ */
 void LCD_BacklightRGB::setRGB(uint32_t hexColor) {
   rgb.setRGB(hexColor);
 }
 
+/**
+ * @brief Sets the RGB color and brightness using a hexadecimal color value.
+ * @param hexColor Hexadecimal representation of the color (e.g., 0xFF0000 for red).
+ * @param brightness Brightness level (0 to 255).
+ */
 void LCD_BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
   rgb.setRGB(hexColor, brightness);
 }
 
+/**
+ * @brief Method for setting the values to (0, 0, 0).
+ */
 void LCD_BacklightRGB::off() {
   rgb.setRGB(BacklightColors::BLACK);
 }
 
+/**
+ * @brief Predefined color methods for setting specific colors with optional brightness.
+ * @note Colors include pink, red, orange, yellow, lime green, green, teal, cyan, sky blue,
+ * blue, purple, magenta, and white.
+ * @note Brightness can also be set for each color.
+ */
 void LCD_BacklightRGB::setWhite() {
   rgb.setRGB(BacklightColors::WHITE);
 }
@@ -134,4 +185,14 @@ void LCD_BacklightRGB::setMagenta() {
 
 void LCD_BacklightRGB::setMagenta(int brightness) {
   rgb.setRGB(BacklightColors::MAGENTA, brightness);
+}
+
+/**
+ * @brief Maps a value to a color on the color wheel.
+ * @param value The input value to map.
+ * @param fromValue The minimum range of the input value.
+ * @param toValue The maximum range of the input value.
+ */
+void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
+  rgb.setRGB(cw.mapToColorWheel(value, fromValue, toValue));
 }
