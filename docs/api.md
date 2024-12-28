@@ -269,5 +269,7 @@ backlight.scaleColor(value, fromValue, toValue)
 #### Parameters
 
 value: The input value to map.
+
 fromValue: The minimum range of the input value.
+
 toValue: The maximum range of the input value.
