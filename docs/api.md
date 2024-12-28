@@ -254,3 +254,20 @@ backlight.setMagenta(brightness)
 backlight: An instance of the LCD_BacklightRGB class.
 
 brightness (optional): The desired brightness level for the LCD backlight in the range of 0 (completely off) to 255 (maximum brightness).
+
+### `scaleColor()`
+
+#### Description
+
+The scaleColor() method maps a value to a color on the color wheel.
+
+#### Syntax
+
+```cpp
+backlight.scaleColor(value, fromValue, toValue)
+```
+#### Parameters
+
+value: The input value to map.
+fromValue: The minimum range of the input value.
+toValue: The maximum range of the input value.
