@@ -18,7 +18,7 @@
  */
 class BacklightRGB {
   private:
-  const bool COMMON_ANODE = true; ///< True common anode LEDs
+  bool _COMMON_ANODE;             ///< True if common anode RGB LED
   int _redPin;                    ///< Pin connected to the red LED.
   int _greenPin;                  ///< Pin connected to the green LED.
   int _bluePin;                   ///< Pin connected to the blue LED.
@@ -42,12 +42,22 @@ class BacklightRGB {
   
   public:
   /**
-   * @brief Constructor to initialize RGB pins (common anode configuration by default).
+   * @brief Constructor to initialize RGB pins.
    * @param redPin Pin connected to the red LED.
    * @param greenPin Pin connected to the green LED.
    * @param bluePin Pin connected to the blue LED.
+   * @note common anode configuration by default
    */
   BacklightRGB(int redPin, int greenPin, int bluePin);
+
+  /**
+   * @brief Constructor to initialize RGB pins.
+   * @param redPin Pin connected to the red LED.
+   * @param greenPin Pin connected to the green LED.
+   * @param bluePin Pin connected to the blue LED.
+   * @param COMMON_ANODE Boolean variable indicating common anode RGB LED.
+   */
+  BacklightRGB(int redPin, int greenPin, int bluePin, bool COMMON_ANODE);
 
   /**
    * @brief Initializes the RGB LED pins as outputs.

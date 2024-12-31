@@ -9,13 +9,27 @@
 #include "BacklightRGB.h"
 
 /**
- * @brief Constructor to initialize RGB pins (common anode configuration by default).
+ * @brief Constructor to initialize RGB pins.
  * @param redPin Pin connected to the red LED.
  * @param greenPin Pin connected to the green LED.
  * @param bluePin Pin connected to the blue LED.
+ * @note common anode configuration by default
  */
 BacklightRGB::BacklightRGB(int redPin, int greenPin, int bluePin) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
+  _COMMON_ANODE = true;
+}
+
+/**
+ * @brief Constructor to initialize RGB pins.
+ * @param redPin Pin connected to the red LED.
+ * @param greenPin Pin connected to the green LED.
+ * @param bluePin Pin connected to the blue LED.
+ * @param COMMON_ANODE Boolean variable indicating common anode RGB LED.
+ */
+BacklightRGB::BacklightRGB(int redPin, int greenPin, int bluePin, bool COMMON_ANODE) {
+  _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
+  _COMMON_ANODE = COMMON_ANODE;
 }
 
 /**
@@ -119,7 +133,7 @@ void BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
 int BacklightRGB::setColor(int color) {
   color = constrain(color, 0, 255);
   color = color * _brightness / 255;
-  if (COMMON_ANODE) {
+  if (_COMMON_ANODE) {
     color = 255 - color;
   }
   return color;
