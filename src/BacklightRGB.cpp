@@ -19,12 +19,23 @@ BacklightRGB::BacklightRGB(int redPin, int greenPin, int bluePin) {
 }
 
 /**
- * @brief Initializes the RGB LED pins as outputs.
+ * @brief Initializes the RGB LED pins as outputs or PWM channels for ESP32.
  */
 void BacklightRGB::begin() {
-  pinMode(_redPin, OUTPUT);
-  pinMode(_greenPin, OUTPUT);
-  pinMode(_bluePin, OUTPUT);
+  #ifdef ESP32
+    ledcSetup(0, 5000, 8); ///< Channel 0, 5 kHz frequency, 8-bit resolution
+    ledcSetup(1, 5000, 8); ///< Channel 1, 5 kHz frequency, 8-bit resolution
+    ledcSetup(2, 5000, 8); ///< Channel 2, 5 kHz frequency, 8-bit resolution
+
+    ledcAttachPin(_redPin, 0);  ///< Attach red pin to channel 0
+    ledcAttachPin(_greenPin, 1); ///< Attach green pin to channel 1
+    ledcAttachPin(_bluePin, 2);  ///< Attach blue pin to channel 2
+  #else
+    // Default setup for non-ESP32 boards
+    pinMode(_redPin, OUTPUT);
+    pinMode(_greenPin, OUTPUT);
+    pinMode(_bluePin, OUTPUT);
+  #endif
 }
 
 /**
@@ -121,8 +132,19 @@ int BacklightRGB::setColor(int color) {
  * @param blue Blue value (0 to 255).
  */
 void BacklightRGB::showRGB(int red, int green, int blue) {
-  _currentColor[0] = red; _currentColor[1] = green; _currentColor[2] = blue;
-  analogWrite(_redPin, setColor(red));
-  analogWrite(_greenPin, setColor(green));
-  analogWrite(_bluePin, setColor(blue));
+    _currentColor[0] = red;
+    _currentColor[1] = green;
+    _currentColor[2] = blue;
+
+  #ifdef ESP32
+    // Use ESP32 PWM for RGB values
+    ledcWrite(0, setColor(red));   ///< Write red value to channel 0
+    ledcWrite(1, setColor(green)); ///< Write green value to channel 1
+    ledcWrite(2, setColor(blue));  ///< Write blue value to channel 2
+  #else
+    // Use analogWrite for non-ESP32 boards
+    analogWrite(_redPin, setColor(red));
+    analogWrite(_greenPin, setColor(green));
+    analogWrite(_bluePin, setColor(blue));
+  #endif
 }
