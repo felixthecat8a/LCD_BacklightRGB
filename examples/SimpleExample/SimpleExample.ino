@@ -64,53 +64,58 @@ void loop() {
   // Set the backlight using default colors.
   backlight.setRed();
   // Display the name on the second line of the LCD.
-  lcd.setCursor(0,1); lcd.print("Red"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Red"); lcd.print("         ");
   // Change color every second.
   delay(1000);
 
   backlight.setOrange();
-  lcd.setCursor(0,1); lcd.print("Orange"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Orange"); lcd.print("         ");
   delay(1000);
 
   backlight.setYellow();
-  lcd.setCursor(0,1); lcd.print("Yellow"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Yellow"); lcd.print("         ");
   delay(1000);
 
   backlight.setLimeGreen();
-  lcd.setCursor(0,1); lcd.print("Lime Green"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Lime Green"); lcd.print("      ");
   delay(1000);
 
   backlight.setGreen();
-  lcd.setCursor(0,1); lcd.print("Green"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Green"); lcd.print("         ");
   delay(1000);
 
   backlight.setTeal();
-  lcd.setCursor(0,1); lcd.print("Teal"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Teal"); lcd.print("         ");
   delay(1000);
 
   backlight.setCyan();
-  lcd.setCursor(0,1); lcd.print("Cyan"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Cyan"); lcd.print("         ");
   delay(1000);
 
   backlight.setSkyBlue();
-  lcd.setCursor(0,1); lcd.print("Sky Blue"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Sky Blue"); lcd.print("        ");
   delay(1000);
 
   backlight.setBlue();
-  lcd.setCursor(0,1); lcd.print("Blue"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Blue"); lcd.print("         ");
   delay(1000);
 
   backlight.setPurple();
-  lcd.setCursor(0,1); lcd.print("Purple"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Purple"); lcd.print("         ");
   delay(1000);
 
   backlight.setMagenta();
-  lcd.setCursor(0,1); lcd.print("Magenta"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Magenta"); lcd.print("         ");
   delay(1000);
 
   backlight.setPink();
-  lcd.setCursor(0,1); lcd.print("Pink"); lcd.print("     ");
+  lcd.setCursor(0,1); lcd.print("Pink"); lcd.print("         ");
   delay(1000);
 
-  
+  //Spin across the colors of the color wheel.
+  lcd.setCursor(0,1); lcd.print("Color Wheel"); lcd.print("     ");
+  for (int index = 0; index <= 255; index++) {
+    backlight.scaleColor(index, 0, 255); delay(25);
+  }
+ 
 }
