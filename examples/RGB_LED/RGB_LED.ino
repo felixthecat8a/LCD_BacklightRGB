@@ -1,14 +1,14 @@
-// /**
-//  * RGB_LED.ino
-//  * 
-//  * This example demonstrates how to control an RGB LED using the LCD_BacklightRGB library.
-//  * It cycles through predefined colors and then smoothly transitions through the color wheel.
-//  * 
-//  * Connections:
-//  * - Red Pin: PWM pin ~11
-//  * - Green Pin: PWM pin ~10
-//  * - Blue Pin: PWM pin ~9
-//  */
+/**
+ * RGB_LED.ino
+ * 
+ * This example demonstrates how to control an RGB LED using the LCD_BacklightRGB library.
+ * It cycles through predefined colors and then smoothly transitions through the color wheel.
+ * 
+ * Connections:
+ * - Red Pin: PWM pin ~11
+ * - Green Pin: PWM pin ~10
+ * - Blue Pin: PWM pin ~9
+ */
 
 // #include <Arduino.h>
 // #include <LCD_BacklightRGB.h>
