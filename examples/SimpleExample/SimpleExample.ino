@@ -67,21 +67,41 @@ void loop() {
   lcd.setCursor(0,1); lcd.print("Red"); lcd.print("     ");
   // Change color every second.
   delay(1000);
-  
+
+  backlight.setOrange();
+  lcd.setCursor(0,1); lcd.print("Orange"); lcd.print("     ");
+  delay(1000);
+
   backlight.setYellow();
   lcd.setCursor(0,1); lcd.print("Yellow"); lcd.print("     ");
+  delay(1000);
+
+  backlight.setLimeGreen();
+  lcd.setCursor(0,1); lcd.print("Lime Green"); lcd.print("     ");
   delay(1000);
 
   backlight.setGreen();
   lcd.setCursor(0,1); lcd.print("Green"); lcd.print("     ");
   delay(1000);
 
+  backlight.setTeal();
+  lcd.setCursor(0,1); lcd.print("Teal"); lcd.print("     ");
+  delay(1000);
+
   backlight.setCyan();
   lcd.setCursor(0,1); lcd.print("Cyan"); lcd.print("     ");
   delay(1000);
 
+  backlight.setSkyBlue();
+  lcd.setCursor(0,1); lcd.print("Sky Blue"); lcd.print("     ");
+  delay(1000);
+
   backlight.setBlue();
   lcd.setCursor(0,1); lcd.print("Blue"); lcd.print("     ");
+  delay(1000);
+
+  backlight.setPurple();
+  lcd.setCursor(0,1); lcd.print("Purple"); lcd.print("     ");
   delay(1000);
 
   backlight.setMagenta();
@@ -91,4 +111,6 @@ void loop() {
   backlight.setPink();
   lcd.setCursor(0,1); lcd.print("Pink"); lcd.print("     ");
   delay(1000);
+
+  
 }
