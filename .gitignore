@@ -33,5 +33,7 @@ Thumbs.db
 # Prototyping file
 LCD_BacklightRGB.ino
 notes.md
-RGB_LED.ino
-ColorWheelSpin.ino
+
+
+RGB_LED/RGB_LED.ino
+ColorWheelSpin/ColorWheelSpin.ino
