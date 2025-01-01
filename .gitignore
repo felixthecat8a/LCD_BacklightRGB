@@ -35,5 +35,5 @@ LCD_BacklightRGB.ino
 notes.md
 
 
-RGB_LED/RGB_LED.ino
-ColorWheelSpin/ColorWheelSpin.ino
+/examples/RGB_LED
+/examples/ColorWheelSpin
