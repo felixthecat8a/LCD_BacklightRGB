@@ -1,9 +1,29 @@
 /**
  * HelloWorld.ino
- * For an RGB LCD with 18 pins, set pin 15 to HIGH.
- * Pin 16 is red, pin 17 is green and pin 18 is blue.
- * On the Arduino board, choose 3 PWM pins (denoted by ~)
-*/
+ *  
+ * Connections:
+ * - Use an RGB LCD with 18 pins:
+ *   - Pin 15: Connect to HIGH for backlight power.
+ *   - Pin 16: Red channel (connect to PWM pin ~6).
+ *   - Pin 17: Green channel (connect to PWM pin ~9).
+ *   - Pin 18: Blue channel (connect to PWM pin ~10).
+ * - LCD Data Pins:
+ *   - RS: Pin 12
+ *   - Enable: Pin 11
+ *   - D4: Pin 5
+ *   - D5: Pin 4
+ *   - D6: Pin 3
+ *   - D7: Pin 2
+ *   - R/W: GND
+ *   - VSS: GND
+ *   - VCC: 5V
+  * - Contrast Adjustment:
+ *   - Connect a 10kΩ potentiometer to the contrast (V0) pin.
+ *   - Middle pin of the potentiometer: Connect to the V0 pin (pin 3) of the LCD.
+ *   - One outer pin: Connect to GND.
+ *   - Other outer pin: Connect to 5V.
+ * 
+ */
 
 #include <LiquidCrystal.h>
 #include <LCD_BacklightRGB.h>
