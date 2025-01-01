@@ -16,7 +16,7 @@
 //Set the RGB pins for the RGB LED. Use PWM pins denoted by a ~ symbol.
 const int redPin = 11, greenPin = 10, bluePin = 9;
 BacklightRGB led(redPin, greenPin, bluePin);
-//Indicate in the construtor if common cathode RGB LED (>= v1.1.9)
+//Indicate in the constructor if common cathode RGB LED (>= v1.1.9)
 //const bool isCommonAnode = false;
 //BacklightRGB led(redPin, greenPin, bluePin, isCommonAnode);
  
