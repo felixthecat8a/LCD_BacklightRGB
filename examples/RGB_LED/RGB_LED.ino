@@ -10,12 +10,12 @@
  * - Blue Pin: PWM pin ~9
  */
 
-// #include <Arduino.h>
-// #include <LCD_BacklightRGB.h>
+#include <Arduino.h>
+#include <LCD_BacklightRGB.h>
 
-// // Set the RGB pins for the RGB LED. Use PWM pins denoted by a ~ symbol.
-// const int redPin = 11, greenPin = 10, bluePin = 9;
-// BacklightRGB led(redPin, greenPin, bluePin);
+// Set the RGB pins for the RGB LED. Use PWM pins denoted by a ~ symbol.
+const int redPin = 11, greenPin = 10, bluePin = 9;
+//BacklightRGB led(redPin, greenPin, bluePin);
 
 //  // Color wheel utility
 // BacklightCW cw;
