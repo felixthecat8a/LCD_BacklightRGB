@@ -16,6 +16,16 @@
 LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b):rgb(r, g, b) {}
 
 /**
+ * @brief Constructor for the BacklightRGB class.
+ * @param r Pin for the red LED.
+ * @param g Pin for the green LED.
+ * @param b Pin for the blue LED.
+ * @param isCommonAnode Boolean variable indicating common anode RGB LED.
+ */
+LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode)
+  :rgb(r, g, b, isCommonAnode) {}
+
+/**
  * @brief Initializes the RGB backlight.
  * @note Sets the initial color to a default teal (hex: 0x0A878F).
  */

@@ -9,6 +9,7 @@
 #define LCD_BACKLIGHTRGB_H
 
 #include <Arduino.h>
+
 #include "BacklightColors.h"
 #include "BacklightRGB.h"
 #include "BacklightCW.h"
@@ -30,6 +31,15 @@ public:
    * @param b Pin number for the blue LED.
    */
   LCD_BacklightRGB(int r, int g, int b);
+
+  /**
+   * @brief Constructor for the BacklightRGB class.
+   * @param r Pin number for the red LED.
+   * @param g Pin number for the green LED.
+   * @param b Pin number for the blue LED.
+   * @param isCommonAnode Boolean variable indicating common anode RGB LED.
+   */
+  LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode);
 
   /**
    * @brief Initializes the RGB backlight hardware.
