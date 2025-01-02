@@ -15,7 +15,6 @@ insert_final_newline = true
 [*.{ino,h,cpp,c}]
 indent_style = space
 indent_size = 2
-insert_final_newline = false
 
 # Settings for Markdown files (e.g., README.md)
 [*.md]
