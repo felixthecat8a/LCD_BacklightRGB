@@ -14,7 +14,7 @@ insert_final_newline = true
 # Settings for C, C++ and Arduino files
 [*.{ino,h,cpp,c}]
 indent_style = space
-indent_size = 4
+indent_size = 2
 insert_final_newline = false
 
 # Settings for Markdown files (e.g., README.md)
