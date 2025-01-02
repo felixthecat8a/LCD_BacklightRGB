@@ -1,9 +1,9 @@
 /**
  * SimpleExample.ino
- * 
+ *
  * This sketch will loop through the different colors and display the color name.
  * This example loops through several default colors available in the library.
- * 
+ *
  * Connections:
  * Use an RGB LCD with 18 pins:
  *   Pin 15: Connect to HIGH for backlight power.
@@ -25,7 +25,7 @@
  *   Middle pin of the potentiometer: Connect to the V0 pin (pin 3) of the LCD.
  *   One outer pin: Connect to GND.
  *   Other outer pin: Connect to 5V.
- * 
+ *
  * felxthecat8a
  */
 
@@ -117,5 +117,5 @@ void loop() {
   for (int index = 0; index <= 255; index++) {
     backlight.scaleColor(index, 0, 255); delay(25);
   }
- 
+
 }

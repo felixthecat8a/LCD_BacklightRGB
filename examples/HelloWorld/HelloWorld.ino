@@ -1,6 +1,6 @@
 /**
  * HelloWorld.ino
- *  
+ *
  * Connections:
  * Use an RGB LCD with 18 pins:
  *   Pin 15: Connect to HIGH for backlight power.
@@ -22,7 +22,7 @@
  *   Middle pin of the potentiometer: Connect to the V0 pin (pin 3) of the LCD.
  *   One outer pin: Connect to GND.
  *   Other outer pin: Connect to 5V.
- * 
+ *
  * felixthecat8a
  */
 
@@ -35,7 +35,7 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 // Set the RGB pins for the RGB LCD. Use PWM pins denoted by a ~ symbol.
 const int redPin = 6, greenPin = 9, bluePin = 10;
 LCD_BacklightRGB backlight(redPin, greenPin, bluePin);
- 
+
 void setup() {
   // Initiate the LCD.
   lcd.begin(16, 2);
@@ -51,7 +51,7 @@ void setup() {
   backlight.setRGB(46, 139, 87, 150);
   lcd.print("hello, world!");
 }
- 
+
 void loop() {
   lcd.setCursor(0, 1);
   lcd.print(millis()/1000);

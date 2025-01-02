@@ -1,8 +1,8 @@
 /**
  * @file BacklightRGB.h
  * @brief Header file for the RGB class.
- * 
- * The `BacklightRGB` class provides an interface for controlling an RGB LED connected to an Arduino. 
+ *
+ * The `BacklightRGB` class provides an interface for controlling an RGB LED connected to an Arduino.
  * It supports brightness control and setting colors using RGB components or hexadecimal values.
  */
 #ifndef BACKLIGHT_RGB_H
@@ -13,7 +13,7 @@
 /**
  * @class BacklightRGB
  * @brief Class for controlling RGB LEDs.
- * @note This class allows for easy control of common anode RGB LEDs by providing methods for setting color, 
+ * @note This class allows for easy control of common anode RGB LEDs by providing methods for setting color,
  * adjusting brightness.
  */
 class BacklightRGB {
@@ -39,7 +39,7 @@ class BacklightRGB {
    * @param blue Blue value (0 to 255).
    */
   void showRGB(int red, int green, int blue);
-  
+
   public:
   /**
    * @brief Constructor to initialize RGB pins.

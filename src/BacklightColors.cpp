@@ -2,7 +2,7 @@
  * @file BacklightColors.cpp
  * @brief Implementation of the BacklightColors class, defining RGB values for various colors.
  *
- * The BacklightColors class provides predefined RGB color constants for use in projects 
+ * The BacklightColors class provides predefined RGB color constants for use in projects
  * requiring consistent color definitions.
  */
 

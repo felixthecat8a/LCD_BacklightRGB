@@ -2,7 +2,7 @@
  * @file BacklightRGB.cpp
  * @brief Implementation of the BacklightRGB class for controlling RGB LEDs.
  *
- * This file contains the implementation of the `BacklightRGB` class, which provides functionality to control 
+ * This file contains the implementation of the `BacklightRGB` class, which provides functionality to control
  * RGB LEDs connected to Arduino. It supports brightness control and setting colors using RGB components or hexadecimal values.
  */
 

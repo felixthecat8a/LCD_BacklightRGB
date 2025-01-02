@@ -1,9 +1,9 @@
 /**
  * RGB_LED_Example.ino
- * 
+ *
  * This example demonstrates how to control an RGB LED using the LCD_BacklightRGB library.
  * It cycles through predefined colors and then smoothly transitions through the color wheel.
- * 
+ *
  * Connections:
  * - Red Pin: PWM pin ~11
  * - Green Pin: PWM pin ~10
@@ -19,7 +19,7 @@ BacklightRGB led(redPin, greenPin, bluePin);
 //Indicate in the constructor if common cathode RGB LED (>= v1.1.9)
 //const bool isCommonAnode = false;
 //BacklightRGB led(redPin, greenPin, bluePin, isCommonAnode);
- 
+
 // Color wheel utility
 BacklightCW cw;
 
@@ -34,7 +34,7 @@ void setup() {
   // Set brightness (0-255)
   led.setBrightness(50);
 }
- 
+
 void loop() {
   // Cycle through predefined colors
   showColor(BacklightColors::WHITE);

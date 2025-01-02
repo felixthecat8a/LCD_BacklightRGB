@@ -1,7 +1,7 @@
 /**
  * @file LCD_BacklightRGB.h
  * @brief Declaration of the LCD_BacklightRGB class for controlling an RGB backlight.
- * The LCD_BacklightRGB class provides methods for controlling RGB LEDs, including 
+ * The LCD_BacklightRGB class provides methods for controlling RGB LEDs, including
  * setting colors, adjusting brightness, and using predefined color presets.
  */
 
