@@ -8,6 +8,8 @@
  * - Red Pin: PWM pin ~11
  * - Green Pin: PWM pin ~10
  * - Blue Pin: PWM pin ~9
+ *
+ * felixthecat8a
  */
 
 #include <LiquidCrystal.h>
