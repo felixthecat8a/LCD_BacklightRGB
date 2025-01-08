@@ -26,8 +26,9 @@ setPurple   KEYWORD2
 setMagenta  KEYWORD2
 setColor	KEYWORD2
 showRGB	KEYWORD2
-getColorWheelRGB
-mapToColorWheel
+getColorWheelRGB    KEYWORD2
+mapToColorWheel KEYWORD2
+scaleColor  KEYWORD2
 
 # Constants (LITERAL1)
 COMMON_ANODE	LITERAL1
