@@ -206,3 +206,31 @@ void LCD_BacklightRGB::setMagenta(int brightness) {
 void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
   rgb.setRGB(cw.mapToColorWheel(value, fromValue, toValue));
 }
+
+/**
+ * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
+ * @param hue The hue value (0-360 degrees).
+ * @param sat The saturation level (0.0-1.0).
+ * @param val The brightness value (0.0-1.0).
+ */
+void LCD_BacklightRGB::setHSV(int hue, float sat, float val) {
+    float r, g, b;
+    hue = constrain(hue, 0, 359);
+    int i = hue / 60;
+    float f = (hue / 60.0) - i;
+    float p = val * (1 - sat);
+    float q = val * (1 - sat * f);
+    float t = val * (1 - sat * (1 - f));
+
+    switch (i % 6) {
+        case 0: r = val, g = t, b = p; break;
+        case 1: r = q, g = val, b = p; break;
+        case 2: r = p, g = val, b = t; break;
+        case 3: r = p, g = q, b = val; break;
+        case 4: r = t, g = p, b = val; break;
+        case 5: r = val, g = p, b = q; break;
+        default: r = g = b = 0; break;
+    }
+
+    rgb.setRGB((int)(r * 255), (int)(g * 255), (int)(b * 255));
+}
