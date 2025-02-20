@@ -216,6 +216,8 @@ void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
 void LCD_BacklightRGB::setHSV(int hue, float sat, float val) {
     float r, g, b;
     hue = constrain(hue, 0, 359);
+    sat = constrain(sat, 0.0, 1.0);
+    val = constrain(val, 0.0, 1.0);
     int i = hue / 60;
     float f = (hue / 60.0) - i;
     float p = val * (1 - sat);
