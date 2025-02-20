@@ -132,6 +132,15 @@ public:
      * @param val The brightness value (0.0-1.0).
      */
     void setHSV(int hue, float sat, float val);
+
+    /**
+     * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value) and adjusts brightness.
+     * @param hue The hue value (0-360 degrees).
+     * @param sat The saturation level (0.0-1.0).
+     * @param val The brightness value (0.0-1.0).
+     * @param brightness Brightness level (0 to 255).
+     */
+    void setHSV(int hue, float sat, float val, int brightness);
 };
 
 #endif
