@@ -62,6 +62,14 @@ void BacklightRGB::setBrightness(int brightness) {
 }
 
 /**
+ * @brief Gets the current brightness level.
+ * @return Brightness value (0 to 255).
+ */
+int BacklightRGB::getBrightness() {
+    return _brightness;
+}
+
+/**
  * @brief Sets the RGB color using an array.
  * @param rgb Array containing red, green, and blue values.
  */
@@ -161,4 +169,20 @@ void BacklightRGB::showRGB(int red, int green, int blue) {
     analogWrite(_greenPin, setColor(green));
     analogWrite(_bluePin, setColor(blue));
   #endif
+}
+
+/**
+ * @brief Gets the current RGB color.
+ * @return Pointer to an array containing red, green, and blue values.
+ */
+const int* BacklightRGB::getRGB() {
+    return _currentColor;
+}
+
+/**
+ * @brief Gets the current color as a 24-bit hexadecimal value.
+ * @return 24-bit integer representing the color (0xRRGGBB).
+ */
+uint32_t BacklightRGB::getColorHex() {
+    return (_currentColor[0] << 16) | (_currentColor[1] << 8) | _currentColor[2];
 }
