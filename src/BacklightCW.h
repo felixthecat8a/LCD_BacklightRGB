@@ -24,65 +24,59 @@ class BacklightCW {
     int _rgb[3] = {255, 0, 0};  ///< Array to store the current RGB color.
 
     /**
-     * @brief Calculates the RGB color for a given index on the color wheel.
+     * @brief Converts HSV to RGB.
      *
-     * @param index Index on the color wheel (0 to 255).
-     * @return Pointer to the array containing RGB values.
-     *
-     * The index is divided into three segments:
-     * - 0 to 84: Transition from Red to Green.
-     * - 85 to 169: Transition from Green to Blue.
-     * - 170 to 255: Transition from Blue to Red.
+     * @param h Hue (0-360 degrees).
+     * @param s Saturation (0-1).
+     * @param v Value/Brightness (0-1).
      */
-    int* getColorWheelRGB(int index) {
-      index = index % 256; // Ensure index wraps within 0-255.
-      if (index < 85) {
-        // Red to Green
-        _rgb[0] = 255 - index * 3;
-        _rgb[1] = index * 3;
-        _rgb[2] = 0;
-      } else if (index < 170) {
-        // Green to Blue
-        index -= 85;
-        _rgb[0] = 0;
-        _rgb[1] = 255 - index * 3;
-        _rgb[2] = index * 3;
-      } else {
-        // Blue to Red
-        index -= 170;
-        _rgb[0] = index * 3;
-        _rgb[1] = 0;
-        _rgb[2] = 255 - index * 3;
-      }
-      return _rgb;
+    void hsvToRgb(int h, float s, float v) {
+        float c = v * s;
+        float x = c * (1 - fabs(fmod(h / 60.0, 2) - 1));
+        float m = v - c;
+
+        float r, g, b;
+        if (h < 60) {
+          r = c, g = x, b = 0;
+        } else if (h < 120) {
+          r = x, g = c, b = 0;
+        } else if (h < 180) {
+          r = 0, g = c, b = x;
+        } else if (h < 240) {
+          r = 0, g = x, b = c;
+        } else if (h < 300) {
+          r = x, g = 0, b = c;
+        } else {
+          r = c, g = 0, b = x;
+        }
+
+        _rgb[0] = (r + m) * 255;
+        _rgb[1] = (g + m) * 255;
+        _rgb[2] = (b + m) * 255;
     }
 
   public:
     /**
-     * @brief Maps a value to the RGB color wheel based on the input range.
+     * @brief Maps a value to the RGB color wheel based on HSV.
      *
      * @param value The input value to be mapped.
      * @param fromValue The lower bound of the input range.
      * @param toValue The upper bound of the input range.
      * @return Pointer to the array containing RGB values.
-     *
-     * If `fromValue` is less than `toValue`, the mapping progresses from 0 to 255 on the color wheel.
-     * If `fromValue` is greater than `toValue`, the mapping reverses from 255 to 0 on the color wheel.
-     * If `fromValue` equals `toValue`, the color defaults to Red (index 0 on the color wheel).
      */
     int* mapToColorWheel(int value, int fromValue, int toValue) {
-      int index;
-      const int min = 0, max = 255;
-      if (fromValue < toValue) {
-        value = constrain(value, fromValue, toValue);
-        index = map(value, fromValue, toValue, min, max);
-      } else if (fromValue > toValue) {
-        value = constrain(value, toValue, fromValue);
-        index = map(value, fromValue, toValue, max, min);
-      } else {
-        index = 0; // Default to the first color if range is invalid.
-      }
-      return getColorWheelRGB(index);
+        int hue;
+        if (fromValue < toValue) {
+            value = constrain(value, fromValue, toValue);
+            hue = map(value, fromValue, toValue, 0, 360);
+        } else if (fromValue > toValue) {
+            value = constrain(value, toValue, fromValue);
+            hue = map(value, fromValue, toValue, 360, 0);
+        } else {
+            hue = 0; // Default to Red if range is invalid.
+        }
+        hsvToRgb(hue, 1.0, 1.0); // Full saturation and brightness
+        return _rgb;
     }
 };
 
