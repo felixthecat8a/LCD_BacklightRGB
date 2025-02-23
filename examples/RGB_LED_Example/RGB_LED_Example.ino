@@ -59,6 +59,6 @@ void loop() {
 
 void spinColorWheel() {
   for (int i = 0; i < 359; i++) {
-    backlight.setHSV(i, 1.0, 1.0);
+    led.setHSV(i, 1.0, 1.0);
   }
 }
