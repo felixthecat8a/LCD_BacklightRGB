@@ -198,73 +198,31 @@ void LCD_BacklightRGB::setMagenta(int brightness) {
 }
 
 /**
- * @brief Maps a value to a color on the color wheel.
- * @param value The input value to map.
- * @param fromValue The minimum range of the input value.
- * @param toValue The maximum range of the input value.
- */
-void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
-  rgb.setRGB(cw.mapToColorWheel(value, fromValue, toValue));
-}
-
-/**
  * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
  * @param hue The hue value (0-360 degrees).
  * @param sat The saturation level (0.0-1.0).
  * @param val The brightness value (0.0-1.0).
  */
 void LCD_BacklightRGB::setHSV(int hue, float sat, float val) {
-    float r, g, b;
-    hue = constrain(hue, 0, 359);
-    sat = constrain(sat, 0.0, 1.0);
-    val = constrain(val, 0.0, 1.0);
-    int i = hue / 60;
-    float f = (hue / 60.0) - i;
-    float p = val * (1 - sat);
-    float q = val * (1 - sat * f);
-    float t = val * (1 - sat * (1 - f));
-
-    switch (i % 6) {
-        case 0: r = val, g = t, b = p; break;
-        case 1: r = q, g = val, b = p; break;
-        case 2: r = p, g = val, b = t; break;
-        case 3: r = p, g = q, b = val; break;
-        case 4: r = t, g = p, b = val; break;
-        case 5: r = val, g = p, b = q; break;
-        default: r = g = b = 0; break;
-    }
-
-    rgb.setRGB((int)(r * 255), (int)(g * 255), (int)(b * 255));
+    rgb.setHSV(hue, sat, val);
 }
 
 /**
- * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value) and adjusts brightness.
- * @param hue The hue value (0-360 degrees).
- * @param sat The saturation level (0.0-1.0).
- * @param val The brightness value (0.0-1.0).
- * @param brightness Brightness level (0 to 255).
+ * @brief Maps a value to a color on the color wheel.
+ * @param value The input value to map.
+ * @param fromValue The minimum range of the input value.
+ * @param toValue The maximum range of the input value.
  */
-void LCD_BacklightRGB::setHSV(int hue, float sat, float val, int brightness) {
-    float r, g, b;
-    hue = constrain(hue, 0, 359);
-    sat = constrain(sat, 0.0, 1.0);
-    val = constrain(val, 0.0, 1.0);
-    brightness = constrain(brightness, 0, 255);
-    int i = hue / 60;
-    float f = (hue / 60.0) - i;
-    float p = val * (1 - sat);
-    float q = val * (1 - sat * f);
-    float t = val * (1 - sat * (1 - f));
-
-    switch (i % 6) {
-        case 0: r = val, g = t, b = p; break;
-        case 1: r = q, g = val, b = p; break;
-        case 2: r = p, g = val, b = t; break;
-        case 3: r = p, g = q, b = val; break;
-        case 4: r = t, g = p, b = val; break;
-        case 5: r = val, g = p, b = q; break;
-        default: r = g = b = 0; break;
+void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
+    int hue;
+    if (fromValue < toValue) {
+        value = constrain(value, fromValue, toValue);
+        hue = map(value, fromValue, toValue, 0, 360);
+    } else if (fromValue > toValue) {
+        value = constrain(value, toValue, fromValue);
+        hue = map(value, fromValue, toValue, 360, 0);
+    } else {
+        hue = 0; // Default to Red if range is invalid.
     }
-
-    rgb.setRGB((int)(r * 255), (int)(g * 255), (int)(b * 255), brightness);
+    setHSV(hue, 1.0, 1.0);
 }

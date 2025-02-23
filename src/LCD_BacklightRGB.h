@@ -21,7 +21,6 @@
 class LCD_BacklightRGB {
 private:
     BacklightRGB rgb; ///< RGB object for managing LED pins and colors.
-    BacklightCW cw;   ///< Color wheel object for mapping values to colors.
 
 public:
     /**
@@ -118,14 +117,6 @@ public:
     void setMagenta(int brightness);
 
     /**
-     * @brief Maps a value to a color on the color wheel.
-     * @param value The input value to map.
-     * @param fromValue The minimum range of the input value.
-     * @param toValue The maximum range of the input value.
-     */
-    void scaleColor(int value, int fromValue, int toValue);
-
-    /**
      * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
      * @param hue The hue value (0-360 degrees).
      * @param sat The saturation level (0.0-1.0).
@@ -134,13 +125,12 @@ public:
     void setHSV(int hue, float sat, float val);
 
     /**
-     * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value) and adjusts brightness.
-     * @param hue The hue value (0-360 degrees).
-     * @param sat The saturation level (0.0-1.0).
-     * @param val The brightness value (0.0-1.0).
-     * @param brightness Brightness level (0 to 255).
+     * @brief Maps a value to a color on the color wheel.
+     * @param value The input value to map.
+     * @param fromValue The minimum range of the input value.
+     * @param toValue The maximum range of the input value.
      */
-    void setHSV(int hue, float sat, float val, int brightness);
+    void scaleColor(int value, int fromValue, int toValue);
 };
 
 #endif

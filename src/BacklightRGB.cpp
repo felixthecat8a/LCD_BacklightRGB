@@ -186,3 +186,33 @@ const int* BacklightRGB::getRGB() {
 uint32_t BacklightRGB::getColorHex() {
     return (_currentColor[0] << 16) | (_currentColor[1] << 8) | _currentColor[2];
 }
+
+/**
+ * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
+ * @param hue The hue value (0-360 degrees).
+ * @param sat The saturation level (0.0-1.0).
+ * @param val The brightness value (0.0-1.0).
+ */
+void BacklightRGB::setHSV(int hue, float sat, float val) {
+    float red, green, blue;
+    hue = constrain(hue, 0, 359);
+    sat = constrain(sat, 0.0, 1.0);
+    val = constrain(val, 0.0, 1.0);
+    int i = hue / 60;
+    float f = (hue / 60.0) - i;
+    float p = val * (1 - sat);
+    float q = val * (1 - sat * f);
+    float t = val * (1 - sat * (1 - f));
+
+    switch (i % 6) {
+        case 0: red = val, green = t, blue = p; break;
+        case 1: red = q, green = val, blue = p; break;
+        case 2: red = p, green = val, blue = t; break;
+        case 3: red = p, green = q, blue = val; break;
+        case 4: red = t, green = p, blue = val; break;
+        case 5: red = val, green = p, blue = q; break;
+        default: red = green = blue = 0; break;
+    }
+
+    rgb.setRGB((int)(red * 255), (int)(green * 255), (int)(blue * 255));
+}

@@ -39,30 +39,26 @@ void setup() {
 
 void loop() {
   // Cycle through predefined colors
-  showColor(BacklightColors::WHITE);
-  showColor(BacklightColors::HOTPINK);
-  showColor(BacklightColors::RED);
-  showColor(BacklightColors::ORANGE);
-  showColor(BacklightColors::YELLOW);
-  showColor(BacklightColors::LIME);
-  showColor(BacklightColors::GREEN);
-  showColor(BacklightColors::TEAL);
-  showColor(BacklightColors::CYAN);
-  showColor(BacklightColors::SKY);
-  showColor(BacklightColors::BLUE);
-  showColor(BacklightColors::PURPLE);
-  showColor(BacklightColors::MAGENTA);
-  showColor(BacklightColors::BLACK);
+  led.setRGB(BacklightColors::WHITE); delay(500);
+  led.setRGB(BacklightColors::HOTPINK); delay(500);
+  led.setRGB(BacklightColors::RED); delay(500);
+  led.setRGB(BacklightColors::ORANGE); delay(500);
+  led.setRGB(BacklightColors::YELLOW); delay(500);
+  led.setRGB(BacklightColors::LIME); delay(500);
+  led.setRGB(BacklightColors::GREEN); delay(500);
+  led.setRGB(BacklightColors::TEAL); delay(500);
+  led.setRGB(BacklightColors::CYAN); delay(500);
+  led.setRGB(BacklightColors::SKY); delay(500);
+  led.setRGB(BacklightColors::BLUE); delay(500);
+  led.setRGB(BacklightColors::PURPLE); delay(500);
+  led.setRGB(BacklightColors::MAGENTA); delay(500);
+  led.setRGB(BacklightColors::BLACK); delay(500);
   // Smoothly transition through the color wheel
   spinColorWheel();
 }
 
-void showColor(const int color[3]) {
-  led.setRGB(color); delay(500);
-}
-
 void spinColorWheel() {
-  for (int i = 0; i < 255; i++) {
-    led.setRGB(cw.mapToColorWheel(i, 0, 255)); delay(15);
+  for (int i = 0; i < 359; i++) {
+    backlight.setHSV(i, 1.0, 1.0);
   }
 }

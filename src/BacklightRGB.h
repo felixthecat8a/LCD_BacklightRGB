@@ -130,6 +130,14 @@ class BacklightRGB {
      * @return 24-bit integer representing the color (0xRRGGBB).
      */
     uint32_t getColorHex();
+
+    /**
+     * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
+     * @param hue The hue value (0-360 degrees).
+     * @param sat The saturation level (0.0-1.0).
+     * @param val The brightness value (0.0-1.0).
+     */
+    void setHSV(int hue, float sat, float val);
 };
 
 #endif
