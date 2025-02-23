@@ -214,5 +214,5 @@ void BacklightRGB::setHSV(int hue, float sat, float val) {
         default: red = green = blue = 0; break;
     }
 
-    rgb.setRGB((int)(red * 255), (int)(green * 255), (int)(blue * 255));
+    setRGB((int)(red * 255), (int)(green * 255), (int)(blue * 255));
 }

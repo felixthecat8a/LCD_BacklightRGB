@@ -23,7 +23,7 @@ BacklightRGB led(redPin, greenPin, bluePin);
 //BacklightRGB led(redPin, greenPin, bluePin, isCommonAnode);
 
 // Color wheel utility
-BacklightCW cw;
+//BacklightCW cw;
 
 // Display a predefined color
 void showColor(const int color[3]);
