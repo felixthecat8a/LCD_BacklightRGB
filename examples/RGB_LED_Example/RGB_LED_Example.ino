@@ -60,5 +60,6 @@ void loop() {
 void spinColorWheel() {
   for (int i = 0; i < 359; i++) {
     led.setHSV(i, 1.0, 1.0);
+    delay(50);
   }
 }
