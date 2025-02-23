@@ -1,8 +1,11 @@
 /**
  * RGB_LED_Example.ino
  *
- * This example demonstrates how to control an RGB LED using the LCD_BacklightRGB library.
- * It cycles through predefined colors and then smoothly transitions through the color wheel.
+ * This example demonstrates how to control an RGB LED using BacklightRGB.h
+ * and BacklightColors.h found in the LCD_BacklightRGB library.
+ *
+ * It  first cycles through predefined colors and then smoothly transitions
+ * through the color wheel.
  *
  * Connections:
  * - Red Pin: PWM pin ~11
@@ -12,7 +15,6 @@
  * felixthecat8a
  */
 
-#include <LiquidCrystal.h>
 #include <LCD_BacklightRGB.h>
 
 //Set the RGB pins for the RGB LED. Use PWM pins denoted by a ~ symbol.
@@ -21,9 +23,6 @@ BacklightRGB led(redPin, greenPin, bluePin);
 //Indicate in the constructor if common cathode RGB LED (>= v1.1.9)
 //const bool isCommonAnode = false;
 //BacklightRGB led(redPin, greenPin, bluePin, isCommonAnode);
-
-// Color wheel utility
-//BacklightCW cw;
 
 // Display a predefined color
 void showColor(const int color[3]);
