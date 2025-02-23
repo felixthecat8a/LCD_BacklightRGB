@@ -24,8 +24,6 @@ BacklightRGB led(redPin, greenPin, bluePin);
 //const bool isCommonAnode = false;
 //BacklightRGB led(redPin, greenPin, bluePin, isCommonAnode);
 
-// Display a predefined color
-void showColor(const int color[3]);
 // Spin the color wheel
 void spinColorWheel();
 
@@ -57,8 +55,8 @@ void loop() {
 }
 
 void spinColorWheel() {
-  for (int i = 0; i < 359; i++) {
-    led.setHSV(i, 1.0, 1.0);
+  for (int hue = 0; hue < 359; hue++) {
+    led.setHSV(hue, 1.0, 1.0);
     delay(50);
   }
 }
