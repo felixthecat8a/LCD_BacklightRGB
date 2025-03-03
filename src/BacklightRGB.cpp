@@ -158,17 +158,17 @@ void BacklightRGB::showRGB(int red, int green, int blue) {
     _currentColor[1] = green;
     _currentColor[2] = blue;
 
-  #ifdef ESP32
-    // Use ESP32 PWM for RGB values
-    ledcWrite(0, setColor(red));   ///< Write red value to channel 0
-    ledcWrite(1, setColor(green)); ///< Write green value to channel 1
-    ledcWrite(2, setColor(blue));  ///< Write blue value to channel 2
-  #else
-    // Use analogWrite for non-ESP32 boards
-    analogWrite(_redPin, setColor(red));
-    analogWrite(_greenPin, setColor(green));
-    analogWrite(_bluePin, setColor(blue));
-  #endif
+    #ifdef ESP32
+        // Use ESP32 PWM for RGB values
+        ledcWrite(0, setColor(red));   ///< Write red value to channel 0
+        ledcWrite(1, setColor(green)); ///< Write green value to channel 1
+        ledcWrite(2, setColor(blue));  ///< Write blue value to channel 2
+    #else
+        // Use analogWrite for non-ESP32 boards
+        analogWrite(_redPin, setColor(red));
+        analogWrite(_greenPin, setColor(green));
+        analogWrite(_bluePin, setColor(blue));
+    #endif
 }
 
 /**
