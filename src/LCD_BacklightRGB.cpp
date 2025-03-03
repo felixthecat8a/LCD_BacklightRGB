@@ -224,5 +224,5 @@ void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
     } else {
         hue = 0; // Default to Red if range is invalid.
     }
-    setHSV(hue, 1.0, 1.0);
+    setHSV(hue);
 }

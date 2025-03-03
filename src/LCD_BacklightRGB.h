@@ -122,7 +122,7 @@ public:
      * @param sat The saturation level (0.0-1.0).
      * @param val The brightness value (0.0-1.0).
      */
-    void setHSV(int hue, float sat, float val);
+    void setHSV(int hue, float sat = 1.0, float val= 1.0);
 
     /**
      * @brief Maps a value to a color on the color wheel.
