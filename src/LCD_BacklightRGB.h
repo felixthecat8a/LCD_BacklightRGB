@@ -103,18 +103,24 @@ public:
     void setLimeGreen(int brightness);
     void setGreen();
     void setGreen(int brightness);
-    void setTeal();
-    void setTeal(int brightness);
+    void setSpringGreen();
+    void setSpringGreen(int brightness);
     void setCyan();
     void setCyan(int brightness);
     void setSkyBlue();
     void setSkyBlue(int brightness);
     void setBlue();
     void setBlue(int brightness);
-    void setPurple();
-    void setPurple(int brightness);
     void setMagenta();
     void setMagenta(int brightness);
+    void setGray();
+    void setGray(int brightness);
+    void setOlive();
+    void setOlive(int brightness);
+    void setTeal();
+    void setTeal(int brightness);
+    void setPurple();
+    void setPurple(int brightness);
 
     /**
      * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
