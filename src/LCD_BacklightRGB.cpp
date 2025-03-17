@@ -181,6 +181,14 @@ void LCD_BacklightRGB::setBlue(int brightness) {
   rgb.setRGB(BacklightColors::BLUE, brightness);
 }
 
+void LCD_BacklightRGB::setViolet() {
+    rgb.setRGB(BacklightColors::VIOLET);
+}
+
+void LCD_BacklightRGB::setViolet(int brightness) {
+    rgb.setRGB(BacklightColors::VIOLET, brightness);
+}
+
 void LCD_BacklightRGB::setMagenta() {
     rgb.setRGB(BacklightColors::MAGENTA);
 }
@@ -212,6 +220,7 @@ void LCD_BacklightRGB::setTeal() {
 void LCD_BacklightRGB::setTeal(int brightness) {
     rgb.setRGB(BacklightColors::TEAL, brightness);
 }
+
 void LCD_BacklightRGB::setPurple() {
     rgb.setRGB(BacklightColors::PURPLE);
 }

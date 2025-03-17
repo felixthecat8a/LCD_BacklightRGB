@@ -111,6 +111,8 @@ public:
     void setSkyBlue(int brightness);
     void setBlue();
     void setBlue(int brightness);
+    void setViolet();
+    void setViolet(int brightness);
     void setMagenta();
     void setMagenta(int brightness);
     void setGray();
