@@ -83,8 +83,10 @@ void BacklightRGB::setRGB(const int rgb[3]) {
  * @param brightness Brightness value (0 to 255).
  */
 void BacklightRGB::setRGB(const int rgb[3], int brightness) {
-  _brightness = constrain(brightness, 0, 255);
-  showRGB(rgb[0], rgb[1], rgb[2]);
+  _currentColor[0] = rgb[0];
+  _currentColor[1] = rgb[1];
+  _currentColor[2] = rgb[2];
+  setBrightness(brightness);
 }
 
 /**
@@ -105,8 +107,10 @@ void BacklightRGB::setRGB(int red, int green, int blue) {
  * @param brightness Brightness value (0 to 255).
  */
 void BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
-  _brightness = constrain(brightness, 0, 255);
-  showRGB(red, green, blue);
+  _currentColor[0] = red;
+  _currentColor[1] = green;
+  _currentColor[2] = blue;
+  setBrightness(brightness);
 }
 
 /**
@@ -126,11 +130,13 @@ void BacklightRGB::setRGB(uint32_t hexColor) {
  * @param brightness Brightness value (0 to 255).
  */
 void BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
-  _brightness = constrain(brightness, 0, 255);
   int red = (hexColor >> 16) & 0xFF;
   int green = (hexColor >> 8) & 0xFF;
   int blue = hexColor & 0xFF;
-  showRGB(red, green, blue);
+  _currentColor[0] = red;
+  _currentColor[1] = green;
+  _currentColor[2] = blue;
+  setBrightness(brightness);
 }
 
 /**

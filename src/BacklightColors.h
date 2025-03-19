@@ -35,6 +35,7 @@ class BacklightColors {
         static const int VIOLET[3];    ///< Violet color (127, 10, 255).
         static const int MAGENTA[3];   ///< Magenta color (255, 10, 255).
         static const int GRAY[3];      ///< Gray color (128, 128, 128).
+        static const int GREY[3];      ///< Grey color (128, 128, 128).
         static const int OLIVE[3];     ///< Olive color (128, 128, 10).
         static const int TEAL[3];      ///< Teal color (10, 128, 128).
         static const int PURPLE[3];    ///< Purple color (128, 10, 128).

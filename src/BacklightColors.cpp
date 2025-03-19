@@ -23,6 +23,7 @@ const int BacklightColors::BLUE[3] = {10, 10, 255};      ///< Blue color (10, 10
 const int BacklightColors::VIOLET[3] = {127, 10, 255};   ///< Violet color (127, 10, 255).
 const int BacklightColors::MAGENTA[3] = {255, 10, 255};  ///< Magenta color (255, 10, 255).
 const int BacklightColors::GRAY[3] = {128, 128, 128};    ///< Gray color (128, 128, 128).
+const int BacklightColors::GREY[3] = {128, 128, 128};    ///< Grey color (128, 128, 128).
 const int BacklightColors::OLIVE[3] = {128, 128, 10};    ///< Olive color (128, 128, 10).
 const int BacklightColors::TEAL[3] = {10, 128, 128};     ///< Teal color (10, 128, 128).
 const int BacklightColors::PURPLE[3] = {128, 10, 128};   ///< Magenta color (128, 10, 128).
