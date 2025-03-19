@@ -43,6 +43,14 @@ void LCD_BacklightRGB::setBrightness(int brightness) {
 }
 
 /**
+ * @brief Gets the current brightness level.
+ * @return Brightness value (0 to 255).
+ */
+int LCD_BacklightRGB::getBrightness() {
+    return rgb.getBrightness();
+}
+
+/**
  * @brief Sets the RGB color using individual color components.
  * @param red Red intensity (0 to 255).
  * @param green Green intensity (0 to 255).
