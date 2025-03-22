@@ -25,7 +25,12 @@ BacklightRGB led(redPin, greenPin, bluePin);
 //BacklightRGB led(redPin, greenPin, bluePin, isCommonAnode);
 
 // Spin the color wheel
-void spinColorWheel();
+void spinColorWheel() {
+    for (int hue = 0; hue < 359; hue++) {
+      led.setHSV(hue, 1.0, 1.0);
+      delay(50);
+    }
+  }
 
 void setup() {
   // Initialize the RGB LED
@@ -52,11 +57,4 @@ void loop() {
   led.setRGB(BacklightColors::BLACK); delay(500);
   // Smoothly transition through the color wheel
   spinColorWheel();
-}
-
-void spinColorWheel() {
-  for (int hue = 0; hue < 359; hue++) {
-    led.setHSV(hue, 1.0, 1.0);
-    delay(50);
-  }
 }
