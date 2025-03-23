@@ -12,7 +12,6 @@
 
 #include "BacklightColors.h"
 #include "BacklightRGB.h"
-#include "BacklightCW.h"
 
 /**
   * @class LCD_BacklightRGB
