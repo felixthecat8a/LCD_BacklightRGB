@@ -10,7 +10,7 @@
 #define BACKLIGHT_COLORS_H
 
 /**
- * @struct BacklightColors
+ * @class BacklightColors
  * @brief A collection of predefined RGB color constants.
  *
  * Each color is represented as an array of three integers, where:
