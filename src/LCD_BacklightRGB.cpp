@@ -97,30 +97,3 @@ void LCD_BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
 void LCD_BacklightRGB::setHSV(int hue, float sat, float val) {
     rgb.setHSV(hue, sat, val);
 }
-
-/**
- * @brief Method for setting the values to (0, 0, 0).
- */
-void LCD_BacklightRGB::off() {
-  rgb.setRGB(BacklightColors::BLACK);
-}
-
-// /**
-//  * @brief Maps a value to a color on the color wheel.
-//  * @param value The input value to map.
-//  * @param fromValue The minimum range of the input value.
-//  * @param toValue The maximum range of the input value.
-//  */
-// void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
-//     int hue;
-//     if (fromValue < toValue) {
-//         value = constrain(value, fromValue, toValue);
-//         hue = map(value, fromValue, toValue, 0, 360);
-//     } else if (fromValue > toValue) {
-//         value = constrain(value, toValue, fromValue);
-//         hue = map(value, fromValue, toValue, 360, 0);
-//     } else {
-//         hue = 0; // Default to Red if range is invalid.
-//     }
-//     setHSV(hue);
-// }
