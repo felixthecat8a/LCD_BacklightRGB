@@ -1,9 +1,10 @@
 /**
  * @file BacklightRGB.h
- * @brief Header file for the RGB class.
+ * @brief Header file for the BacklightRGB class.
  *
- * The `BacklightRGB` class provides an interface for controlling an RGB LED connected to an Arduino.
- * It supports brightness control and setting colors using RGB components or hexadecimal values.
+ * @note The BacklightRGB class provides an interface for controlling an RGB LED
+ * connected to an Arduino. It supports brightness control and setting colors using
+ * RGB components or hexadecimal values.
  */
 #ifndef BACKLIGHT_RGB_H
 #define BACKLIGHT_RGB_H
@@ -13,20 +14,20 @@
 /**
  * @class BacklightRGB
  * @brief Class for controlling RGB LEDs.
- * @note This class allows for easy control of common anode RGB LEDs by providing methods for setting color,
- * adjusting brightness.
+ * @note This class allows for easy control of common anode RGB LEDs by providing
+ * methods for setting color and adjusting brightness.
  */
 class BacklightRGB {
     private:
-    bool _COMMON_ANODE;             ///< True if common anode RGB LED
-    int _redPin;                    ///< Pin connected to the red LED.
-    int _greenPin;                  ///< Pin connected to the green LED.
-    int _bluePin;                   ///< Pin connected to the blue LED.
-    int _brightness = 255;          ///< Brightness value (0 to 255).
-    int _currentColor[3];           ///< Array storing the current RGB values.
+    bool _COMMON_ANODE;     ///< True if common anode RGB LED
+    int _redPin;            ///< Pin connected to the red LED.
+    int _greenPin;          ///< Pin connected to the green LED.
+    int _bluePin;           ///< Pin connected to the blue LED.
+    int _brightness = 255;  ///< Brightness value (0 to 255).
+    int _currentColor[3];   ///< Array storing the current RGB values.
 
     /**
-     * @brief Adjusts the intensity of a color component based on brightness and configuration.
+     * @brief Adjusts the intensity of a color component based on brightness.
      * @param color Original color component value (0 to 255).
      * @return Adjusted color value.
      */
@@ -108,13 +109,13 @@ class BacklightRGB {
 
     /**
      * @brief Sets the RGB color using a hexadecimal value.
-     * @param hexColor 24-bit hexadecimal value representing the color (e.g., 0xRRGGBB).
+     * @param hexColor 24-bit hexadecimal value representing the color.
      */
     void setRGB(uint32_t hexColor);
 
     /**
      * @brief Sets the RGB color and brightness using a hexadecimal value.
-     * @param hexColor 24-bit hexadecimal value representing the color (e.g., 0xRRGGBB).
+     * @param hexColor 24-bit hexadecimal value representing the color.
      * @param brightness Brightness value (0 to 255).
      */
     void setRGB(uint32_t hexColor, int brightness);
