@@ -1,8 +1,8 @@
 /**
  * @file LCD_BacklightRGB.h
- * @brief Declaration of the LCD_BacklightRGB class for controlling an RGB backlight.
- * The LCD_BacklightRGB class provides methods for controlling RGB LEDs, including
- * setting colors, adjusting brightness, and using predefined color presets.
+ * @brief Declaration of the LCD_BacklightRGB class.
+ * @note The LCD_BacklightRGB class provides methods for setting colors and
+ * adjusting brightness of the RGB backlight on 18-pin RGB LCD modules.
  */
 
 #ifndef LCD_BACKLIGHTRGB_H
@@ -14,9 +14,11 @@
 #include "BacklightRGB.h"
 
 /**
-  * @class LCD_BacklightRGB
-  * @brief A class to control an RGB backlight with various color and brightness options.
-  */
+ * @class LCD_BacklightRGB
+ * @brief A class for crontrolling RGB pins on RGB LCD modules
+ * @note The LCD_BacklightRGB class provides methods for setting colors and
+ * adjusting brightness of the RGB backlight on 18-pin RGB LCD modules.
+ */
 class LCD_BacklightRGB {
   private:
     BacklightRGB rgb; ///< RGB object for managing LED pins and colors.
@@ -24,23 +26,25 @@ class LCD_BacklightRGB {
   public:
     /**
      * @brief Constructor for the BacklightRGB class.
-     * @param r Pin number for the red LED.
-     * @param g Pin number for the green LED.
-     * @param b Pin number for the blue LED.
+     * @param r Pin for the red LED.
+     * @param g Pin for the green LED.
+     * @param b Pin for the blue LED.
      */
-    LCD_BacklightRGB(int r, int g, int b);
+    LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b):rgb(r, g, b) {}
 
     /**
      * @brief Constructor for the BacklightRGB class.
-     * @param r Pin number for the red LED.
-     * @param g Pin number for the green LED.
-     * @param b Pin number for the blue LED.
+     * @param r Pin for the red LED.
+     * @param g Pin for the green LED.
+     * @param b Pin for the blue LED.
      * @param isCommonAnode Boolean variable indicating common anode RGB LED.
      */
-    LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode);
+    LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode)
+      :rgb(r, g, b, isCommonAnode) {}
 
     /**
-     * @brief Initializes the RGB backlight hardware.
+     * @brief Initializes the RGB backlight.
+     * @note Sets the initial color to a default teal (hex: 0x0A878F).
      */
     void begin();
 
@@ -57,7 +61,7 @@ class LCD_BacklightRGB {
     int getBrightness();
 
     /**
-     * @brief Sets the RGB color using individual color components.
+     * @brief Sets RGB color using individual color components.
      * @param red Red intensity (0 to 255).
      * @param green Green intensity (0 to 255).
      * @param blue Blue intensity (0 to 255).
@@ -65,7 +69,7 @@ class LCD_BacklightRGB {
     void setRGB(int red, int green, int blue);
 
     /**
-     * @brief Sets the RGB color and brightness using individual components.
+     * @brief Sets RGB color using individual color components and brightness.
      * @param red Red intensity (0 to 255).
      * @param green Green intensity (0 to 255).
      * @param blue Blue intensity (0 to 255).
@@ -75,13 +79,14 @@ class LCD_BacklightRGB {
 
     /**
      * @brief Sets the RGB color using a hexadecimal color value.
-     * @param hexColor Hexadecimal representation of the color (e.g., 0xFF0000 for red).
+     * @param hexColor Hexadecimal representation of the color
+     * @example setRGB(0xFF0000)
      */
     void setRGB(uint32_t hexColor);
 
     /**
      * @brief Sets the RGB color and brightness using a hexadecimal color value.
-     * @param hexColor Hexadecimal representation of the color (e.g., 0xFF0000 for red).
+     * @param hexColor Hexadecimal representation of the color.
      * @param brightness Brightness level (0 to 255).
      */
     void setRGB(uint32_t hexColor, int brightness);
@@ -97,100 +102,48 @@ class LCD_BacklightRGB {
     /**
      * @brief Sets the values to (0, 0, 0).
      */
-    void off() {
-      rgb.setRGB(BacklightColors::BLACK);
-    }
+    void off();
 
     /**
-     * @brief Predefined color methods for setting specific colors with optional brightness.
-     * @note Colors include pink, red, orange, yellow, lime green, green, spring green, cyan,
-     * sky blue, blue, purple, magenta, and white.
+     * @brief Predefined color methods for setting specific colors.
+     * @note Colors include white, pink, red, orange, yellow, lime green, green,
+     * spring green, cyan, sky blue, blue, purple, magenta, and white.
      * @note Brightness can also be set for each color.
      */
-    void setWhite() { rgb.setRGB(BacklightColors::WHITE); }
-    void setWhite(int brightness) {
-      rgb.setRGB(BacklightColors::WHITE, brightness);
-    }
-
-    void setPink() { rgb.setRGB(BacklightColors::HOTPINK); }
-    void setPink(int brightness) {
-      rgb.setRGB(BacklightColors::HOTPINK, brightness);
-    }
-
-    void setRed() { rgb.setRGB(BacklightColors::RED); }
-    void setRed(int brightness) {
-      rgb.setRGB(BacklightColors::RED, brightness);
-    }
-
-    void setOrange() { rgb.setRGB(BacklightColors::ORANGE); }
-    void setOrange(int brightness) {
-      rgb.setRGB(BacklightColors::ORANGE, brightness);
-    }
-
-    void setYellow() { rgb.setRGB(BacklightColors::YELLOW); }
-    void setYellow(int brightness) {
-      rgb.setRGB(BacklightColors::YELLOW, brightness);
-    }
-
-    void setLimeGreen() { rgb.setRGB(BacklightColors::LIME); }
-    void setLimeGreen(int brightness) {
-      rgb.setRGB(BacklightColors::LIME, brightness);
-    }
-
-    void setGreen() { rgb.setRGB(BacklightColors::GREEN); }
-    void setGreen(int brightness) {
-      rgb.setRGB(BacklightColors::GREEN, brightness);
-    }
-
-    void setSpringGreen() { rgb.setRGB(BacklightColors::SPRING); }
-    void setSpringGreen(int brightness) {
-      rgb.setRGB(BacklightColors::SPRING, brightness);
-    }
-
-    void setCyan() { rgb.setRGB(BacklightColors::CYAN); }
-    void setCyan(int brightness) {
-      rgb.setRGB(BacklightColors::CYAN, brightness);
-    }
-
-    void setSkyBlue() { rgb.setRGB(BacklightColors::SKY); }
-    void setSkyBlue(int brightness) {
-      rgb.setRGB(BacklightColors::SKY, brightness);
-    }
-
-    void setBlue() { rgb.setRGB(BacklightColors::BLUE); }
-    void setBlue(int brightness) {
-      rgb.setRGB(BacklightColors::BLUE, brightness);
-    }
-
-    void setViolet() { rgb.setRGB(BacklightColors::VIOLET); }
-    void setViolet(int brightness) {
-      rgb.setRGB(BacklightColors::VIOLET, brightness);
-    }
-
-    void setMagenta() { rgb.setRGB(BacklightColors::MAGENTA); }
-    void setMagenta(int brightness) {
-      rgb.setRGB(BacklightColors::MAGENTA, brightness);
-    }
-
-    void setGray() { rgb.setRGB(BacklightColors::GRAY); }
-    void setGray(int brightness) {
-      rgb.setRGB(BacklightColors::GRAY, brightness);
-    }
-
-    void setOlive() { rgb.setRGB(BacklightColors::OLIVE); }
-    void setOlive(int brightness) {
-      rgb.setRGB(BacklightColors::OLIVE, brightness);
-    }
-
-    void setTeal() { rgb.setRGB(BacklightColors::TEAL); }
-    void setTeal(int brightness) {
-      rgb.setRGB(BacklightColors::TEAL, brightness);
-    }
-
-    void setPurple() { rgb.setRGB(BacklightColors::PURPLE); }
-    void setPurple(int brightness) {
-      rgb.setRGB(BacklightColors::PURPLE, brightness);
-    }
+    void setWhite();
+    void setWhite(int brightness);
+    void setPink();
+    void setPink(int brightness);
+    void setRed();
+    void setRed(int brightness);
+    void setOrange();
+    void setOrange(int brightness);
+    void setYellow();
+    void setYellow(int brightness);
+    void setLimeGreen();
+    void setLimeGreen(int brightness);
+    void setGreen();
+    void setGreen(int brightness);
+    void setSpringGreen();
+    void setSpringGreen(int brightness);
+    void setCyan();
+    void setCyan(int brightness);
+    void setSkyBlue();
+    void setSkyBlue(int brightness);
+    void setBlue();
+    void setBlue(int brightness);
+    void setViolet();
+    void setViolet(int brightness);
+    void setMagenta();
+    void setMagenta(int brightness);
+    void setGray();
+    void setGray(int brightness);
+    void setOlive();
+    void setOlive(int brightness);
+    void setTeal();
+    void setTeal(int brightness);
+    void setPurple();
+    void setPurple(int brightness);
 
     /**
      * @brief Maps a value to a color on the color wheel.
@@ -198,19 +151,7 @@ class LCD_BacklightRGB {
      * @param fromValue The minimum range of the input value.
      * @param toValue The maximum range of the input value.
      */
-    void scaleColor(int value, int fromValue, int toValue) {
-      int hue;
-      if (fromValue < toValue) {
-        value = constrain(value, fromValue, toValue);
-        hue = map(value, fromValue, toValue, 0, 360);
-      } else if (fromValue > toValue) {
-        value = constrain(value, toValue, fromValue);
-        hue = map(value, fromValue, toValue, 360, 0);
-      } else {
-        hue = 0; // Default to Red if range is invalid.
-      }
-      setHSV(hue);
-    }
+    void scaleColor(int value, int fromValue, int toValue);
 };
 
 #endif
