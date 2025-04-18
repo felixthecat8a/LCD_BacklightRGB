@@ -61,7 +61,7 @@ class BacklightRGB {
     BacklightRGB(int redPin, int greenPin, int bluePin, bool COMMON_ANODE);
 
     /**
-     * @brief Initializes the RGB LED pins as outputs.
+     * @brief Initializes the RGB LED pins as outputs or PWM channels for ESP32.
      */
     void begin();
 

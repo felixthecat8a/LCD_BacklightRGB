@@ -8,33 +8,17 @@
 
 #include "BacklightRGB.h"
 
-/**
- * @brief Constructor to initialize RGB pins.
- * @param redPin Pin connected to the red LED.
- * @param greenPin Pin connected to the green LED.
- * @param bluePin Pin connected to the blue LED.
- * @note common anode configuration by default
- */
+
 BacklightRGB::BacklightRGB(int redPin, int greenPin, int bluePin) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
   _COMMON_ANODE = true;
 }
 
-/**
- * @brief Constructor to initialize RGB pins.
- * @param redPin Pin connected to the red LED.
- * @param greenPin Pin connected to the green LED.
- * @param bluePin Pin connected to the blue LED.
- * @param COMMON_ANODE Boolean variable indicating common anode RGB LED.
- */
 BacklightRGB::BacklightRGB(int redPin, int greenPin, int bluePin, bool COMMON_ANODE) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
   _COMMON_ANODE = COMMON_ANODE;
 }
 
-/**
- * @brief Initializes the RGB LED pins as outputs or PWM channels for ESP32.
- */
 void BacklightRGB::begin() {
   #ifdef ESP32
     ledcSetup(0, 5000, 8); ///< Channel 0, 5 kHz frequency, 8-bit resolution
@@ -52,36 +36,19 @@ void BacklightRGB::begin() {
   #endif
 }
 
-/**
- * @brief Sets the brightness of the LED.
- * @param brightness Brightness value (0 to 255).
- */
 void BacklightRGB::setBrightness(int brightness) {
   _brightness = constrain(brightness, 0, 255);
   showRGB(_currentColor[0], _currentColor[1], _currentColor[2]);
 }
 
-/**
- * @brief Gets the current brightness level.
- * @return Brightness value (0 to 255).
- */
 int BacklightRGB::getBrightness() {
     return _brightness;
 }
 
-/**
- * @brief Sets the RGB color using an array.
- * @param rgb Array containing red, green, and blue values.
- */
 void BacklightRGB::setRGB(const int rgb[3]) {
   showRGB(rgb[0], rgb[1], rgb[2]);
 }
 
-/**
- * @brief Sets the RGB color and brightness using an array.
- * @param rgb Array containing red, green, and blue values.
- * @param brightness Brightness value (0 to 255).
- */
 void BacklightRGB::setRGB(const int rgb[3], int brightness) {
   _currentColor[0] = rgb[0];
   _currentColor[1] = rgb[1];
@@ -89,23 +56,10 @@ void BacklightRGB::setRGB(const int rgb[3], int brightness) {
   setBrightness(brightness);
 }
 
-/**
- * @brief Sets the RGB color using red, green, and blue values.
- * @param red Red value (0 to 255).
- * @param green Green value (0 to 255).
- * @param blue Blue value (0 to 255).
- */
 void BacklightRGB::setRGB(int red, int green, int blue) {
   showRGB(red, green, blue);
 }
 
-/**
- * @brief Sets the RGB color and brightness using red, green, and blue values.
- * @param red Red value (0 to 255).
- * @param green Green value (0 to 255).
- * @param blue Blue value (0 to 255).
- * @param brightness Brightness value (0 to 255).
- */
 void BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
   _currentColor[0] = red;
   _currentColor[1] = green;
@@ -113,10 +67,6 @@ void BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
   setBrightness(brightness);
 }
 
-/**
- * @brief Sets the RGB color using a hexadecimal value.
- * @param hexColor 24-bit hexadecimal value representing the color (e.g., 0xRRGGBB).
- */
 void BacklightRGB::setRGB(uint32_t hexColor) {
   int red = (hexColor >> 16) & 0xFF;
   int green = (hexColor >> 8) & 0xFF;
@@ -124,11 +74,6 @@ void BacklightRGB::setRGB(uint32_t hexColor) {
   showRGB(red, green, blue);
 }
 
-/**
- * @brief Sets the RGB color and brightness using a hexadecimal value.
- * @param hexColor 24-bit hexadecimal value representing the color (e.g., 0xRRGGBB).
- * @param brightness Brightness value (0 to 255).
- */
 void BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
   int red = (hexColor >> 16) & 0xFF;
   int green = (hexColor >> 8) & 0xFF;
@@ -139,11 +84,6 @@ void BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
   setBrightness(brightness);
 }
 
-/**
- * @brief Adjusts the intensity of a color component based on brightness and configuration.
- * @param color Original color component value (0 to 255).
- * @return Adjusted color value considering brightness and common anode/cathode configuration.
- */
 int BacklightRGB::setColor(int color) {
   color = constrain(color, 0, 255);
   color = color * _brightness / 255;
@@ -153,12 +93,6 @@ int BacklightRGB::setColor(int color) {
   return color;
 }
 
-/**
- * @brief Updates the RGB LED with the specified red, green, and blue values.
- * @param red Red value (0 to 255).
- * @param green Green value (0 to 255).
- * @param blue Blue value (0 to 255).
- */
 void BacklightRGB::showRGB(int red, int green, int blue) {
     _currentColor[0] = red;
     _currentColor[1] = green;
@@ -177,28 +111,14 @@ void BacklightRGB::showRGB(int red, int green, int blue) {
     #endif
 }
 
-/**
- * @brief Gets the current RGB color.
- * @return Pointer to an array containing red, green, and blue values.
- */
 const int* BacklightRGB::getRGB() {
     return _currentColor;
 }
 
-/**
- * @brief Gets the current color as a 24-bit hexadecimal value.
- * @return 24-bit integer representing the color (0xRRGGBB).
- */
 uint32_t BacklightRGB::getColorHex() {
     return (_currentColor[0] << 16) | (_currentColor[1] << 8) | _currentColor[2];
 }
 
-/**
- * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
- * @param hue The hue value (0-360 degrees).
- * @param sat The saturation level (0.0-1.0).
- * @param val The brightness value (0.0-1.0).
- */
 void BacklightRGB::setHSV(int hue, float sat, float val) {
     float red, green, blue;
     hue = constrain(hue, 0, 359);
