@@ -30,7 +30,7 @@ class LCD_BacklightRGB {
      * @param g Pin for the green LED.
      * @param b Pin for the blue LED.
      */
-    LCD_BacklightRGB(int r, int g, int b):rgb(r, g, b) {}
+    LCD_BacklightRGB(int r, int g, int b);
 
     /**
      * @brief Constructor for the BacklightRGB class.
@@ -39,8 +39,7 @@ class LCD_BacklightRGB {
      * @param b Pin for the blue LED.
      * @param isCommonAnode Boolean variable indicating common anode RGB LED.
      */
-    LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode)
-      :rgb(r, g, b, isCommonAnode) {}
+    LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode);
 
     /**
      * @brief Initializes the RGB backlight.

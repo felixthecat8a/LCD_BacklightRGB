@@ -11,7 +11,7 @@
 LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b) : rgb(r, g, b) {}
 
 LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode)
-    : rgb(r, g, b, isCommonAnode) {}
+  : rgb(r, g, b, isCommonAnode) {}
 
 void LCD_BacklightRGB::begin() {
   rgb.begin();
