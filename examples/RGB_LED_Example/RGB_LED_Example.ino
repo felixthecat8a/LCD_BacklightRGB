@@ -7,12 +7,12 @@
  * It  first cycles through predefined colors and then smoothly transitions
  * through the color wheel.
  *
- * Connections:
+ * Wire connections for this example:
  * - Red Pin: PWM pin ~11
  * - Green Pin: PWM pin ~10
  * - Blue Pin: PWM pin ~9
  *
- * felixthecat8a
+ * @author felixthecat8a
  */
 
 #include <LCD_BacklightRGB.h>

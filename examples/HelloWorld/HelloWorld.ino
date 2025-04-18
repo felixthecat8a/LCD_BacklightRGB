@@ -1,7 +1,7 @@
 /**
- * HelloWorld.ino
+ * @file HelloWorld.ino
  *
- * Connections:
+ * Wire connections for this example:
  * Use an RGB LCD with 18 pins:
  *   Pin 15: Connect to HIGH for backlight power.
  *   Pin 16: Red channel (connect to PWM pin ~6).
@@ -23,7 +23,7 @@
  *   One outer pin: Connect to GND.
  *   Other outer pin: Connect to 5V.
  *
- * felixthecat8a
+ * @author felixthecat8a
  */
 
 #include <LiquidCrystal.h>
