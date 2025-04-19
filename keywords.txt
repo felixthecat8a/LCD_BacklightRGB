@@ -13,6 +13,7 @@ setRGB	KEYWORD2
 getRGB	KEYWORD2
 getColorHex	KEYWORD2
 setHSV	KEYWORD2
+setCMYK KEYWORD2
 off KEYWORD2
 setWhite    KEYWORD2
 setPink KEYWORD2
@@ -34,7 +35,6 @@ setTeal   KEYWORD2
 setPurple   KEYWORD2
 setColor	KEYWORD2
 showRGB	KEYWORD2
-getColorWheelRGB    KEYWORD2
 scaleColor  KEYWORD2
 
 # Constants (LITERAL1)

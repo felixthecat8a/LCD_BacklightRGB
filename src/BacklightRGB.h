@@ -35,27 +35,27 @@ class BacklightRGB {
 
     /**
      * @brief Updates the RGB LED with the specified red, green, and blue values.
-     * @param red Red value (0 to 255).
-     * @param green Green value (0 to 255).
-     * @param blue Blue value (0 to 255).
+     * @param red Red value (0 to 255)
+     * @param green Green value (0 to 255)
+     * @param blue Blue value (0 to 255)
      */
     void showRGB(int red, int green, int blue);
 
     public:
     /**
      * @brief Constructor to initialize RGB pins.
-     * @param redPin Pin connected to the red LED.
-     * @param greenPin Pin connected to the green LED.
-     * @param bluePin Pin connected to the blue LED.
+     * @param redPin Pin connected to red LED
+     * @param greenPin Pin connected to green LED
+     * @param bluePin Pin connected to blue LED
      * @note common anode configuration by default
      */
     BacklightRGB(int redPin, int greenPin, int bluePin);
 
     /**
      * @brief Constructor to initialize RGB pins.
-     * @param redPin Pin connected to the red LED.
-     * @param greenPin Pin connected to the green LED.
-     * @param bluePin Pin connected to the blue LED.
+     * @param redPin Pin connected to red LED
+     * @param greenPin Pin connected to green LED
+     * @param bluePin Pin connected to blue LED
      * @param COMMON_ANODE Boolean variable indicating common anode RGB LED.
      */
     BacklightRGB(int redPin, int greenPin, int bluePin, bool COMMON_ANODE);
@@ -92,18 +92,18 @@ class BacklightRGB {
 
     /**
      * @brief Sets the RGB color using red, green, and blue values.
-     * @param red Red value (0 to 255).
-     * @param green Green value (0 to 255).
-     * @param blue Blue value (0 to 255).
+     * @param red Red value (0 to 255)
+     * @param green Green value (0 to 255)
+     * @param blue Blue value (0 to 255)
      */
     void setRGB(int red, int green, int blue);
 
     /**
      * @brief Sets the RGB color and brightness using red, green, and blue values.
-     * @param red Red value (0 to 255).
-     * @param green Green value (0 to 255).
-     * @param blue Blue value (0 to 255).
-     * @param brightness Brightness value (0 to 255).
+     * @param red Red value (0 to 255)
+     * @param green Green value (0 to 255)
+     * @param blue Blue value (0 to 255)
+     * @param brightness Brightness value (0 to 255)
      */
     void setRGB(int red, int green, int blue, int brightness);
 
@@ -134,11 +134,20 @@ class BacklightRGB {
 
     /**
      * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
-     * @param hue The hue value (0-360 degrees).
-     * @param sat The saturation level (0.0-1.0).
-     * @param val The brightness value (0.0-1.0).
+     * @param hue Hue value (0-360 degrees)
+     * @param sat Saturation level (0.0-1.0)
+     * @param val Brightness value (0.0-1.0)
      */
     void setHSV(int hue, float sat = 1.0, float val= 1.0);
+
+    /**
+     * @brief Sets
+     * @param cyan Cyan value (0.0-1.0)
+     * @param magenta Magenta value (0.0-1.0)
+     * @param yellow Yellow value (0.0-1.0)
+     * @param key Key value (0.0-1.0)
+     */
+    void setCMYK(float cyan, float magenta, float yellow, float key);
 };
 
 #endif
