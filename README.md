@@ -8,6 +8,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/felixthecat8a/LCD_BacklightRGB)
 ![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/felixthecat8a/LCD_BacklightRGB)
 ![GitHub top language](https://img.shields.io/github/languages/top/felixthecat8a/LCD_BacklightRGB)
+
 ![Check Arduino](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/check-arduino.yml/badge.svg)
 ![Compile Examples](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/compile-examples.yml/badge.svg)
 ![Spell Check](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/spell-check.yml/badge.svg)
