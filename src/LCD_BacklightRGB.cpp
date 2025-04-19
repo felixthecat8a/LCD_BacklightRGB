@@ -46,6 +46,10 @@ void LCD_BacklightRGB::setHSV(int hue, float sat, float val) {
   rgb.setHSV(hue, sat, val);
 }
 
+void LCD_BacklightRGB::setCMYK(float cyan, float magenta, float yellow, float key) {
+  rgb.setCMYK(cyan, magenta, yellow, key);
+}
+
 void LCD_BacklightRGB::off() {
   rgb.setRGB(BacklightColors::BLACK);
 }

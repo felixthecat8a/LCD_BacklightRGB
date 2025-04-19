@@ -99,6 +99,15 @@ class LCD_BacklightRGB {
     void setHSV(int hue, float sat = 1.0, float val= 1.0);
 
     /**
+     * @brief Sets
+     * @param cyan Cyan value (0.0-1.0)
+     * @param magenta Magenta value (0.0-1.0)
+     * @param yellow Yellow value (0.0-1.0)
+     * @param key Key value (0.0-1.0)
+     */
+    void setCMYK(float cyan, float magenta, float yellow, float key);
+
+    /**
      * @brief Sets the values to (0, 0, 0).
      */
     void off();
@@ -151,6 +160,7 @@ class LCD_BacklightRGB {
      * @param toValue The maximum range of the input value.
      */
     void scaleColor(int value, int fromValue, int toValue);
+
 };
 
 #endif
