@@ -81,14 +81,14 @@ class LCD_BacklightRGB {
      * @param hexColor Hexadecimal representation of the color
      * @example setRGB(0xFF0000)
      */
-    void setRGB(uint32_t hexColor);
+    void setHex(uint32_t hexColor);
 
     /**
      * @brief Sets the RGB color and brightness using a hexadecimal color value.
      * @param hexColor Hexadecimal representation of the color.
      * @param brightness Brightness level (0 to 255).
      */
-    void setRGB(uint32_t hexColor, int brightness);
+    void setHex(uint32_t hexColor, int brightness);
 
     /**
      * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
@@ -118,6 +118,7 @@ class LCD_BacklightRGB {
      * spring green, cyan, sky blue, blue, purple, magenta, and white.
      * @note Brightness can also be set for each color.
      */
+    /// @{
     void setWhite();
     void setWhite(int brightness);
     void setPink();
@@ -152,6 +153,7 @@ class LCD_BacklightRGB {
     void setTeal(int brightness);
     void setPurple();
     void setPurple(int brightness);
+    /// @}
 
     /**
      * @brief Maps a value to a color on the color wheel.
@@ -160,6 +162,12 @@ class LCD_BacklightRGB {
      * @param toValue The maximum range of the input value.
      */
     void scaleColor(int value, int fromValue, int toValue);
+
+    /**
+     * @brief Returns the current RGB values.
+     * @return Pointer to an array of 3 uint8_t values {R, G, B}.
+     */
+    const int* getRGB() const;
 
 };
 

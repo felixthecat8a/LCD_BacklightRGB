@@ -111,14 +111,14 @@ class BacklightRGB {
      * @brief Sets the RGB color using a hexadecimal value.
      * @param hexColor 24-bit hexadecimal value representing the color.
      */
-    void setRGB(uint32_t hexColor);
+    void setHex(uint32_t hexColor);
 
     /**
      * @brief Sets the RGB color and brightness using a hexadecimal value.
      * @param hexColor 24-bit hexadecimal value representing the color.
      * @param brightness Brightness value (0 to 255).
      */
-    void setRGB(uint32_t hexColor, int brightness);
+    void setHex(uint32_t hexColor, int brightness);
 
     /**
      * @brief Gets the current RGB color.
@@ -141,13 +141,19 @@ class BacklightRGB {
     void setHSV(int hue, float sat = 1.0, float val= 1.0);
 
     /**
-     * @brief Sets
+     * @brief Sets the RGB LED color using CMYK (Cyan, Magenta, Yellow, Key).
      * @param cyan Cyan value (0.0-1.0)
      * @param magenta Magenta value (0.0-1.0)
      * @param yellow Yellow value (0.0-1.0)
      * @param key Key value (0.0-1.0)
      */
     void setCMYK(float cyan, float magenta, float yellow, float key);
+
+    /**
+     * @brief Returns the current RGB values.
+     * @return Pointer to an array of 3 int values {R, G, B}.
+     */
+    const int* getRGB() const;
 };
 
 #endif

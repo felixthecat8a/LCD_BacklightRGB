@@ -67,14 +67,14 @@ void BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
   setBrightness(brightness);
 }
 
-void BacklightRGB::setRGB(uint32_t hexColor) {
+void BacklightRGB::setHex(uint32_t hexColor) {
   int red = (hexColor >> 16) & 0xFF;
   int green = (hexColor >> 8) & 0xFF;
   int blue = hexColor & 0xFF;
   showRGB(red, green, blue);
 }
 
-void BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
+void BacklightRGB::setHex(uint32_t hexColor, int brightness) {
   int red = (hexColor >> 16) & 0xFF;
   int green = (hexColor >> 8) & 0xFF;
   int blue = hexColor & 0xFF;
@@ -148,8 +148,12 @@ void BacklightRGB::setCMYK(float cyan, float magenta, float yellow, float key) {
   magenta = constrain(magenta, 0.0f, 1.0f);
   yellow = constrain(yellow, 0.0f, 1.0f);
   float black = constrain(key, 0.0f, 1.0f);
-  int red   = (1 - cyan) * (1 - black) * 255;
-  int green = (1 - magenta) * (1 - black) * 255;
-  int blue  = (1 - yellow) * (1 - black) * 255;
+  int red   = roundf((1 - cyan) * (1 - black) * 255);
+  int green = roundf((1 - magenta) * (1 - black) * 255);
+  int blue  = roundf((1 - yellow) * (1 - black) * 255);
   setRGB(red, green, blue);
+}
+
+const int* BacklightRGB::getRGB() const {
+  return _currentColor;
 }

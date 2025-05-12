@@ -15,7 +15,7 @@ LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode)
 
 void LCD_BacklightRGB::begin() {
   rgb.begin();
-  rgb.setRGB(0x0A878F); // Set default color to teal
+  rgb.setHex(0x0A878F); // Set default color to teal
 }
 
 void LCD_BacklightRGB::setBrightness(int brightness) {
@@ -34,11 +34,11 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
   rgb.setRGB(red, green, blue, brightness);
 }
 
-void LCD_BacklightRGB::setRGB(uint32_t hexColor) {
+void LCD_BacklightRGB::setHex(uint32_t hexColor) {
   rgb.setRGB(hexColor);
 }
 
-void LCD_BacklightRGB::setRGB(uint32_t hexColor, int brightness) {
+void LCD_BacklightRGB::setHex(uint32_t hexColor, int brightness) {
   rgb.setRGB(hexColor, brightness);
 }
 
@@ -202,4 +202,8 @@ void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
     hue = 0; // Default to Red if range is invalid.
   }
   setHSV(hue);
+}
+
+const int* LCD_BacklightRGB::getRGB() const {
+  return rgb.getRGB();
 }
