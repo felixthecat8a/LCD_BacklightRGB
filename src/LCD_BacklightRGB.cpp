@@ -35,11 +35,11 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
 }
 
 void LCD_BacklightRGB::setHex(uint32_t hexColor) {
-  rgb.setRGB(hexColor);
+  rgb.setHex(hexColor);
 }
 
 void LCD_BacklightRGB::setHex(uint32_t hexColor, int brightness) {
-  rgb.setRGB(hexColor, brightness);
+  rgb.setHex(hexColor, brightness);
 }
 
 void LCD_BacklightRGB::setHSV(int hue, float sat, float val) {
