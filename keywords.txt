@@ -11,6 +11,7 @@ setBrightness   KEYWORD2
 getBrightness   KEYWORD2
 setRGB	KEYWORD2
 getRGB	KEYWORD2
+setHex	KEYWORD2
 getColorHex	KEYWORD2
 setHSV	KEYWORD2
 setCMYK KEYWORD2
