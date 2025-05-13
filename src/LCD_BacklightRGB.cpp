@@ -22,7 +22,7 @@ void LCD_BacklightRGB::setBrightness(int brightness) {
   rgb.setBrightness(brightness);
 }
 
-int LCD_BacklightRGB::getBrightness() {
+int LCD_BacklightRGB::getBrightness() const {
   return rgb.getBrightness();
 }
 
@@ -32,6 +32,10 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue) {
 
 void LCD_BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
   rgb.setRGB(red, green, blue, brightness);
+}
+
+const int* LCD_BacklightRGB::getRGB() const {
+  return rgb.getRGB();
 }
 
 void LCD_BacklightRGB::setHex(uint32_t hexColor) {
@@ -202,8 +206,4 @@ void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
     hue = 0; // Default to Red if range is invalid.
   }
   setHSV(hue);
-}
-
-const int* LCD_BacklightRGB::getRGB() const {
-  return rgb.getRGB();
 }

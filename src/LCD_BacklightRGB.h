@@ -57,7 +57,7 @@ class LCD_BacklightRGB {
      * @brief Gets the current brightness level.
      * @return Brightness value (0 to 255).
      */
-    int getBrightness();
+    int getBrightness() const;
 
     /**
      * @brief Sets RGB color using individual color components.
@@ -75,6 +75,12 @@ class LCD_BacklightRGB {
      * @param brightness Brightness level (0 to 255).
      */
     void setRGB(int red, int green, int blue, int brightness);
+
+    /**
+     * @brief Returns the current RGB values.
+     * @return Pointer to an array of 3 uint8_t values {R, G, B}.
+     */
+    const int* getRGB() const;
 
     /**
      * @brief Sets the RGB color using a hexadecimal color value.
@@ -162,12 +168,6 @@ class LCD_BacklightRGB {
      * @param toValue The maximum range of the input value.
      */
     void scaleColor(int value, int fromValue, int toValue);
-
-    /**
-     * @brief Returns the current RGB values.
-     * @return Pointer to an array of 3 uint8_t values {R, G, B}.
-     */
-    const int* getRGB() const;
 
 };
 
