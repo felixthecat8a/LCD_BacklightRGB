@@ -41,7 +41,7 @@ void BacklightRGB::setBrightness(int brightness) {
   showRGB(_currentColor[0], _currentColor[1], _currentColor[2]);
 }
 
-int BacklightRGB::getBrightness() {
+int BacklightRGB::getBrightness() const {
     return _brightness;
 }
 
@@ -115,7 +115,7 @@ const int* BacklightRGB::getRGB() const {
   return _currentColor;
 }
 
-uint32_t BacklightRGB::getColorHex() {
+uint32_t BacklightRGB::getColorHex() const {
     return (_currentColor[0] << 16) | (_currentColor[1] << 8) | _currentColor[2];
 }
 
