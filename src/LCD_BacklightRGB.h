@@ -15,7 +15,7 @@
 
 /**
  * @class LCD_BacklightRGB
- * @brief A class for crontrolling RGB pins on RGB LCD modules
+ * @brief A class for controlling RGB pins on RGB LCD modules
  * @note The LCD_BacklightRGB class provides methods for setting colors and
  * adjusting brightness of the RGB backlight on 18-pin RGB LCD modules.
  */
