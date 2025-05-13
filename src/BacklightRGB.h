@@ -124,7 +124,7 @@ class BacklightRGB {
      * @brief Gets the current RGB color.
      * @return Pointer to an array containing red, green, and blue values.
      */
-    const int* getRGB();
+    const int* getRGB() const;
 
     /**
      * @brief Gets the current color as a 24-bit hexadecimal value.
@@ -149,11 +149,6 @@ class BacklightRGB {
      */
     void setCMYK(float cyan, float magenta, float yellow, float key);
 
-    /**
-     * @brief Returns the current RGB values.
-     * @return Pointer to an array of 3 int values {R, G, B}.
-     */
-    const int* getRGB() const;
 };
 
 #endif
