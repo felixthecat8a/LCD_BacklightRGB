@@ -111,8 +111,8 @@ void BacklightRGB::showRGB(int red, int green, int blue) {
     #endif
 }
 
-const int* BacklightRGB::getRGB() {
-    return _currentColor;
+const int* BacklightRGB::getRGB() const {
+  return _currentColor;
 }
 
 uint32_t BacklightRGB::getColorHex() {
@@ -152,8 +152,4 @@ void BacklightRGB::setCMYK(float cyan, float magenta, float yellow, float key) {
   int green = roundf((1 - magenta) * (1 - black) * 255);
   int blue  = roundf((1 - yellow) * (1 - black) * 255);
   setRGB(red, green, blue);
-}
-
-const int* BacklightRGB::getRGB() const {
-  return _currentColor;
 }
