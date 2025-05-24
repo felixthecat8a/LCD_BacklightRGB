@@ -23,7 +23,7 @@ class BacklightRGB {
     int _redPin;            ///< Pin connected to the red LED.
     int _greenPin;          ///< Pin connected to the green LED.
     int _bluePin;           ///< Pin connected to the blue LED.
-    int _brightness = 255;  ///< Brightness value (0 to 255).
+    int _brightness;  ///< Brightness value (0 to 255).
     int _currentColor[3];   ///< Array storing the current RGB values.
 
     /**
@@ -31,7 +31,7 @@ class BacklightRGB {
      * @param color Original color component value (0 to 255).
      * @return Adjusted color value.
      */
-    int setColor(int color);
+    inline int setColor(int color);
 
     /**
      * @brief Updates the RGB LED with the specified red, green, and blue values.
@@ -39,7 +39,7 @@ class BacklightRGB {
      * @param green Green value (0 to 255)
      * @param blue Blue value (0 to 255)
      */
-    void showRGB(int red, int green, int blue);
+    inline void showRGB(int red, int green, int blue);
 
     public:
     /**
@@ -64,6 +64,18 @@ class BacklightRGB {
      * @brief Initializes the RGB LED pins as outputs or PWM channels for ESP32.
      */
     void begin();
+
+    /**
+     * @brief Deleted copy constructor to prevent copying of BacklightRGB instances.
+     * @note Copying is disallowed to avoid issues with shared hardware resources (e.g., PWM pins).
+     */
+    BacklightRGB(const BacklightRGB&) = delete;
+
+    /**
+     * @brief Deleted copy assignment operator to prevent copying of BacklightRGB instances.
+     * @note Copying is disallowed to avoid unintended behavior from sharing pin assignments.
+     */
+    BacklightRGB& operator=(const BacklightRGB&) = delete;
 
     /**
      * @brief Sets the brightness of the LED.

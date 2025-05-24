@@ -12,11 +12,15 @@
 BacklightRGB::BacklightRGB(int redPin, int greenPin, int bluePin) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
   _COMMON_ANODE = true;
+  _brightness = 255;
+  _currentColor[0] = _currentColor[1] = _currentColor[2] = 0;
 }
 
 BacklightRGB::BacklightRGB(int redPin, int greenPin, int bluePin, bool COMMON_ANODE) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
   _COMMON_ANODE = COMMON_ANODE;
+  _brightness = 255;
+  _currentColor[0] = _currentColor[1] = _currentColor[2] = 0;
 }
 
 void BacklightRGB::begin() {
@@ -25,9 +29,9 @@ void BacklightRGB::begin() {
     ledcSetup(1, 5000, 8); ///< Channel 1, 5 kHz frequency, 8-bit resolution
     ledcSetup(2, 5000, 8); ///< Channel 2, 5 kHz frequency, 8-bit resolution
 
-    ledcAttachPin(_redPin, 0);  ///< Attach red pin to channel 0
-    ledcAttachPin(_greenPin, 1); ///< Attach green pin to channel 1
-    ledcAttachPin(_bluePin, 2);  ///< Attach blue pin to channel 2
+    ledcAttachPin(_redPin, 0);    ///< Attach red pin to channel 0
+    ledcAttachPin(_greenPin, 1);  ///< Attach green pin to channel 1
+    ledcAttachPin(_bluePin, 2);   ///< Attach blue pin to channel 2
   #else
     // Default setup for non-ESP32 boards
     pinMode(_redPin, OUTPUT);
