@@ -7,7 +7,7 @@
  *   Pin 16: Red channel (connect to PWM pin ~6).
  *   Pin 17: Green channel (connect to PWM pin ~9).
  *   Pin 18: Blue channel (connect to PWM pin ~10).
- *   LCD Data Pins:
+ * LCD Data Pins:
  *   Register Select: Pin 12
  *   Enable: Pin 11
  *   D4: Pin 5

@@ -1,5 +1,5 @@
 /**
- * RGB_LED_Example.ino
+ * @file RGB_LED_Example.ino
  *
  * This example demonstrates how to control an RGB LED using BacklightRGB.h
  * and BacklightColors.h found in the LCD_BacklightRGB library.
