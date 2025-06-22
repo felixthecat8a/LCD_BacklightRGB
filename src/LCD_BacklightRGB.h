@@ -80,7 +80,7 @@ class LCD_BacklightRGB {
      * @brief Returns the current RGB values.
      * @return Pointer to an array of 3 uint8_t values {R, G, B}.
      */
-    const int* getRGB() const;
+    const uint8_t* getRGB() const;
 
     /**
      * @brief Sets the RGB color using a hexadecimal color value.

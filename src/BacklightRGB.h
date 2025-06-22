@@ -20,18 +20,18 @@
 class BacklightRGB {
     private:
     bool _COMMON_ANODE;     ///< True if common anode RGB LED
-    int _redPin;            ///< Pin connected to the red LED.
-    int _greenPin;          ///< Pin connected to the green LED.
-    int _bluePin;           ///< Pin connected to the blue LED.
-    int _brightness;  ///< Brightness value (0 to 255).
-    int _currentColor[3];   ///< Array storing the current RGB values.
+    uint8_t _redPin;            ///< Pin connected to the red LED.
+    uint8_t _greenPin;          ///< Pin connected to the green LED.
+    uint8_t _bluePin;           ///< Pin connected to the blue LED.
+    uint8_t _brightness;  ///< Brightness value (0 to 255).
+    uint8_t _currentColor[3];   ///< Array storing the current RGB values.
 
     /**
      * @brief Adjusts the intensity of a color component based on brightness.
      * @param color Original color component value (0 to 255).
      * @return Adjusted color value.
      */
-    inline int setColor(int color);
+    inline uint8_t setColor(uint8_t color);
 
     /**
      * @brief Updates the RGB LED with the specified red, green, and blue values.
@@ -39,7 +39,7 @@ class BacklightRGB {
      * @param green Green value (0 to 255)
      * @param blue Blue value (0 to 255)
      */
-    inline void showRGB(int red, int green, int blue);
+    inline void showRGB(uint8_t red, uint8_t green, uint8_t blue);
 
     public:
     /**
@@ -49,7 +49,7 @@ class BacklightRGB {
      * @param bluePin Pin connected to blue LED
      * @note common anode configuration by default
      */
-    BacklightRGB(int redPin, int greenPin, int bluePin);
+    BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin);
 
     /**
      * @brief Constructor to initialize RGB pins.
@@ -58,7 +58,7 @@ class BacklightRGB {
      * @param bluePin Pin connected to blue LED
      * @param COMMON_ANODE Boolean variable indicating common anode RGB LED.
      */
-    BacklightRGB(int redPin, int greenPin, int bluePin, bool COMMON_ANODE);
+    BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bool COMMON_ANODE);
 
     /**
      * @brief Initializes the RGB LED pins as outputs or PWM channels for ESP32.
@@ -81,7 +81,7 @@ class BacklightRGB {
      * @brief Sets the brightness of the LED.
      * @param brightness Brightness value (0 to 255).
      */
-    void setBrightness(int brightness);
+    void setBrightness(uint8_t brightness);
 
     /**
      * @brief Gets the current brightness level.
@@ -93,14 +93,14 @@ class BacklightRGB {
      * @brief Sets the RGB color using an array.
      * @param rgb Array containing red, green, and blue values.
      */
-    void setRGB(const int rgb[3]);
+    void setRGB(const uint8_t rgb[3]);
 
     /**
      * @brief Sets the RGB color and brightness using an array.
      * @param rgb Array containing red, green, and blue values.
      * @param brightness Brightness value (0 to 255).
      */
-    void setRGB(const int rgb[3], int brightness);
+    void setRGB(const uint8_t rgb[3], uint8_t brightness);
 
     /**
      * @brief Sets the RGB color using red, green, and blue values.
@@ -108,7 +108,7 @@ class BacklightRGB {
      * @param green Green value (0 to 255)
      * @param blue Blue value (0 to 255)
      */
-    void setRGB(int red, int green, int blue);
+    void setRGB(uint8_t red, uint8_t green, uint8_t blue);
 
     /**
      * @brief Sets the RGB color and brightness using red, green, and blue values.
@@ -117,7 +117,7 @@ class BacklightRGB {
      * @param blue Blue value (0 to 255)
      * @param brightness Brightness value (0 to 255)
      */
-    void setRGB(int red, int green, int blue, int brightness);
+    void setRGB(uint8_t red, uint8_t green, uint8_t blue, uint8_t brightness);
 
     /**
      * @brief Sets the RGB color using a hexadecimal value.
@@ -130,13 +130,15 @@ class BacklightRGB {
      * @param hexColor 24-bit hexadecimal value representing the color.
      * @param brightness Brightness value (0 to 255).
      */
-    void setHex(uint32_t hexColor, int brightness);
+    void setHex(uint32_t hexColor, uint8_t brightness);
 
     /**
      * @brief Gets the current RGB color.
      * @return Pointer to an array containing red, green, and blue values.
      */
-    const int* getRGB() const;
+    //const int* getRGB() const;
+    const uint8_t* getRGB() const;
+
 
     /**
      * @brief Gets the current color as a 24-bit hexadecimal value.

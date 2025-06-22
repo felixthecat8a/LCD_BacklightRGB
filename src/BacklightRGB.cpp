@@ -9,14 +9,14 @@
 #include "BacklightRGB.h"
 
 
-BacklightRGB::BacklightRGB(int redPin, int greenPin, int bluePin) {
+BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
   _COMMON_ANODE = true;
   _brightness = 255;
   _currentColor[0] = _currentColor[1] = _currentColor[2] = 0;
 }
 
-BacklightRGB::BacklightRGB(int redPin, int greenPin, int bluePin, bool COMMON_ANODE) {
+BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bool COMMON_ANODE) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
   _COMMON_ANODE = COMMON_ANODE;
   _brightness = 255;
@@ -40,7 +40,7 @@ void BacklightRGB::begin() {
   #endif
 }
 
-void BacklightRGB::setBrightness(int brightness) {
+void BacklightRGB::setBrightness(uint8_t brightness) {
   _brightness = constrain(brightness, 0, 255);
   showRGB(_currentColor[0], _currentColor[1], _currentColor[2]);
 }
@@ -49,22 +49,22 @@ int BacklightRGB::getBrightness() const {
     return _brightness;
 }
 
-void BacklightRGB::setRGB(const int rgb[3]) {
+void BacklightRGB::setRGB(const uint8_t rgb[3]) {
   showRGB(rgb[0], rgb[1], rgb[2]);
 }
 
-void BacklightRGB::setRGB(const int rgb[3], int brightness) {
+void BacklightRGB::setRGB(const uint8_t rgb[3], uint8_t brightness) {
   _currentColor[0] = rgb[0];
   _currentColor[1] = rgb[1];
   _currentColor[2] = rgb[2];
   setBrightness(brightness);
 }
 
-void BacklightRGB::setRGB(int red, int green, int blue) {
+void BacklightRGB::setRGB(uint8_t red, uint8_t green, uint8_t blue) {
   showRGB(red, green, blue);
 }
 
-void BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
+void BacklightRGB::setRGB(uint8_t red, uint8_t green, uint8_t blue, uint8_t brightness) {
   _currentColor[0] = red;
   _currentColor[1] = green;
   _currentColor[2] = blue;
@@ -72,23 +72,23 @@ void BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
 }
 
 void BacklightRGB::setHex(uint32_t hexColor) {
-  int red = (hexColor >> 16) & 0xFF;
-  int green = (hexColor >> 8) & 0xFF;
-  int blue = hexColor & 0xFF;
+  uint8_t red = (hexColor >> 16) & 0xFF;
+  uint8_t green = (hexColor >> 8) & 0xFF;
+  uint8_t blue = hexColor & 0xFF;
   showRGB(red, green, blue);
 }
 
-void BacklightRGB::setHex(uint32_t hexColor, int brightness) {
-  int red = (hexColor >> 16) & 0xFF;
-  int green = (hexColor >> 8) & 0xFF;
-  int blue = hexColor & 0xFF;
+void BacklightRGB::setHex(uint32_t hexColor, uint8_t brightness) {
+  uint8_t red = (hexColor >> 16) & 0xFF;
+  uint8_t green = (hexColor >> 8) & 0xFF;
+  uint8_t blue = hexColor & 0xFF;
   _currentColor[0] = red;
   _currentColor[1] = green;
   _currentColor[2] = blue;
   setBrightness(brightness);
 }
 
-int BacklightRGB::setColor(int color) {
+uint8_t BacklightRGB::setColor(uint8_t color) {
   color = constrain(color, 0, 255);
   color = color * _brightness / 255;
   if (_COMMON_ANODE) {
@@ -97,7 +97,7 @@ int BacklightRGB::setColor(int color) {
   return color;
 }
 
-void BacklightRGB::showRGB(int red, int green, int blue) {
+void BacklightRGB::showRGB(uint8_t red, uint8_t green, uint8_t blue) {
     _currentColor[0] = red;
     _currentColor[1] = green;
     _currentColor[2] = blue;
@@ -115,7 +115,7 @@ void BacklightRGB::showRGB(int red, int green, int blue) {
     #endif
 }
 
-const int* BacklightRGB::getRGB() const {
+const uint8_t* BacklightRGB::getRGB() const {
   return _currentColor;
 }
 
