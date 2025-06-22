@@ -35,7 +35,10 @@ void LCD_BacklightRGB::setRGB(int red, int green, int blue, int brightness) {
 }
 
 const uint8_t* LCD_BacklightRGB::getRGB() const {
-  return rgb.getRGB();
+  uint8_t color[3];
+  memcpy(color, rgb.getRGB(), 3);
+  return color;
+  //return rgb.getRGB();
 }
 
 void LCD_BacklightRGB::setHex(uint32_t hexColor) {
