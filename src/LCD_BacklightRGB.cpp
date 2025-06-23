@@ -46,6 +46,13 @@ void LCD_BacklightRGB::setHex(uint32_t hexColor, int brightness) {
   rgb.setHex(hexColor, brightness);
 }
 
+String LCD_BacklightRGB::getHexString() const {
+  char buffer[8];
+  uint32_t hex = rgb.getColorHex();
+  snprintf(buffer, sizeof(buffer), "#%06lX", hex);
+  return String(buffer);
+}
+
 void LCD_BacklightRGB::setHSV(int hue, float sat, float val) {
   rgb.setHSV(hue, sat, val);
 }

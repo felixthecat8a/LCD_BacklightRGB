@@ -97,6 +97,12 @@ class LCD_BacklightRGB {
     void setHex(uint32_t hexColor, int brightness);
 
     /**
+     * @brief Returns the current RGB color as a hexadecimal string (e.g., "#FF00AA").
+     * @return A String representing the RGB hex color.
+     */
+    String LCD_BacklightRGB::getHexString() const;
+
+    /**
      * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).
      * @param hue The hue value (0-360 degrees).
      * @param sat The saturation level (0.0-1.0).
