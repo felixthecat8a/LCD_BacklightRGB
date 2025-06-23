@@ -23,7 +23,7 @@
  *   One outer pin: Connect to GND.
  *   Other outer pin: Connect to 5V.
  *
- * @author felixthecat8a
+ * @author https://github.com/felixthecat8a
  */
 
 #include <LiquidCrystal.h>

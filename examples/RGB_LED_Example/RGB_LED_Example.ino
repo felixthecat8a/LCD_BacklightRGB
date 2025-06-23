@@ -12,7 +12,7 @@
  * - Green Pin: PWM pin ~10
  * - Blue Pin: PWM pin ~9
  *
- * @author felixthecat8a
+ * @author https://github.com/felixthecat8a
  */
 
 #include <LCD_BacklightRGB.h>

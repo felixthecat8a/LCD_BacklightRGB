@@ -77,10 +77,10 @@ class LCD_BacklightRGB {
     void setRGB(int red, int green, int blue, int brightness);
 
     /**
-     * @brief Returns the current RGB values.
-     * @return Pointer to an array of 3 uint8_t values {R, G, B}.
+     * @brief Copies the current RGB values into the provided array.
+     * @param out Array of 3 uint8_t values where the RGB values will be stored.
      */
-    const uint8_t* getRGB() const;
+    void getRGB(uint8_t out[3]) const;
 
     /**
      * @brief Sets the RGB color using a hexadecimal color value.
