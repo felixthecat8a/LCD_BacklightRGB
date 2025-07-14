@@ -25,13 +25,19 @@ BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bo
 
 void BacklightRGB::begin() {
   #ifdef ESP32
-    ledcSetup(0, 5000, 8); ///< Channel 0, 5 kHz frequency, 8-bit resolution
-    ledcSetup(1, 5000, 8); ///< Channel 1, 5 kHz frequency, 8-bit resolution
-    ledcSetup(2, 5000, 8); ///< Channel 2, 5 kHz frequency, 8-bit resolution
+    // Updated from 2.x
+    // ledcSetup(0, 5000, 8); ///< Channel 0, 5 kHz frequency, 8-bit resolution
+    // ledcSetup(1, 5000, 8); ///< Channel 1, 5 kHz frequency, 8-bit resolution
+    // ledcSetup(2, 5000, 8); ///< Channel 2, 5 kHz frequency, 8-bit resolution
 
-    ledcAttachPin(_redPin, 0);    ///< Attach red pin to channel 0
-    ledcAttachPin(_greenPin, 1);  ///< Attach green pin to channel 1
-    ledcAttachPin(_bluePin, 2);   ///< Attach blue pin to channel 2
+    // ledcAttachPin(_redPin, 0);    ///< Attach red pin to channel 0
+    // ledcAttachPin(_greenPin, 1);  ///< Attach green pin to channel 1
+    // ledcAttachPin(_bluePin, 2);   ///< Attach blue pin to channel 2
+
+    // to 3.x
+    ledcAttach(_redPin, 5000, 8);    ///< red pin, 5 kHz frequency, 8-bit resolution
+    ledcAttach(_greenPin, 5000, 8);  ///< green pin, 5 kHz frequency, 8-bit resolution
+    ledcAttach(_bluePin, 5000, 8);   ///< blue pin, 5 kHz frequency, 8-bit resolution
   #else
     // Default setup for non-ESP32 boards
     pinMode(_redPin, OUTPUT);
@@ -103,10 +109,15 @@ void BacklightRGB::showRGB(uint8_t red, uint8_t green, uint8_t blue) {
     _currentColor[2] = blue;
 
     #ifdef ESP32
-        // Use ESP32 PWM for RGB values
-        ledcWrite(0, setColor(red));   ///< Write red value to channel 0
-        ledcWrite(1, setColor(green)); ///< Write green value to channel 1
-        ledcWrite(2, setColor(blue));  ///< Write blue value to channel 2
+        // Updated from 2.x
+        // ledcWrite(0, setColor(red));   ///< Write red value to channel 0
+        // ledcWrite(1, setColor(green)); ///< Write green value to channel 1
+        // ledcWrite(2, setColor(blue));  ///< Write blue value to channel 2
+
+        // to 3.x
+        ledcWrite(_redPin, setColor(red));
+        ledcWrite(_greenPin, setColor(green));
+        ledcWrite(_bluePin, setColor(blue));
     #else
         // Use analogWrite for non-ESP32 boards
         analogWrite(_redPin, setColor(red));
