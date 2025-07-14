@@ -8,6 +8,12 @@
 
 #include "BacklightRGB.h"
 
+#if defined(ESP_ARDUINO_VERSION)
+  #define USING_ARDUINO_ESP32
+  #if (ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 0, 0))
+    #define ESP32_NEW_PWM
+  #endif
+#endif
 
 BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
@@ -24,27 +30,28 @@ BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bo
 }
 
 void BacklightRGB::begin() {
-  #ifdef ESP32
-    // Updated from 2.x
-    // ledcSetup(0, 5000, 8); ///< Channel 0, 5 kHz frequency, 8-bit resolution
-    // ledcSetup(1, 5000, 8); ///< Channel 1, 5 kHz frequency, 8-bit resolution
-    // ledcSetup(2, 5000, 8); ///< Channel 2, 5 kHz frequency, 8-bit resolution
-
-    // ledcAttachPin(_redPin, 0);    ///< Attach red pin to channel 0
-    // ledcAttachPin(_greenPin, 1);  ///< Attach green pin to channel 1
-    // ledcAttachPin(_bluePin, 2);   ///< Attach blue pin to channel 2
-
-    // to 3.x
-    ledcAttach(_redPin, 5000, 8);    ///< red pin, 5 kHz frequency, 8-bit resolution
-    ledcAttach(_greenPin, 5000, 8);  ///< green pin, 5 kHz frequency, 8-bit resolution
-    ledcAttach(_bluePin, 5000, 8);   ///< blue pin, 5 kHz frequency, 8-bit resolution
+  #ifdef USING_ARDUINO_ESP32
+    #ifdef ESP32_NEW_PWM
+      // ESP32 Arduino core 3.x+
+      ledcAttach(_redPin, 5000, 8);
+      ledcAttach(_greenPin, 5000, 8);
+      ledcAttach(_bluePin, 5000, 8);
+    #else
+      // ESP32 Arduino core 2.x
+      ledcSetup(0, 5000, 8); ///< Channel 0, 5 kHz frequency, 8-bit resolution
+      ledcSetup(1, 5000, 8); ///< Channel 1, 5 kHz frequency, 8-bit resolution
+      ledcSetup(2, 5000, 8); ///< Channel 2, 5 kHz frequency, 8-bit resolution
+      ledcAttachPin(_redPin, 0);    ///< Attach red pin to channel 0
+      ledcAttachPin(_greenPin, 1);  ///< Attach green pin to channel 1
+      ledcAttachPin(_bluePin, 2);   ///< Attach blue pin to channel 2
+    #endif
   #else
-    // Default setup for non-ESP32 boards
     pinMode(_redPin, OUTPUT);
     pinMode(_greenPin, OUTPUT);
     pinMode(_bluePin, OUTPUT);
   #endif
 }
+
 
 void BacklightRGB::setBrightness(uint8_t brightness) {
   _brightness = constrain(brightness, 0, 255);
@@ -104,26 +111,27 @@ uint8_t BacklightRGB::setColor(uint8_t color) {
 }
 
 void BacklightRGB::showRGB(uint8_t red, uint8_t green, uint8_t blue) {
-    _currentColor[0] = red;
-    _currentColor[1] = green;
-    _currentColor[2] = blue;
+  _currentColor[0] = red;
+  _currentColor[1] = green;
+  _currentColor[2] = blue;
 
-    #ifdef ESP32
-        // Updated from 2.x
-        // ledcWrite(0, setColor(red));   ///< Write red value to channel 0
-        // ledcWrite(1, setColor(green)); ///< Write green value to channel 1
-        // ledcWrite(2, setColor(blue));  ///< Write blue value to channel 2
-
-        // to 3.x
-        ledcWrite(_redPin, setColor(red));
-        ledcWrite(_greenPin, setColor(green));
-        ledcWrite(_bluePin, setColor(blue));
+  #ifdef USING_ARDUINO_ESP32
+    #ifdef ESP32_NEW_PWM
+      // Arduino 3.x+
+      ledcWrite(_redPin, setColor(red));
+      ledcWrite(_greenPin, setColor(green));
+      ledcWrite(_bluePin, setColor(blue));
     #else
-        // Use analogWrite for non-ESP32 boards
-        analogWrite(_redPin, setColor(red));
-        analogWrite(_greenPin, setColor(green));
-        analogWrite(_bluePin, setColor(blue));
+      // Arduino 2.x
+      ledcWrite(0, setColor(red));
+      ledcWrite(1, setColor(green));
+      ledcWrite(2, setColor(blue));
     #endif
+  #else
+    analogWrite(_redPin, setColor(red));
+    analogWrite(_greenPin, setColor(green));
+    analogWrite(_bluePin, setColor(blue));
+  #endif
 }
 
 const uint8_t* BacklightRGB::getRGB() const {
