@@ -71,3 +71,18 @@ Here are some of the 18-pin RGB displays that I found:
 ## Known Issues
 * Release v1.1.1 has an issue with setting the output values. Update to the latest release to fix the issue.
 * Release v1.1.5 and earlier releases have an issue that involves compiling to the arduino-avr-mega platform. Update to the latest release to fix the issue.
+
+## Extras
+You can use just the core `BacklightRGB` and `BacklightColors` class directly if you want to control an RGB LED.
+
+```ino
+#include <BacklightColors.h>
+#include <BacklightRGB.h>
+
+BacklightRGB led(6, 9, 10, false); // common cathode
+
+void setup() {
+  led.begin();
+  led.setRGB(BacklightColors::TEAL);
+}
+```
