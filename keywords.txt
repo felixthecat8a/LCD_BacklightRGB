@@ -15,6 +15,7 @@ setHex	KEYWORD2
 getColorHex	KEYWORD2
 setHSV	KEYWORD2
 setCMYK KEYWORD2
+setGammaCorrection  KEYWORD2
 off KEYWORD2
 setWhite    KEYWORD2
 setPink KEYWORD2

@@ -19,6 +19,7 @@ BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
   _COMMON_ANODE = true;
   _brightness = 255;
+  _gammaEnabled = false;
   _currentColor[0] = _currentColor[1] = _currentColor[2] = 0;
 }
 
@@ -26,6 +27,7 @@ BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bo
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
   _COMMON_ANODE = COMMON_ANODE;
   _brightness = 255;
+  _gammaEnabled = false;
   _currentColor[0] = _currentColor[1] = _currentColor[2] = 0;
 }
 
@@ -104,6 +106,9 @@ void BacklightRGB::setHex(uint32_t hexColor, uint8_t brightness) {
 uint8_t BacklightRGB::setColor(uint8_t color) {
   color = constrain(color, 0, 255);
   color = color * _brightness / 255;
+  if (_gammaEnabled) {
+    color = _gammaTable[color];
+  }
   if (_COMMON_ANODE) {
     color = 255 - color;
   }
@@ -176,3 +181,26 @@ void BacklightRGB::setCMYK(float cyan, float magenta, float yellow, float key) {
   int blue  = roundf((1 - yellow) * (1 - black) * 255);
   setRGB(red, green, blue);
 }
+
+void BacklightRGB::setGammaCorrection(bool enabled) {
+  _gammaEnabled = enabled;
+}
+
+const uint8_t BacklightRGB::_gammaTable[256] = {
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
+  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2,
+  2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5,
+  5, 6, 6, 6, 7, 7, 7, 8, 8, 9, 9, 10, 10, 10, 11, 11,
+  12, 12, 13, 13, 14, 15, 15, 16, 16, 17, 18, 19, 19, 20, 21, 22,
+  23, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37,
+  38, 40, 41, 42, 43, 44, 46, 47, 48, 50, 51, 52, 54, 55, 56, 58,
+  59, 61, 62, 64, 65, 67, 68, 70, 71, 73, 74, 76, 78, 79, 81, 83,
+  84, 86, 88, 90, 91, 93, 95, 97, 99,100,102,104,106,108,110,112,
+  114,116,118,120,122,124,126,128,130,132,134,136,138,141,143,145,
+  147,149,152,154,156,159,161,163,166,168,170,173,175,178,180,183,
+  185,188,190,193,195,198,201,203,206,209,211,214,217,220,222,225,
+  228,231,234,237,239,242,245,248,251,254,255,255,255,255,255,255,
+  255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,
+  255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255
+};

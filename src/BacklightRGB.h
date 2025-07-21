@@ -19,12 +19,13 @@
  */
 class BacklightRGB {
     private:
-    bool _COMMON_ANODE;     ///< True if common anode RGB LED
+    bool _COMMON_ANODE;         ///< True if common anode RGB LED
     uint8_t _redPin;            ///< Pin connected to the red LED.
     uint8_t _greenPin;          ///< Pin connected to the green LED.
     uint8_t _bluePin;           ///< Pin connected to the blue LED.
-    uint8_t _brightness;  ///< Brightness value (0 to 255).
+    uint8_t _brightness;        ///< Brightness value (0 to 255).
     uint8_t _currentColor[3];   ///< Array storing the current RGB values.
+    bool _gammaEnabled;         ///< Set true to enable gamma correction.
 
     /**
      * @brief Adjusts the intensity of a color component based on brightness.
@@ -40,6 +41,20 @@ class BacklightRGB {
      * @param blue Blue value (0 to 255)
      */
     inline void showRGB(uint8_t red, uint8_t green, uint8_t blue);
+
+    /**
+     * @brief Precomputed gamma correction lookup table.
+     *
+     * This table maps 8-bit linear brightness values (0–255) to perceptual values
+     * corrected for human vision using a gamma of approximately 2.2.
+     *
+     * When gamma correction is enabled via setGammaCorrection(true), this table is
+     * used to adjust each color channel before output.
+     *
+     * Index: input brightness (0–255)
+     * Value: corrected brightness (0–255)
+     */
+    static const uint8_t _gammaTable[256];
 
     public:
     /**
@@ -139,7 +154,6 @@ class BacklightRGB {
     //const int* getRGB() const;
     const uint8_t* getRGB() const;
 
-
     /**
      * @brief Gets the current color as a 24-bit hexadecimal value.
      * @return 24-bit integer representing the color (0xRRGGBB).
@@ -163,6 +177,12 @@ class BacklightRGB {
      */
     void setCMYK(float cyan, float magenta, float yellow, float key);
 
+    /**
+     * @brief Set whether to apply gamma correction to RGB output.
+     *
+     * @param enabled True to apply gamma correction using a lookup table.
+     */
+    void setGammaCorrection(bool enabled);
 };
 
 #endif
