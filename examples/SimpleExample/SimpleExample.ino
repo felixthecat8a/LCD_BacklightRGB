@@ -38,11 +38,23 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 const int redPin = 6, greenPin = 9, bluePin = 10;
 LCD_BacklightRGB backlight(redPin, greenPin, bluePin);
 
+void showSplashScreen(const char* line1, const char* line2) {
+  lcd.clear(); lcd.home(); lcd.print(line1);
+  lcd.setCursor(0, 1); lcd.print(line2);
+  delay(1500); // Splash screen delay
+  for (int i = 0; i < LCD_COLUMNS; i++) {
+    lcd.scrollDisplayLeft(); delay(100);
+  }
+  lcd.clear();
+}
+
 void setup() {
   // Initiate the LCD.
   lcd.begin(16, 2);
   // Initiate the RGB pins.
   backlight.begin();
+  // Optional: Turn on Gamma Correction.
+  backlight.setGamma(true);
   // Optional: Set the brightness level (0 - 255).
   // Defaults to 255 if not set.
   // backlight.setBrightness(150);
@@ -51,13 +63,8 @@ void setup() {
   // backlight.setRGB(46, 139, 87);
   // Set the color and brightness:
   backlight.setRGB(46, 139, 87, 150);
-  lcd.home(); lcd.print("Backlight Color:");
-  lcd.setCursor(0,1); lcd.print("Sea Green!");
-  delay(1000);
-  for (int index = 0; index < 16; index++) {
-    lcd.scrollDisplayLeft(); delay(100);
-  }
-  lcd.clear();
+
+  showSplashScreen("Arduino!", "RGB Backlight");
 }
 
 void loop() {
