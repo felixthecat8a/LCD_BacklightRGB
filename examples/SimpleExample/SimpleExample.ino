@@ -34,6 +34,7 @@
 // Set the pins for the LCD display.
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+const int LCD_COLUMNS = 16, LCD_ROWS = 2;
 // Set the RGB pins for the RGB LCD. Use PWM pins denoted by a ~ symbol.
 const int redPin = 6, greenPin = 9, bluePin = 10;
 LCD_BacklightRGB backlight(redPin, greenPin, bluePin);
@@ -50,7 +51,7 @@ void showSplashScreen(const char* line1, const char* line2) {
 
 void setup() {
   // Initiate the LCD.
-  lcd.begin(16, 2);
+  lcd.begin(LCD_COLUMNS, LCD_ROWS);
   // Initiate the RGB pins.
   backlight.begin();
   // Optional: Turn on Gamma Correction.
