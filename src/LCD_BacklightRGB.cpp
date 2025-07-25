@@ -18,6 +18,10 @@ void LCD_BacklightRGB::begin() {
   rgb.setHex(0x0A878F); // Set default color to teal
 }
 
+void LCD_BacklightRGB::setGamma(bool enabled) {
+  rgb.setGammaCorrection(enabled);
+}
+
 void LCD_BacklightRGB::setBrightness(int brightness) {
   rgb.setBrightness(brightness);
 }

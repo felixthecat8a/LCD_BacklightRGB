@@ -48,6 +48,12 @@ class LCD_BacklightRGB {
     void begin();
 
     /**
+     * @brief Sets whether to apply gamma correction.
+     * @param enabled True to apply gamma correction.
+     */
+    void setGamma(bool enabled);
+
+    /**
      * @brief Sets the brightness of the backlight.
      * @param brightness Brightness level (0 to 255).
      */
