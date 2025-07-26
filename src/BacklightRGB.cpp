@@ -144,7 +144,9 @@ const uint8_t* BacklightRGB::getRGB() const {
 }
 
 uint32_t BacklightRGB::getColorHex() const {
-    return (_currentColor[0] << 16) | (_currentColor[1] << 8) | _currentColor[2];
+  return ((uint32_t)_currentColor[0] << 16) |
+        ((uint32_t)_currentColor[1] << 8)  |
+        ((uint32_t)_currentColor[2]);
 }
 
 void BacklightRGB::setHSV(int hue, float sat, float val) {
