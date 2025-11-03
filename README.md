@@ -76,8 +76,7 @@ Here are some of the 18-pin RGB displays that I found:
 You can use just the core `BacklightRGB` and `BacklightColors` classes directly if you want to control an RGB LED.
 
 ```ino
-#include <BacklightColors.h>
-#include <BacklightRGB.h>
+#include <LCD_BacklightRGB.h>
 
 BacklightRGB led(6, 9, 10, false); // common cathode
 

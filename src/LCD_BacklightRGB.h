@@ -10,8 +10,8 @@
 
 #include <Arduino.h>
 
-#include "BacklightColors.h"
-#include "BacklightRGB.h"
+#include "util/BacklightColors.h"
+#include "util/BacklightRGB.h"
 
 /**
  * @class LCD_BacklightRGB
