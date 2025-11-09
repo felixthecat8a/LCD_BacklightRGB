@@ -35,7 +35,7 @@ class BacklightRGB {
     inline uint8_t _setColor(uint8_t color);
 
     /**
-     * @brief Updates the curren color array with the specified red, green, and blue values.
+     * @brief Updates the current color array with the specified red, green, and blue values.
      * @param red Red value (0 to 255)
      * @param green Green value (0 to 255)
      * @param blue Blue value (0 to 255)
