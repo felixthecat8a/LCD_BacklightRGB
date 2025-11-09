@@ -15,7 +15,8 @@ LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode)
 
 void LCD_BacklightRGB::begin() {
   rgb.begin();
-  rgb.setHex(0x0A878F); // Set default color to teal
+  constexpr uint32_t COLOR_TEAL = 0x0A878F;
+  rgb.setHex(COLOR_TEAL);
 }
 
 void LCD_BacklightRGB::setGamma(bool enabled) {
@@ -212,7 +213,7 @@ void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
     hue = map(value, fromValue, toValue, 0, 360);
   } else if (fromValue > toValue) {
     value = constrain(value, toValue, fromValue);
-    hue = map(value, fromValue, toValue, 360, 0);
+    hue = map(value, toValue, fromValue, 360, 0);
   } else {
     hue = 0; // Default to Red if range is invalid.
   }

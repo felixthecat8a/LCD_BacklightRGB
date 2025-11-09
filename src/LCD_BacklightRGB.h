@@ -25,7 +25,7 @@ class LCD_BacklightRGB {
 
   public:
     /**
-     * @brief Constructor for the BacklightRGB class.
+     * @brief Constructor for the LCD_BacklightRGB class.
      * @param r Pin for the red LED.
      * @param g Pin for the green LED.
      * @param b Pin for the blue LED.
@@ -33,7 +33,7 @@ class LCD_BacklightRGB {
     LCD_BacklightRGB(int r, int g, int b);
 
     /**
-     * @brief Constructor for the BacklightRGB class.
+     * @brief Constructor for the LCD_BacklightRGB class.
      * @param r Pin for the red LED.
      * @param g Pin for the green LED.
      * @param b Pin for the blue LED.
@@ -117,7 +117,7 @@ class LCD_BacklightRGB {
     void setHSV(int hue, float sat = 1.0, float val= 1.0);
 
     /**
-     * @brief Sets
+     * @brief Sets the RGB color using CMYK color components.
      * @param cyan Cyan value (0.0-1.0)
      * @param magenta Magenta value (0.0-1.0)
      * @param yellow Yellow value (0.0-1.0)
@@ -174,10 +174,11 @@ class LCD_BacklightRGB {
     /// @}
 
     /**
-     * @brief Maps a value to a color on the color wheel.
+     * @brief Maps a numeric value to a corresponding color across the RGB color wheel.
      * @param value The input value to map.
-     * @param fromValue The minimum range of the input value.
-     * @param toValue The maximum range of the input value.
+     * @param fromValue The minimum input range.
+     * @param toValue The maximum input range.
+     * @note Internally maps the range to a hue (0–360) and applies full saturation/value.
      */
     void scaleColor(int value, int fromValue, int toValue);
 
