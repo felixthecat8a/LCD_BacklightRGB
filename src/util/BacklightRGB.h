@@ -19,7 +19,7 @@
  */
 class BacklightRGB {
     private:
-    bool _COMMON_ANODE;         ///< True if common anode RGB LED
+    bool _commonAnode;         ///< True if common anode RGB LED
     uint8_t _redPin;            ///< Pin connected to the red LED.
     uint8_t _greenPin;          ///< Pin connected to the green LED.
     uint8_t _bluePin;           ///< Pin connected to the blue LED.
@@ -32,7 +32,15 @@ class BacklightRGB {
      * @param color Original color component value (0 to 255).
      * @return Adjusted color value.
      */
-    inline uint8_t setColor(uint8_t color);
+    inline uint8_t _setColor(uint8_t color);
+
+    /**
+     * @brief Updates the curren color array with the specified red, green, and blue values.
+     * @param red Red value (0 to 255)
+     * @param green Green value (0 to 255)
+     * @param blue Blue value (0 to 255)
+     */
+    inline void _saveRGB(uint8_t red, uint8_t green, uint8_t blue);
 
     /**
      * @brief Updates the RGB LED with the specified red, green, and blue values.
@@ -77,6 +85,8 @@ class BacklightRGB {
 
     /**
      * @brief Initializes the RGB LED pins as outputs or PWM channels for ESP32.
+     * @note For ESP32, supports both Arduino core 2.x and 3.x PWM APIs.
+     * @warning Ensure PWM channels 0–2 are free before calling begin().
      */
     void begin();
 
