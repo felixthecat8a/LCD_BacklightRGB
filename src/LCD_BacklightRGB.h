@@ -12,6 +12,7 @@
 
 #include "util/BacklightColors.h"
 #include "util/BacklightRGB.h"
+#include "anim/RGB_Animator.h"
 
 /**
  * @class LCD_BacklightRGB
