@@ -26,11 +26,11 @@ BacklightRGB led(redPin, greenPin, bluePin);
 
 // Spin the color wheel
 void spinColorWheel() {
-    for (int hue = 0; hue < 359; hue++) {
-      led.setHSV(hue, 1.0, 1.0);
-      delay(50);
-    }
+  for (int hue = 0; hue < 359; hue++) {
+    led.setHSV(hue, 1.0, 1.0);
+    delay(50);
   }
+}
 
 void setup() {
   // Initialize the RGB LED
@@ -42,19 +42,32 @@ void setup() {
 void loop() {
   // Cycle through predefined colors
   led.setRGB(BacklightColors::WHITE); delay(500);
-  led.setRGB(BacklightColors::HOTPINK); delay(500);
   led.setRGB(BacklightColors::RED); delay(500);
+  led.setRGB(BacklightColors::VERMILION); delay(500);
   led.setRGB(BacklightColors::ORANGE); delay(500);
+  led.setRGB(BacklightColors::AMBER); delay(500);
   led.setRGB(BacklightColors::YELLOW); delay(500);
   led.setRGB(BacklightColors::LIME); delay(500);
+  led.setRGB(BacklightColors::CHARTREUSE); delay(500);
+  led.setRGB(BacklightColors::HARLEQUIN); delay(500);
   led.setRGB(BacklightColors::GREEN); delay(500);
-  led.setRGB(BacklightColors::TEAL); delay(500);
+  led.setRGB(BacklightColors::MINT); delay(500);
+  led.setRGB(BacklightColors::SPRING); delay(500);
+  led.setRGB(BacklightColors::TURQUOISE); delay(500);
   led.setRGB(BacklightColors::CYAN); delay(500);
   led.setRGB(BacklightColors::SKY); delay(500);
+  led.setRGB(BacklightColors::AZURE); delay(500);
+  led.setRGB(BacklightColors::CERULEAN); delay(500);
   led.setRGB(BacklightColors::BLUE); delay(500);
+  led.setRGB(BacklightColors::INDIGO); delay(500);
+  led.setRGB(BacklightColors::VIOLET); delay(500);
   led.setRGB(BacklightColors::PURPLE); delay(500);
   led.setRGB(BacklightColors::MAGENTA); delay(500);
+  led.setRGB(BacklightColors::HOTPINK); delay(500);
+  led.setRGB(BacklightColors::ROSE); delay(500);
+  led.setRGB(BacklightColors::CRIMSON); delay(500);
   led.setRGB(BacklightColors::BLACK); delay(500);
+
   // Smoothly transition through the color wheel
   spinColorWheel();
 }
