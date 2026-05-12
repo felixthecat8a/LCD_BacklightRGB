@@ -129,48 +129,56 @@ class LCD_BacklightRGB {
     /**
      * @brief Sets the values to (0, 0, 0).
      */
-    void off();
+    void off() { rgb.setRGB(BacklightColors::BLACK); }
 
     /**
      * @brief Predefined color methods for setting specific colors.
      * @note Colors include white, pink, red, orange, yellow, lime green, green,
      * spring green, cyan, sky blue, blue, purple, magenta, and white.
-     * @note Brightness can also be set for each color.
      */
     /// @{
-    void setWhite();
+    void setWhite() { rgb.setRGB(BacklightColors::WHITE); }
+    void setPink() { rgb.setRGB(BacklightColors::HOTPINK); }
+    void setRed() { rgb.setRGB(BacklightColors::RED); }
+    void setOrange() { rgb.setRGB(BacklightColors::ORANGE); }
+    void setYellow() { rgb.setRGB(BacklightColors::YELLOW); }
+    void setLimeGreen() { rgb.setRGB(BacklightColors::LIME); }
+    void setGreen() { rgb.setRGB(BacklightColors::GREEN); }
+    void setSpringGreen() { rgb.setRGB(BacklightColors::SPRING); }
+    void setCyan() { rgb.setRGB(BacklightColors::CYAN); }
+    void setSkyBlue() { rgb.setRGB(BacklightColors::SKY); }
+    void setBlue() { rgb.setRGB(BacklightColors::BLUE); }
+    void setViolet() { rgb.setRGB(BacklightColors::VIOLET); }
+    void setMagenta() { rgb.setRGB(BacklightColors::MAGENTA); }
+    void setGray() { rgb.setRGB(BacklightColors::GRAY); }
+    void setOlive() { rgb.setRGB(BacklightColors::OLIVE); }
+    void setTeal() { rgb.setRGB(BacklightColors::TEAL); }
+    void setPurple() { rgb.setRGB(BacklightColors::PURPLE); }
+    /// @}
+
+    /**
+     * @brief Predefined color methods for setting specific colors.
+     * @param brightness Brightness level (0 to 255).
+     * @note Colors include white, pink, red, orange, yellow, lime green, green,
+     * spring green, cyan, sky blue, blue, purple, magenta, and white.
+     */
+    /// @{
     void setWhite(int brightness);
-    void setPink();
     void setPink(int brightness);
-    void setRed();
     void setRed(int brightness);
-    void setOrange();
     void setOrange(int brightness);
-    void setYellow();
     void setYellow(int brightness);
-    void setLimeGreen();
     void setLimeGreen(int brightness);
-    void setGreen();
     void setGreen(int brightness);
-    void setSpringGreen();
     void setSpringGreen(int brightness);
-    void setCyan();
     void setCyan(int brightness);
-    void setSkyBlue();
     void setSkyBlue(int brightness);
-    void setBlue();
     void setBlue(int brightness);
-    void setViolet();
     void setViolet(int brightness);
-    void setMagenta();
     void setMagenta(int brightness);
-    void setGray();
     void setGray(int brightness);
-    void setOlive();
     void setOlive(int brightness);
-    void setTeal();
     void setTeal(int brightness);
-    void setPurple();
     void setPurple(int brightness);
     /// @}
 
