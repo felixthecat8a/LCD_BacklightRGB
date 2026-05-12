@@ -150,17 +150,13 @@ class LCD_BacklightRGB {
     void setBlue() { rgb.setRGB(BacklightColors::BLUE); }
     void setViolet() { rgb.setRGB(BacklightColors::VIOLET); }
     void setMagenta() { rgb.setRGB(BacklightColors::MAGENTA); }
-    void setGray() { rgb.setRGB(BacklightColors::GRAY); }
-    void setOlive() { rgb.setRGB(BacklightColors::OLIVE); }
-    void setTeal() { rgb.setRGB(BacklightColors::TEAL); }
-    void setPurple() { rgb.setRGB(BacklightColors::PURPLE); }
     /// @}
 
     /**
      * @brief Predefined color methods for setting specific colors.
      * @param brightness Brightness level (0 to 255).
      * @note Colors include white, pink, red, orange, yellow, lime green, green,
-     * spring green, cyan, sky blue, blue, purple, magenta, and white.
+     * spring green, cyan, sky blue, blue, magenta, and white.
      */
     /// @{
     void setWhite(int brightness);
@@ -176,10 +172,6 @@ class LCD_BacklightRGB {
     void setBlue(int brightness);
     void setViolet(int brightness);
     void setMagenta(int brightness);
-    void setGray(int brightness);
-    void setOlive(int brightness);
-    void setTeal(int brightness);
-    void setPurple(int brightness);
     /// @}
 
     /**

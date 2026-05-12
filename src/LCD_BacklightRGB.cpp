@@ -118,22 +118,6 @@ void LCD_BacklightRGB::setMagenta(int brightness) {
   rgb.setRGB(BacklightColors::MAGENTA, brightness);
 }
 
-void LCD_BacklightRGB::setGray(int brightness) {
-  rgb.setRGB(BacklightColors::GRAY, brightness);
-}
-
-void LCD_BacklightRGB::setOlive(int brightness) {
-  rgb.setRGB(BacklightColors::OLIVE, brightness);
-}
-
-void LCD_BacklightRGB::setTeal(int brightness) {
-  rgb.setRGB(BacklightColors::TEAL, brightness);
-}
-
-void LCD_BacklightRGB::setPurple(int brightness) {
-  rgb.setRGB(BacklightColors::PURPLE, brightness);
-}
-
 void LCD_BacklightRGB::scaleColor(int value, int fromValue, int toValue) {
   int hue;
   if (fromValue < toValue) {

@@ -48,11 +48,6 @@ class BacklightColors {
     static const uint8_t HOTPINK[3];   ///< Hot Pink color (255, 0, 191).
     static const uint8_t ROSE[3];      ///< Rose color (255, 0, 128).
     static const uint8_t CRIMSON[3];   ///< Crimson color (255, 0, 64).
-
-    static const uint8_t GRAY[3];      ///< Gray color (128, 128, 128).
-    static const uint8_t GREY[3];      ///< Grey color (128, 128, 128).
-    static const uint8_t OLIVE[3];     ///< Olive color (128, 128, 10).
-    static const uint8_t TEAL[3];      ///< Teal color (10, 128, 128).
 };
 
 #endif

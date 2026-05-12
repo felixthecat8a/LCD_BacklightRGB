@@ -34,9 +34,3 @@ const uint8_t BacklightColors::MAGENTA[3] = {255, 0, 255};
 const uint8_t BacklightColors::HOTPINK[3] = {255, 0, 191};
 const uint8_t BacklightColors::ROSE[3] = {255, 0, 128};
 const uint8_t BacklightColors::CRIMSON[3] = {255, 0, 64};
-
-const uint8_t BacklightColors::GRAY[3] = {128, 128, 128};
-const uint8_t BacklightColors::GREY[3] = {128, 128, 128};
-const uint8_t BacklightColors::OLIVE[3] = {128, 128, 10};
-const uint8_t BacklightColors::TEAL[3] = {10, 128, 128};
-
