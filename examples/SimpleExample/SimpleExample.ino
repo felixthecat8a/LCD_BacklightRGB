@@ -88,10 +88,6 @@ void loop() {
   lcd.setCursor(0,1); lcd.print("Green"); lcd.print("         ");
   delay(1000);
 
-  backlight.setTeal();
-  lcd.setCursor(0,1); lcd.print("Teal"); lcd.print("         ");
-  delay(1000);
-
   backlight.setCyan();
   lcd.setCursor(0,1); lcd.print("Cyan"); lcd.print("         ");
   delay(1000);
@@ -102,10 +98,6 @@ void loop() {
 
   backlight.setBlue();
   lcd.setCursor(0,1); lcd.print("Blue"); lcd.print("         ");
-  delay(1000);
-
-  backlight.setPurple();
-  lcd.setCursor(0,1); lcd.print("Purple"); lcd.print("         ");
   delay(1000);
 
   backlight.setMagenta();
