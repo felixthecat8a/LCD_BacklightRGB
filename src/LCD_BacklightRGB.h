@@ -44,7 +44,8 @@ class LCD_BacklightRGB {
 
     /**
      * @brief Initializes the RGB backlight.
-     * @note Sets the initial color to a default teal (hex: 0x0A878F).
+     * @note Must be called before using other methods.
+     * Sets the initial color to a default teal (hex: 0x0A878F).
      */
     void begin();
 
@@ -102,12 +103,6 @@ class LCD_BacklightRGB {
      * @param brightness Brightness level (0 to 255).
      */
     void setHex(uint32_t hexColor, int brightness);
-
-    /**
-     * @brief Returns the current RGB color as a hexadecimal string (e.g., "#FF00AA").
-     * @return A String representing the RGB hex color.
-     */
-    String getHexString() const;
 
     /**
      * @brief Sets the RGB LED color using HSV (Hue, Saturation, Value).

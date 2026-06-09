@@ -18,7 +18,7 @@
  * methods for setting color and adjusting brightness.
  */
 class BacklightRGB {
-    private:
+  private:
     bool _commonAnode;         ///< True if common anode RGB LED
     uint8_t _redPin;            ///< Pin connected to the red LED.
     uint8_t _greenPin;          ///< Pin connected to the green LED.
@@ -64,7 +64,7 @@ class BacklightRGB {
      */
     static const uint8_t _gammaTable[256];
 
-    public:
+  public:
     /**
      * @brief Constructor to initialize RGB pins.
      * @param redPin Pin connected to red LED

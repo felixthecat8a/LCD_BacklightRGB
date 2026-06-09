@@ -33,7 +33,6 @@ On the RGB LCD display module, set pin 15 to HIGH. Pin 16 is red, pin 17 is gree
 4. Find the "LCD_BacklightRGB" library in the list and click on it.
 5. Click the `Install` button.
 
-
 ## Usage
 
 ```cpp
@@ -66,7 +65,10 @@ void loop() {
 Here are some of the 18-pin RGB displays that I found:
 * The Adafruit RGB LCD displays in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
 * Sparkfun also has this one in [backlight positive](https://www.sparkfun.com/products/10862). 
-* I found this one on Amazon from Winstar in [backlight negative](https://www.amazon.com/Character-Negative-Backlight-Arduino-projects/dp/B00CRSF37I)
+* ~I found this one on Amazon from Winstar in [backlight negative](https://www.amazon.com/Character-Negative-Backlight-Arduino-projects/dp/B00CRSF37I)~
+* Here is one from [DigiKey](https://www.digikey.com/en/products/detail/newhaven-display-intl/NHD-0216K1Z-NS(RGB)-FBW-REV1/2172436)
+
+Note: I2C RGB LCD modules handle backlight colors internally
 
 ## Known Issues
 * Release v1.1.1 has an issue with setting the output values. Update to the latest release to fix the issue.

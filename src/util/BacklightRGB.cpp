@@ -8,21 +8,6 @@
 
 #include "BacklightRGB.h"
 
-#if defined(ESP_ARDUINO_VERSION)
-  #define USING_ARDUINO_ESP32
-  #if (ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 0, 0))
-    #define ESP32_NEW_PWM
-  #endif
-#endif
-
-#ifndef BACKLIGHT_PWM_FREQ
-#define BACKLIGHT_PWM_FREQ 5000
-#endif
-
-#ifndef BACKLIGHT_PWM_RES
-#define BACKLIGHT_PWM_RES 8
-#endif
-
 BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin) {
   _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
   _commonAnode = true;
@@ -40,26 +25,9 @@ BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bo
 }
 
 void BacklightRGB::begin() {
-  #ifdef USING_ARDUINO_ESP32
-    #ifdef ESP32_NEW_PWM
-      // ESP32 Arduino core 3.x+
-      ledcAttach(_redPin, BACKLIGHT_PWM_FREQ, BACKLIGHT_PWM_RES);
-      ledcAttach(_greenPin, BACKLIGHT_PWM_FREQ, BACKLIGHT_PWM_RES);
-      ledcAttach(_bluePin, BACKLIGHT_PWM_FREQ, BACKLIGHT_PWM_RES);
-    #else
-      // ESP32 Arduino core 2.x
-      ledcSetup(0, BACKLIGHT_PWM_FREQ, BACKLIGHT_PWM_RES); ///< Channel 0, 5 kHz frequency, 8-bit resolution
-      ledcSetup(1, BACKLIGHT_PWM_FREQ, BACKLIGHT_PWM_RES); ///< Channel 1, 5 kHz frequency, 8-bit resolution
-      ledcSetup(2, BACKLIGHT_PWM_FREQ, BACKLIGHT_PWM_RES); ///< Channel 2, 5 kHz frequency, 8-bit resolution
-      ledcAttachPin(_redPin, 0);    ///< Attach red pin to channel 0
-      ledcAttachPin(_greenPin, 1);  ///< Attach green pin to channel 1
-      ledcAttachPin(_bluePin, 2);   ///< Attach blue pin to channel 2
-    #endif
-  #else
-    pinMode(_redPin, OUTPUT);
-    pinMode(_greenPin, OUTPUT);
-    pinMode(_bluePin, OUTPUT);
-  #endif
+  pinMode(_redPin, OUTPUT);
+  pinMode(_greenPin, OUTPUT);
+  pinMode(_bluePin, OUTPUT);
 }
 
 
@@ -122,24 +90,9 @@ void BacklightRGB::_saveRGB(uint8_t red, uint8_t green, uint8_t blue) {
 
 void BacklightRGB::showRGB(uint8_t red, uint8_t green, uint8_t blue) {
   _saveRGB(red, green, blue);
-
-  #ifdef USING_ARDUINO_ESP32
-    #ifdef ESP32_NEW_PWM
-      // Arduino 3.x+
-      ledcWrite(_redPin, _setColor(red));
-      ledcWrite(_greenPin, _setColor(green));
-      ledcWrite(_bluePin, _setColor(blue));
-    #else
-      // Arduino 2.x
-      ledcWrite(0, _setColor(red));
-      ledcWrite(1, _setColor(green));
-      ledcWrite(2, _setColor(blue));
-    #endif
-  #else
-    analogWrite(_redPin, _setColor(red));
-    analogWrite(_greenPin, _setColor(green));
-    analogWrite(_bluePin, _setColor(blue));
-  #endif
+  analogWrite(_redPin, _setColor(red));
+  analogWrite(_greenPin, _setColor(green));
+  analogWrite(_bluePin, _setColor(blue));
 }
 
 uint32_t BacklightRGB::getColorHex() const {
