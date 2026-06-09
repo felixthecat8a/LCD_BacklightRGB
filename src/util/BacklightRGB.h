@@ -112,7 +112,7 @@ class BacklightRGB {
      * @brief Gets the current brightness level.
      * @return Brightness value (0 to 255).
      */
-    int getBrightness() const;
+    int getBrightness() const { return _brightness; }
 
     /**
      * @brief Sets the RGB color using an array.
@@ -161,8 +161,7 @@ class BacklightRGB {
      * @brief Gets the current RGB color.
      * @return Pointer to an array containing red, green, and blue values.
      */
-    //const int* getRGB() const;
-    const uint8_t* getRGB() const;
+    const uint8_t* getRGB() const { return _currentColor; }
 
     /**
      * @brief Gets the current color as a 24-bit hexadecimal value.

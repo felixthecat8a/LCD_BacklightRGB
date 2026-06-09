@@ -68,10 +68,6 @@ void BacklightRGB::setBrightness(uint8_t brightness) {
   showRGB(_currentColor[0], _currentColor[1], _currentColor[2]);
 }
 
-int BacklightRGB::getBrightness() const {
-    return _brightness;
-}
-
 void BacklightRGB::setRGB(const uint8_t rgb[3]) {
   showRGB(rgb[0], rgb[1], rgb[2]);
 }
@@ -107,7 +103,8 @@ void BacklightRGB::setHex(uint32_t hexColor, uint8_t brightness) {
 
 uint8_t BacklightRGB::_setColor(uint8_t color) {
   color = constrain(color, 0, 255);
-  color = color * _brightness / 255;
+  // color = color * _brightness / 255;
+  color = (uint16_t(color) * _brightness) / 255;
   if (_gammaEnabled) {
     color = _gammaTable[color];
   }
@@ -143,10 +140,6 @@ void BacklightRGB::showRGB(uint8_t red, uint8_t green, uint8_t blue) {
     analogWrite(_greenPin, _setColor(green));
     analogWrite(_bluePin, _setColor(blue));
   #endif
-}
-
-const uint8_t* BacklightRGB::getRGB() const {
-  return _currentColor;
 }
 
 uint32_t BacklightRGB::getColorHex() const {
