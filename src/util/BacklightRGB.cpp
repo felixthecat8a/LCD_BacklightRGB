@@ -10,8 +10,6 @@
 
 BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bool commonAnode)
   : _redPin(redPin), _greenPin(greenPin), _bluePin(bluePin), _commonAnode(commonAnode) {
-  _brightness = 255;
-  _gammaEnabled = false;
   _currentColor[0] = _currentColor[1] = _currentColor[2] = 0;
 }
 
