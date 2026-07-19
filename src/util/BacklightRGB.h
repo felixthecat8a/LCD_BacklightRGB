@@ -139,12 +139,12 @@ class BacklightRGB {
     void setGammaCorrection(bool enabled);
 
   private:
-    bool _commonAnode;            ///< True if common anode RGB LED
     uint8_t _redPin;              ///< Pin connected to the red LED.
     uint8_t _greenPin;            ///< Pin connected to the green LED.
     uint8_t _bluePin;             ///< Pin connected to the blue LED.
-    uint8_t _brightness = 255;    ///< Brightness value (0 to 255).
+    bool _commonAnode;            ///< True if common anode RGB LED
     uint8_t _currentColor[3];     ///< Array storing the current RGB values.
+    uint8_t _brightness = 255;    ///< Brightness value (0 to 255).
     bool _gammaEnabled = false;   ///< Set true to enable gamma correction.
 
     /**
