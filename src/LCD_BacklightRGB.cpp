@@ -8,10 +8,11 @@
 
 #include "LCD_BacklightRGB.h"
 
-LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b) : rgb(r, g, b) {}
-
 LCD_BacklightRGB::LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode)
   : rgb(r, g, b, isCommonAnode) {}
+
+LCD_BacklightRGB::LCD_BacklightRGB(LiquidCrystal& lcd, int r, int g, int b, bool isCommonAnode)
+  : rgb(r, g, b, isCommonAnode), _lcd(&lcd) {}
 
 void LCD_BacklightRGB::begin() {
   rgb.begin();

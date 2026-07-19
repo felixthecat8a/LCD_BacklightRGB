@@ -9,6 +9,7 @@
 #define LCD_BACKLIGHTRGB_H
 
 #include <Arduino.h>
+#include <LiquidCrystal.h>
 
 #include "util/BacklightColors.h"
 #include "util/BacklightRGB.h"
@@ -20,18 +21,7 @@
  * adjusting brightness of the RGB backlight on 18-pin RGB LCD modules.
  */
 class LCD_BacklightRGB {
-  private:
-    BacklightRGB rgb; ///< RGB object for managing LED pins and colors.
-
   public:
-    /**
-     * @brief Constructor for the LCD_BacklightRGB class.
-     * @param r Pin for the red LED.
-     * @param g Pin for the green LED.
-     * @param b Pin for the blue LED.
-     */
-    LCD_BacklightRGB(int r, int g, int b);
-
     /**
      * @brief Constructor for the LCD_BacklightRGB class.
      * @param r Pin for the red LED.
@@ -39,7 +29,17 @@ class LCD_BacklightRGB {
      * @param b Pin for the blue LED.
      * @param isCommonAnode Boolean variable indicating common anode RGB LED.
      */
-    LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode);
+    LCD_BacklightRGB(int r, int g, int b, bool isCommonAnode = true);
+
+    /**
+     * @brief Constructor for the LCD_BacklightRGB class with LiquidCrystal reference.
+     * @param lcd Reference to a LiquidCrystal object.
+     * @param r Pin for the red LED.
+     * @param g Pin for the green LED.
+     * @param b Pin for the blue LED.
+     * @param isCommonAnode Boolean variable indicating common anode RGB LED.
+     */
+    LCD_BacklightRGB(LiquidCrystal& lcd, int r, int g, int b, bool isCommonAnode = true);
 
     /**
      * @brief Initializes the RGB backlight.
@@ -176,6 +176,52 @@ class LCD_BacklightRGB {
      * @note Internally maps the range to a hue (0–360) and applies full saturation/value.
      */
     void scaleColor(int value, int fromValue, int toValue);
+
+    /**
+     * @brief Initializes the LCD display.
+     * @param cols Number of columns on the LCD.
+     * @param rows Number of rows on the LCD.
+     */
+    void lcdBegin(uint8_t cols, uint8_t rows) { if (_lcd) _lcd->begin(cols, rows);    }
+
+    void print(const char* msg) { if (_lcd) _lcd->print(msg); }
+    void print(String msg) { if (_lcd) _lcd->print(msg); }
+    void print(int value) { if (_lcd) _lcd->print(value); }
+
+    void clear() { if (_lcd) _lcd->clear(); }
+    void setCursor(uint8_t col, uint8_t row) { if (_lcd) _lcd->setCursor(col, row); }
+    void home() { if (_lcd) _lcd->home(); }
+
+    void scrollDisplayLeft() { if (_lcd) _lcd->scrollDisplayLeft(); }
+    void scrollDisplayRight() { if (_lcd) _lcd->scrollDisplayRight(); }
+
+    void noDisplay() { if (_lcd) _lcd->noDisplay(); }
+    void display() { if (_lcd) _lcd->display(); }
+
+    void noCursor() { if (_lcd) _lcd->noCursor(); }
+    void cursor() { if (_lcd) _lcd->cursor(); }
+    void noBlink() { if (_lcd) _lcd->noBlink(); }
+    void blink() { if (_lcd) _lcd->blink(); }
+
+    void leftToRight() { if (_lcd) _lcd->leftToRight(); }
+    void rightToLeft() { if (_lcd) _lcd->rightToLeft(); }
+    void autoscroll() { if (_lcd) _lcd->autoscroll(); }
+    void noAutoscroll() { if (_lcd) _lcd->noAutoscroll(); }
+
+    void createChar(uint8_t location, uint8_t charmap[]) {
+      if (_lcd) _lcd->createChar(location, charmap);
+    }
+
+    /**
+     * @brief Gets a pointer to the underlying LiquidCrystal object.
+     * @return A pointer to the LiquidCrystal object, or nullptr if not initialized.
+     */
+    LiquidCrystal* getLCD() { return _lcd; }
+
+  private:
+    BacklightRGB rgb; ///< RGB object for managing LED pins and colors.
+
+    LiquidCrystal* _lcd = nullptr; ///< Pointer to the LiquidCrystal object, if provided.
 
 };
 

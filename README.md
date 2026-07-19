@@ -3,12 +3,19 @@
 
 # LCD_BacklightRGB
 
-![GitHub Release](https://img.shields.io/github/v/release/felixthecat8a/LCD_BacklightRGB?logo=arduino&logoColor=00878F&logoSize=auto&color=00878F)
+![GitHub Release](https://img.shields.io/github/v/release/felixthecat8a/LCD_BacklightRGB?color=00878F&logo=arduino&logoColor=00878F&logoSize=auto)
 [![License: MIT](https://img.shields.io/github/license/felixthecat8a/LCD_BacklightRGB)](https://opensource.org/licenses/MIT)
 ![GitHub repo size](https://img.shields.io/github/repo-size/felixthecat8a/LCD_BacklightRGB)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/felixthecat8a/LCD_BacklightRGB)
 ![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/felixthecat8a/LCD_BacklightRGB)
-![GitHub top language](https://img.shields.io/github/languages/top/felixthecat8a/LCD_BacklightRGB?color=%2300599C&logo=c%2B%2B&logoSize=auto)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/felixthecat8a/LCD_BacklightRGB?color=00599C)
+![GitHub top language](https://img.shields.io/github/languages/top/felixthecat8a/LCD_BacklightRGB?color=00599C&logo=cplusplus)
+
+![GitHub Created At](https://img.shields.io/github/created-at/felixthecat8a/LCD_BacklightRGB)
+![GitHub Release Date](https://img.shields.io/github/release-date/felixthecat8a/LCD_BacklightRGB)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/felixthecat8a/LCD_BacklightRGB)
+![GitHub commits since latest release](https://img.shields.io/github/commits-since/felixthecat8a/LCD_BacklightRGB/latest)
+![GitHub last commit](https://img.shields.io/github/last-commit/felixthecat8a/LCD_BacklightRGB)
+
 
 <!-- Workflows -->
 ![Check Arduino](https://github.com/felixthecat8a/LCD_BacklightRGB/actions/workflows/check-arduino.yml/badge.svg)

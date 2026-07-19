@@ -18,70 +18,15 @@
  * methods for setting color and adjusting brightness.
  */
 class BacklightRGB {
-  private:
-    bool _commonAnode;         ///< True if common anode RGB LED
-    uint8_t _redPin;            ///< Pin connected to the red LED.
-    uint8_t _greenPin;          ///< Pin connected to the green LED.
-    uint8_t _bluePin;           ///< Pin connected to the blue LED.
-    uint8_t _brightness;        ///< Brightness value (0 to 255).
-    uint8_t _currentColor[3];   ///< Array storing the current RGB values.
-    bool _gammaEnabled;         ///< Set true to enable gamma correction.
-
-    /**
-     * @brief Adjusts the intensity of a color component based on brightness.
-     * @param color Original color component value (0 to 255).
-     * @return Adjusted color value.
-     */
-    inline uint8_t _setColor(uint8_t color);
-
-    /**
-     * @brief Updates the current color array with the specified red, green, and blue values.
-     * @param red Red value (0 to 255)
-     * @param green Green value (0 to 255)
-     * @param blue Blue value (0 to 255)
-     */
-    inline void _saveRGB(uint8_t red, uint8_t green, uint8_t blue);
-
-    /**
-     * @brief Updates the RGB LED with the specified red, green, and blue values.
-     * @param red Red value (0 to 255)
-     * @param green Green value (0 to 255)
-     * @param blue Blue value (0 to 255)
-     */
-    inline void showRGB(uint8_t red, uint8_t green, uint8_t blue);
-
-    /**
-     * @brief Precomputed gamma correction lookup table.
-     *
-     * This table maps 8-bit linear brightness values (0–255) to perceptual values
-     * corrected for human vision using a gamma of approximately 2.2.
-     *
-     * When gamma correction is enabled via setGammaCorrection(true), this table is
-     * used to adjust each color channel before output.
-     *
-     * Index: input brightness (0–255)
-     * Value: corrected brightness (0–255)
-     */
-    static const uint8_t _gammaTable[256];
-
   public:
     /**
      * @brief Constructor to initialize RGB pins.
      * @param redPin Pin connected to red LED
      * @param greenPin Pin connected to green LED
      * @param bluePin Pin connected to blue LED
-     * @note common anode configuration by default
+     * @param commonAnode Boolean variable indicating common anode RGB LED.
      */
-    BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin);
-
-    /**
-     * @brief Constructor to initialize RGB pins.
-     * @param redPin Pin connected to red LED
-     * @param greenPin Pin connected to green LED
-     * @param bluePin Pin connected to blue LED
-     * @param COMMON_ANODE Boolean variable indicating common anode RGB LED.
-     */
-    BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bool COMMON_ANODE);
+    BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bool commonAnode = true);
 
     /**
      * @brief Initializes the RGB LED pins as outputs or PWM channels for ESP32.
@@ -192,6 +137,52 @@ class BacklightRGB {
      * @param enabled True to apply gamma correction using a lookup table.
      */
     void setGammaCorrection(bool enabled);
+
+  private:
+    bool _commonAnode;            ///< True if common anode RGB LED
+    uint8_t _redPin;              ///< Pin connected to the red LED.
+    uint8_t _greenPin;            ///< Pin connected to the green LED.
+    uint8_t _bluePin;             ///< Pin connected to the blue LED.
+    uint8_t _brightness = 255;    ///< Brightness value (0 to 255).
+    uint8_t _currentColor[3];     ///< Array storing the current RGB values.
+    bool _gammaEnabled = false;   ///< Set true to enable gamma correction.
+
+    /**
+     * @brief Adjusts the intensity of a color component based on brightness.
+     * @param color Original color component value (0 to 255).
+     * @return Adjusted color value.
+     */
+    inline uint8_t _setColor(uint8_t color);
+
+    /**
+     * @brief Updates the current color array with the specified red, green, and blue values.
+     * @param red Red value (0 to 255)
+     * @param green Green value (0 to 255)
+     * @param blue Blue value (0 to 255)
+     */
+    inline void _saveRGB(uint8_t red, uint8_t green, uint8_t blue);
+
+    /**
+     * @brief Updates the RGB LED with the specified red, green, and blue values.
+     * @param red Red value (0 to 255)
+     * @param green Green value (0 to 255)
+     * @param blue Blue value (0 to 255)
+     */
+    inline void showRGB(uint8_t red, uint8_t green, uint8_t blue);
+
+    /**
+     * @brief Precomputed gamma correction lookup table.
+     *
+     * This table maps 8-bit linear brightness values (0–255) to perceptual values
+     * corrected for human vision using a gamma of approximately 2.2.
+     *
+     * When gamma correction is enabled via setGammaCorrection(true), this table is
+     * used to adjust each color channel before output.
+     *
+     * Index: input brightness (0–255)
+     * Value: corrected brightness (0–255)
+     */
+    static const uint8_t _gammaTable[256];
 };
 
 #endif

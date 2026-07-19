@@ -8,17 +8,8 @@
 
 #include "BacklightRGB.h"
 
-BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin) {
-  _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
-  _commonAnode = true;
-  _brightness = 255;
-  _gammaEnabled = false;
-  _currentColor[0] = _currentColor[1] = _currentColor[2] = 0;
-}
-
-BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bool COMMON_ANODE) {
-  _redPin = redPin; _greenPin = greenPin; _bluePin = bluePin;
-  _commonAnode = COMMON_ANODE;
+BacklightRGB::BacklightRGB(uint8_t redPin, uint8_t greenPin, uint8_t bluePin, bool commonAnode)
+  : _redPin(redPin), _greenPin(greenPin), _bluePin(bluePin), _commonAnode(commonAnode) {
   _brightness = 255;
   _gammaEnabled = false;
   _currentColor[0] = _currentColor[1] = _currentColor[2] = 0;
@@ -29,7 +20,6 @@ void BacklightRGB::begin() {
   pinMode(_greenPin, OUTPUT);
   pinMode(_bluePin, OUTPUT);
 }
-
 
 void BacklightRGB::setBrightness(uint8_t brightness) {
   _brightness = constrain(brightness, 0, 255);
