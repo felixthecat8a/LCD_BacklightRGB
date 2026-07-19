@@ -5,7 +5,7 @@
 #######################################
 # Classes (KEYWORD1)
 #######################################
-LCD_BacklightRGB	KEYWORD1
+LCD_BacklightRGB	KEYWORD1	LCD_BacklightRGB
 BacklightRGB    KEYWORD1
 BacklightColors	KEYWORD1
 
@@ -43,6 +43,9 @@ setGray	KEYWORD2
 setOlive	KEYWORD2
 setTeal	KEYWORD2
 setPurple	KEYWORD2
+
+lcdBegin	KEYWORD2
+getLCD	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
