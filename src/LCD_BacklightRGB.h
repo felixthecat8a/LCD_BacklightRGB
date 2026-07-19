@@ -49,6 +49,15 @@ class LCD_BacklightRGB {
     void begin();
 
     /**
+     * @brief Initializes the RGB backlight and LCD.
+     * @param cols Number of columns on the LCD.
+     * @param rows Number of rows on the LCD.
+     * @note Must be called before using other methods.
+     * Sets the initial color to a default teal (hex: 0x0A878F).
+     */
+    void begin(uint8_t cols, uint8_t rows);
+
+    /**
      * @brief Sets whether to apply gamma correction.
      * @param enabled True to apply gamma correction.
      */
@@ -182,35 +191,40 @@ class LCD_BacklightRGB {
      * @param cols Number of columns on the LCD.
      * @param rows Number of rows on the LCD.
      */
-    void lcdBegin(uint8_t cols, uint8_t rows) { if (_lcd) _lcd->begin(cols, rows);    }
+    void lcdBegin(uint8_t cols, uint8_t rows) { if (_lcd) _lcd->begin(cols, rows); }
 
+    /**
+     * @brief LCD display methods that forward calls to the underlying LiquidCrystal object.
+     * @note These methods are only available if a LiquidCrystal object was provided during construction.
+     */
+    /// @{
     void print(const char* msg) { if (_lcd) _lcd->print(msg); }
     void print(String msg) { if (_lcd) _lcd->print(msg); }
     void print(int value) { if (_lcd) _lcd->print(value); }
-
+    void write(uint8_t value) { if (_lcd) _lcd->write(value); }
     void clear() { if (_lcd) _lcd->clear(); }
     void setCursor(uint8_t col, uint8_t row) { if (_lcd) _lcd->setCursor(col, row); }
     void home() { if (_lcd) _lcd->home(); }
-
     void scrollDisplayLeft() { if (_lcd) _lcd->scrollDisplayLeft(); }
     void scrollDisplayRight() { if (_lcd) _lcd->scrollDisplayRight(); }
-
     void noDisplay() { if (_lcd) _lcd->noDisplay(); }
     void display() { if (_lcd) _lcd->display(); }
-
     void noCursor() { if (_lcd) _lcd->noCursor(); }
     void cursor() { if (_lcd) _lcd->cursor(); }
     void noBlink() { if (_lcd) _lcd->noBlink(); }
     void blink() { if (_lcd) _lcd->blink(); }
-
     void leftToRight() { if (_lcd) _lcd->leftToRight(); }
     void rightToLeft() { if (_lcd) _lcd->rightToLeft(); }
     void autoscroll() { if (_lcd) _lcd->autoscroll(); }
     void noAutoscroll() { if (_lcd) _lcd->noAutoscroll(); }
-
     void createChar(uint8_t location, uint8_t charmap[]) {
       if (_lcd) _lcd->createChar(location, charmap);
     }
+    void command(uint8_t value) { if (_lcd) _lcd->command(value); }
+    void setRowOffsets(int row1, int row2, int row3, int row4) {
+      if (_lcd) _lcd->setRowOffsets(row1, row2, row3, row4);
+    }
+    /// @}
 
     /**
      * @brief Gets a pointer to the underlying LiquidCrystal object.

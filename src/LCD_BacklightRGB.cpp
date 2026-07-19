@@ -20,6 +20,11 @@ void LCD_BacklightRGB::begin() {
   rgb.setHex(COLOR_TEAL);
 }
 
+void LCD_BacklightRGB::begin(uint8_t cols, uint8_t rows) {
+  lcdBegin(cols, rows); // Initialize the LCD with specified dimensions.
+  begin(); // Call the default begin() to initialize the RGB backlight.
+}
+
 void LCD_BacklightRGB::setGamma(bool enabled) {
   rgb.setGammaCorrection(enabled);
 }

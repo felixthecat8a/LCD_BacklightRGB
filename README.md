@@ -80,8 +80,7 @@ LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 LCD_BacklightRGB display(lcd, 6, 9, 10);
 
 void setup() {
-    display.lcdBegin(16, 2); // Initiate the LCD.
-    display.begin(); // Initiate the RGB pins.
+    display.begin(16, 2); // Initiate the LCD & RGB pins.
     display.setBrightness(130); // Set the brightness level. (0 - 255)
     display.setGreen();// Set the backlight color.
     display.print("Hello World!");
