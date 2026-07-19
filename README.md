@@ -44,6 +44,8 @@ On the RGB LCD display module, set pin 15 to HIGH. Pin 16 is red, pin 17 is gree
 
 ## Usage
 
+Use `LCD_BacklightRGB` as an RGB backlight controller separately.
+
 ```cpp
 #include <LiquidCrystal.h>
 #include <LCD_BacklightRGB.h>
@@ -55,20 +57,41 @@ const int redPin = 6, greenPin = 9, bluePin = 10;
 LCD_BacklightRGB backlight(redPin, greenPin, bluePin);
 
 void setup() {
-    // Initiate the LCD.
-    lcd.begin(16, 2);
-    // Initiate the RGB pins.
-    backlight.begin();
-    // Set the brightness level. (0 - 255)
-    backlight.setBrightness(130);
-    // Set the backlight using RGB values.
-    backlight.setRGB(0, 255, 0);
+    lcd.begin(16, 2); // Initiate the LCD.
+    backlight.begin(); // Initiate the RGB pins.
+    backlight.setBrightness(130); // Set the brightness level. (0 - 255)
+    backlight.setRGB(0, 255, 0);// Set the backlight color.
+    lcd.print("Hello World!");
 }
 
 void loop() {
     // Add your code here.
 }
 ```
+
+Or, use `LCD_BacklightRGB` as a `LiquidCrystal` wrapper.
+
+```cpp
+#include <LiquidCrystal.h>
+#include <LCD_BacklightRGB.h>
+// Set up the LiquidCrystal library
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+LCD_BacklightRGB display(lcd, 6, 9, 10);
+
+void setup() {
+    display.lcdBegin(16, 2); // Initiate the LCD.
+    display.begin(); // Initiate the RGB pins.
+    display.setBrightness(130); // Set the brightness level. (0 - 255)
+    display.setGreen();// Set the backlight color.
+    display.print("Hello World!");
+}
+
+void loop() {
+    // Add your code here.
+}
+```
+
 ## RGB LCD Displays
 
 Here are some of the 18-pin RGB displays that I found:
