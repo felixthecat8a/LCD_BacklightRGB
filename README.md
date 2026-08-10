@@ -11,10 +11,11 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/felixthecat8a/LCD_BacklightRGB?color=00599C&logo=cplusplus)
 
 ![GitHub Created At](https://img.shields.io/github/created-at/felixthecat8a/LCD_BacklightRGB)
-![GitHub Release Date](https://img.shields.io/github/release-date/felixthecat8a/LCD_BacklightRGB)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/felixthecat8a/LCD_BacklightRGB)
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/felixthecat8a/LCD_BacklightRGB/latest)
 ![GitHub last commit](https://img.shields.io/github/last-commit/felixthecat8a/LCD_BacklightRGB)
+![GitHub Release Date](https://img.shields.io/github/release-date/felixthecat8a/LCD_BacklightRGB)
+![GitHub commits since latest release](https://img.shields.io/github/commits-since/felixthecat8a/LCD_BacklightRGB/latest)
+
 
 
 <!-- Workflows -->
@@ -95,8 +96,8 @@ void loop() {
 
 Here are some of the 18-pin RGB displays that I found:
 * The Adafruit RGB LCD displays in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
-* Sparkfun also has this one in [backlight positive](https://www.sparkfun.com/products/10862). 
-* ~I found this one on Amazon from Winstar in [backlight negative](https://www.amazon.com/Character-Negative-Backlight-Arduino-projects/dp/B00CRSF37I)~
+* Sparkfun also has this one in [backlight positive](https://www.sparkfun.com/products/10862).
+* Mouser Electronics sells some from Newhaven Display in [backlight positive](https://www.mouser.com/en/ProductDetail/Newhaven-Display/NHD-0216K1Z-NSRGB-FBW-REV1?qs=dH5mIrD9dd3QJMIfPqek5A%3D%3D) and [backlight negative](https://www.mouser.com/en/ProductDetail/Newhaven-Display/NHD-0216K1Z-NSRGB-FBW-REV1?qs=dH5mIrD9dd3QJMIfPqek5A%3D%3D).
 * Here is one from [DigiKey](https://www.digikey.com/en/products/detail/newhaven-display-intl/NHD-0216K1Z-NS(RGB)-FBW-REV1/2172436)
 
 Note: I2C RGB LCD modules handle backlight colors internally
