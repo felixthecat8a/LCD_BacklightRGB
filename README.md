@@ -97,7 +97,7 @@ void loop() {
 Here are some of the 18-pin RGB displays that I found:
 * The Adafruit RGB LCD displays in  [backlight positive](https://www.adafruit.com/product/398) and [backlight negative](https://www.adafruit.com/product/399).
 * Sparkfun also has this one in [backlight positive](https://www.sparkfun.com/products/10862).
-* Mouser Electronics sells some from Newhaven Display in [backlight positive](https://www.mouser.com/en/ProductDetail/Newhaven-Display/NHD-0216K1Z-NSRGB-FBW-REV1?qs=dH5mIrD9dd3QJMIfPqek5A%3D%3D) and [backlight negative](https://www.mouser.com/en/ProductDetail/Newhaven-Display/NHD-0216K1Z-NSRGB-FBW-REV1?qs=dH5mIrD9dd3QJMIfPqek5A%3D%3D).
+* Mouser Electronics sells some from Newhaven Display in [backlight positive](https://www.mouser.com/en/ProductDetail/Newhaven-Display/NHD-0216K1Z-FSRGB-FBW-REV1?qs=2reeYn0UkXopV4f6ub58tw%3D%3D) and [backlight negative](https://www.mouser.com/en/ProductDetail/Newhaven-Display/NHD-0216K1Z-NSRGB-FBW-REV1?qs=dH5mIrD9dd3QJMIfPqek5A%3D%3D).
 * Here is one from [DigiKey](https://www.digikey.com/en/products/detail/newhaven-display-intl/NHD-0216K1Z-NS(RGB)-FBW-REV1/2172436)
 
 Note: I2C RGB LCD modules handle backlight colors internally
